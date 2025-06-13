@@ -1,14 +1,14 @@
-
 import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Calculator, Shield, Cpu, TrendingUp, Zap, Users, Award, DollarSign, Clock } from 'lucide-react';
+import { Calculator, Shield, Cpu, TrendingUp, Zap, Users, Award, DollarSign, Clock, Coins, Activity } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 const Index = () => {
   const navigate = useNavigate();
   const [angelRoundValue, setAngelRoundValue] = useState(1000000);
   const [matrixText, setMatrixText] = useState('');
+  const [stakeAmount, setStakeAmount] = useState('');
 
   // Matrix rain effect text
   useEffect(() => {
@@ -48,6 +48,17 @@ const Index = () => {
   };
 
   const tokenomics = calculateTokenomics(angelRoundValue);
+
+  // Mock data for design stage
+  const mockData = {
+    currentStake: 0,
+    rewards: 0,
+    holdings: 0,
+    currentSupply: 1000000,
+    currentPrice: tokenomics.launchPrice,
+    ocBotzDeployed: 12,
+    rewardsLocked: 2500000
+  };
 
   return (
     <div className="min-h-screen bg-black text-green-400 overflow-hidden font-mono">
@@ -136,6 +147,131 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Live Statistics Widget */}
+      <section className="relative z-10 py-8 px-6 bg-gradient-to-b from-black to-gray-900">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl font-bold text-center mb-8 text-green-400">
+            LIVE ECOSYSTEM STATS
+          </h2>
+          
+          <div className="grid md:grid-cols-4 gap-4">
+            <Card className="bg-black border-green-400/50 hover:shadow-[0_0_20px_rgba(0,255,65,0.2)]">
+              <CardContent className="p-4 text-center">
+                <Coins className="h-8 w-8 text-green-400 mx-auto mb-2" />
+                <h4 className="text-green-400 font-semibold">Current Supply</h4>
+                <p className="text-2xl font-bold text-green-300">{mockData.currentSupply.toLocaleString()}</p>
+              </CardContent>
+            </Card>
+            
+            <Card className="bg-black border-green-400/50 hover:shadow-[0_0_20px_rgba(0,255,65,0.2)]">
+              <CardContent className="p-4 text-center">
+                <DollarSign className="h-8 w-8 text-green-400 mx-auto mb-2" />
+                <h4 className="text-green-400 font-semibold">Current Price</h4>
+                <p className="text-2xl font-bold text-green-300">${mockData.currentPrice}</p>
+              </CardContent>
+            </Card>
+            
+            <Card className="bg-black border-green-400/50 hover:shadow-[0_0_20px_rgba(0,255,65,0.2)]">
+              <CardContent className="p-4 text-center">
+                <Cpu className="h-8 w-8 text-green-400 mx-auto mb-2" />
+                <h4 className="text-green-400 font-semibold">OCBotz Deployed</h4>
+                <p className="text-2xl font-bold text-green-300">{mockData.ocBotzDeployed}</p>
+              </CardContent>
+            </Card>
+            
+            <Card className="bg-black border-green-400/50 hover:shadow-[0_0_20px_rgba(0,255,65,0.2)]">
+              <CardContent className="p-4 text-center">
+                <Activity className="h-8 w-8 text-green-400 mx-auto mb-2" />
+                <h4 className="text-green-400 font-semibold">Rewards Locked</h4>
+                <p className="text-2xl font-bold text-green-300">{mockData.rewardsLocked.toLocaleString()}</p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Staking Interface */}
+      <section className="relative z-10 py-16 px-6">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl font-bold text-center mb-12 text-green-400">
+            STAKING INTERFACE
+          </h2>
+          
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* User Holdings */}
+            <Card className="bg-black border-green-400/50 hover:shadow-[0_0_30px_rgba(0,255,65,0.2)]">
+              <CardHeader>
+                <CardTitle className="text-green-400 text-center">YOUR HOLDINGS</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="p-4 border border-green-400/30 rounded">
+                  <div className="flex justify-between">
+                    <span className="text-green-300">Current OCAI Stake:</span>
+                    <span className="text-green-400 font-bold">{mockData.currentStake.toLocaleString()}</span>
+                  </div>
+                </div>
+                <div className="p-4 border border-green-400/30 rounded">
+                  <div className="flex justify-between">
+                    <span className="text-green-300">Pending Rewards:</span>
+                    <span className="text-green-400 font-bold">{mockData.rewards.toLocaleString()}</span>
+                  </div>
+                </div>
+                <div className="p-4 border border-green-400/30 rounded">
+                  <div className="flex justify-between">
+                    <span className="text-green-300">OCAI Holdings:</span>
+                    <span className="text-green-400 font-bold">{mockData.holdings.toLocaleString()}</span>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Staking Actions */}
+            <Card className="bg-black border-green-400/50 hover:shadow-[0_0_30px_rgba(0,255,65,0.2)]">
+              <CardHeader>
+                <CardTitle className="text-green-400 text-center">STAKING ACTIONS</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-6">
+                <div>
+                  <label className="block text-green-300 mb-2">
+                    Enter OCAI Amount to Stake:
+                  </label>
+                  <input
+                    type="number"
+                    value={stakeAmount}
+                    onChange={(e) => setStakeAmount(e.target.value)}
+                    className="w-full p-3 bg-black border border-green-400/50 text-green-400 rounded focus:border-green-400 focus:outline-none"
+                    placeholder="0"
+                  />
+                  <p className="text-xs text-green-300/70 mt-1">
+                    ⚠️ Only 1 stake allowed per address. Cannot add to existing stake.
+                  </p>
+                </div>
+                
+                <Button 
+                  className="w-full bg-green-400 text-black hover:bg-green-300 py-3 text-lg font-semibold transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,255,65,0.5)]"
+                  disabled={!stakeAmount || parseFloat(stakeAmount) <= 0}
+                >
+                  MINT NFT & STAKE
+                </Button>
+                
+                <Button 
+                  variant="outline"
+                  className="w-full border-red-400 text-red-400 hover:bg-red-400 hover:text-black py-3 text-lg font-semibold transition-all duration-300"
+                >
+                  BURN NFT & COLLECT YIELD
+                </Button>
+                
+                <div className="p-4 border border-yellow-400/50 rounded bg-yellow-400/5">
+                  <p className="text-yellow-300 text-sm text-center">
+                    💡 <strong>Strategy Tip:</strong> Wait to accumulate more OCAI before staking for bigger rewards share!
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* ICO Calculator Section */}
       <section className="relative z-10 py-16 px-6 bg-gradient-to-b from-black to-gray-900">
         <div className="max-w-6xl mx-auto">
@@ -164,6 +300,17 @@ const Index = () => {
                   step="100000"
                 />
               </div>
+
+              {/* Wallet Address */}
+              <div className="mb-8 p-4 border border-green-400/50 rounded bg-green-400/5">
+                <h3 className="text-green-400 font-semibold mb-2 text-center">ICO WALLET ADDRESS</h3>
+                <p className="text-green-300 text-center font-mono text-sm break-all">
+                  0x4e60bfdda8dee4cb6bbfb93a35fa7439e63c067b
+                </p>
+                <p className="text-green-300/70 text-xs text-center mt-2">
+                  Send your tokens to this address during ICO rounds
+                </p>
+              </div>
               
               <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-4">
                 <div className="text-center p-4 border border-green-400/30 rounded bg-green-400/5">
@@ -171,6 +318,7 @@ const Index = () => {
                   <p className="text-2xl font-bold text-green-300">${tokenomics.earlyBirdPrice}</p>
                   <p className="text-sm text-green-300/70">5x discount • $10k max</p>
                   <p className="text-xs text-green-300/50">Any token accepted</p>
+                  <p className="text-xs text-yellow-300 font-semibold">14 days</p>
                 </div>
                 
                 <div className="text-center p-4 border border-green-400/30 rounded bg-green-400/5">
@@ -178,6 +326,7 @@ const Index = () => {
                   <p className="text-2xl font-bold text-green-300">${tokenomics.round1Price}</p>
                   <p className="text-sm text-green-300/70">3x discount</p>
                   <p className="text-xs text-green-300/50">PLS only</p>
+                  <p className="text-xs text-yellow-300 font-semibold">14 days</p>
                 </div>
                 
                 <div className="text-center p-4 border border-green-400/30 rounded bg-green-400/5">
@@ -185,6 +334,7 @@ const Index = () => {
                   <p className="text-2xl font-bold text-green-300">${tokenomics.round2Price}</p>
                   <p className="text-sm text-green-300/70">2x discount</p>
                   <p className="text-xs text-green-300/50">PLS only</p>
+                  <p className="text-xs text-yellow-300 font-semibold">14 days</p>
                 </div>
                 
                 <div className="text-center p-4 border border-green-400/30 rounded bg-green-400/5">
@@ -192,6 +342,7 @@ const Index = () => {
                   <p className="text-2xl font-bold text-green-300">${tokenomics.lastOrdersPrice}</p>
                   <p className="text-sm text-green-300/70">1.25x discount</p>
                   <p className="text-xs text-green-300/50">PLS only</p>
+                  <p className="text-xs text-yellow-300 font-semibold">14 days</p>
                 </div>
 
                 <div className="text-center p-4 border border-green-400 rounded bg-green-400/10">
@@ -231,6 +382,7 @@ const Index = () => {
                   <li>• Target 555% yield in TBILL & FED rewards over 55 days</li>
                   <li>• NFT Proof-Of-Stake (POS) ownership</li>
                   <li>• Exclusive access to ecosystem rewards</li>
+                  <li>• <span className="text-yellow-400 font-semibold">ONE stake per address maximum</span></li>
                 </ul>
               </CardContent>
             </Card>
@@ -239,18 +391,18 @@ const Index = () => {
               <CardHeader>
                 <CardTitle className="text-green-400 flex items-center gap-2">
                   <Zap className="h-6 w-6" />
-                  Smart Tax System
+                  Strategic Commitment
                 </CardTitle>
               </CardHeader>
               <CardContent className="text-green-300">
                 <p className="mb-4">
-                  Every trade fuels the ecosystem with a 3% tax distributed strategically:
+                  The one-stake-per-address rule creates strategic decision making:
                 </p>
                 <ul className="space-y-2 text-sm">
-                  <li>• 0.5% → OCBotz (buy & burn OCAI)</li>
-                  <li>• 1.25% → Buy TBILL for stakers</li>
-                  <li>• 1.25% → Buy FED for stakers</li>
-                  <li>• Zero rewards for non-stakers</li>
+                  <li>• <span className="text-green-400">Wait & Accumulate:</span> Buy more OCAI before staking</li>
+                  <li>• <span className="text-green-400">Bigger Stake = Bigger Share:</span> More rewards proportionally</li>
+                  <li>• <span className="text-green-400">Commitment Rewarded:</span> 55-day lock period</li>
+                  <li>• <span className="text-green-400">No Adding:</span> Must burn NFT to stake again</li>
                 </ul>
               </CardContent>
             </Card>

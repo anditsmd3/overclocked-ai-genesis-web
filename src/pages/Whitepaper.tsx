@@ -126,7 +126,7 @@ const Whitepaper = () => {
           </CardContent>
         </Card>
 
-        {/* Game Theory */}
+        {/* Advanced Game Theory - Enhanced Section */}
         <Card className="bg-black border-green-400/50">
           <CardHeader>
             <CardTitle className="text-green-400 text-2xl flex items-center gap-2">
@@ -135,6 +135,35 @@ const Whitepaper = () => {
             </CardTitle>
           </CardHeader>
           <CardContent className="text-green-300 leading-relaxed">
+            <h3 className="text-xl font-semibold text-green-400 mb-3">The One-Stake-Per-Address Rule</h3>
+            <p className="mb-4">
+              OCAI's revolutionary constraint allows only ONE active stake per wallet address at any time. 
+              This creates unprecedented strategic depth and game theory dynamics:
+            </p>
+            
+            <div className="grid md:grid-cols-2 gap-6 mb-6">
+              <div className="p-4 border border-green-400/30 rounded bg-green-400/5">
+                <h4 className="text-green-400 font-semibold mb-2">STRATEGIC ACCUMULATION</h4>
+                <ul className="space-y-1 text-sm">
+                  <li>• Users cannot add to existing stakes</li>
+                  <li>• Must burn NFT to stake again</li>
+                  <li>• Incentivizes waiting to accumulate more OCAI</li>
+                  <li>• Bigger stakes = proportionally bigger rewards</li>
+                  <li>• Creates natural buying pressure</li>
+                </ul>
+              </div>
+              <div className="p-4 border border-green-400/30 rounded bg-green-400/5">
+                <h4 className="text-green-400 font-semibold mb-2">COMMITMENT MECHANISMS</h4>
+                <ul className="space-y-1 text-sm">
+                  <li>• 55-day lock period enforced by NFT</li>
+                  <li>• Early exit penalty of 25%</li>
+                  <li>• No rewards for early exits</li>
+                  <li>• Decision paralysis favors hodling</li>
+                  <li>• Time decay increases commitment</li>
+                </ul>
+              </div>
+            </div>
+
             <h3 className="text-xl font-semibold text-green-400 mb-3">The Staker Class Advantage</h3>
             <p className="mb-4">
               OCAI creates a two-tier system where only stakers receive the true value:
@@ -162,20 +191,35 @@ const Whitepaper = () => {
               </div>
             </div>
             
-            <h3 className="text-xl font-semibold text-green-400 mb-3">Behavioral Economics</h3>
+            <h3 className="text-xl font-semibold text-green-400 mb-3">Behavioral Economics & Decision Theory</h3>
             <p className="mb-4">
-              This system creates powerful psychological and economic incentives:
+              The one-stake constraint creates powerful psychological and economic incentives:
             </p>
             <ul className="space-y-2 ml-6 mb-4">
-              <li>• <span className="text-green-400">Loss Aversion:</span> Fear of missing massive rewards drives staking</li>
-              <li>• <span className="text-green-400">Social Proof:</span> Stakers become a privileged class</li>
-              <li>• <span className="text-green-400">Commitment Bias:</span> 55-day lock creates strong commitment</li>
-              <li>• <span className="text-green-400">Scarcity Effect:</span> Limited rewards only for stakers</li>
+              <li>• <span className="text-green-400">Analysis Paralysis:</span> Users over-analyze optimal staking timing</li>
+              <li>• <span className="text-green-400">FOMO Accumulation:</span> Fear of missing bigger rewards drives token buying</li>
+              <li>• <span className="text-green-400">Commitment Escalation:</span> Larger stakes feel more important to protect</li>
+              <li>• <span className="text-green-400">Sunk Cost Fallacy:</span> Users less likely to exit larger commitments</li>
+              <li>• <span className="text-green-400">Social Proof:</span> Successful stakers become community leaders</li>
             </ul>
+
+            <h3 className="text-xl font-semibold text-green-400 mb-3">Strategic Decision Framework</h3>
+            <p className="mb-4">
+              Users face a complex strategic decision matrix:
+            </p>
+            <div className="p-4 border border-yellow-400/30 rounded bg-yellow-400/5 mb-4">
+              <h4 className="text-yellow-400 font-semibold mb-2">THE STAKING DILEMMA:</h4>
+              <ul className="space-y-1 text-sm text-yellow-300">
+                <li>• <strong>Stake Now:</strong> Start earning immediately but with smaller rewards share</li>
+                <li>• <strong>Wait & Accumulate:</strong> Risk price increases but potentially earn much more</li>
+                <li>• <strong>Market Timing:</strong> Try to optimize entry point for maximum efficiency</li>
+                <li>• <strong>Opportunity Cost:</strong> Miss current cycle rewards vs future larger rewards</li>
+              </ul>
+            </div>
           </CardContent>
         </Card>
 
-        {/* Tokenomics */}
+        {/* Tokenomics - Enhanced Section */}
         <Card className="bg-black border-green-400/50">
           <CardHeader>
             <CardTitle className="text-green-400 text-2xl flex items-center gap-2">
@@ -185,27 +229,43 @@ const Whitepaper = () => {
           </CardHeader>
           <CardContent className="text-green-300 leading-relaxed">
             <h3 className="text-xl font-semibold text-green-400 mb-3">ICO Phases</h3>
+            
+            {/* ICO Wallet Address */}
+            <div className="mb-6 p-4 border border-green-400/50 rounded bg-green-400/5">
+              <h4 className="text-green-400 font-semibold mb-2 text-center">ICO WALLET ADDRESS</h4>
+              <p className="text-green-300 text-center font-mono text-sm break-all">
+                0x4e60bfdda8dee4cb6bbfb93a35fa7439e63c067b
+              </p>
+              <p className="text-green-300/70 text-xs text-center mt-2">
+                Send your tokens to this address during ICO rounds
+              </p>
+            </div>
+
             <div className="grid md:grid-cols-2 gap-4 mb-6">
               <div className="p-4 border border-green-400/30 rounded">
                 <h4 className="text-green-400 font-semibold">1. Early Bird Angels</h4>
                 <p className="text-sm">• 5x discount from launch price</p>
                 <p className="text-sm">• $10,000 max per wallet</p>
                 <p className="text-sm">• Any token accepted</p>
+                <p className="text-sm text-yellow-300">• Duration: 14 days</p>
               </div>
               <div className="p-4 border border-green-400/30 rounded">
                 <h4 className="text-green-400 font-semibold">2. Round 1</h4>
                 <p className="text-sm">• 3x discount from launch price</p>
                 <p className="text-sm">• PLS only accepted</p>
+                <p className="text-sm text-yellow-300">• Duration: 14 days</p>
               </div>
               <div className="p-4 border border-green-400/30 rounded">
                 <h4 className="text-green-400 font-semibold">3. Round 2</h4>
                 <p className="text-sm">• 2x discount from launch price</p>
                 <p className="text-sm">• PLS only accepted</p>
+                <p className="text-sm text-yellow-300">• Duration: 14 days</p>
               </div>
               <div className="p-4 border border-green-400/30 rounded">
                 <h4 className="text-green-400 font-semibold">4. Last Orders</h4>
                 <p className="text-sm">• 1.25x discount from launch price</p>
                 <p className="text-sm">• PLS only accepted</p>
+                <p className="text-sm text-yellow-300">• Duration: 14 days</p>
               </div>
             </div>
 
@@ -238,7 +298,7 @@ const Whitepaper = () => {
           </CardContent>
         </Card>
 
-        {/* Staking Mechanics */}
+        {/* Staking Mechanics - Enhanced Section */}
         <Card className="bg-black border-green-400/50">
           <CardHeader>
             <CardTitle className="text-green-400 text-2xl flex items-center gap-2">
@@ -247,6 +307,18 @@ const Whitepaper = () => {
             </CardTitle>
           </CardHeader>
           <CardContent className="text-green-300 leading-relaxed">
+            <h3 className="text-xl font-semibold text-green-400 mb-3">The One-Stake Constraint</h3>
+            <div className="p-4 border border-red-400/30 rounded bg-red-400/5 mb-6">
+              <h4 className="text-red-400 font-semibold mb-2">CRITICAL RULE: ONE STAKE PER ADDRESS</h4>
+              <ul className="space-y-1 text-red-300">
+                <li>• Only ONE active stake allowed per wallet address</li>
+                <li>• Cannot add tokens to existing stake</li>
+                <li>• Must burn NFT and claim rewards to stake again</li>
+                <li>• Creates strategic decision-making pressure</li>
+                <li>• Incentivizes accumulation before staking</li>
+              </ul>
+            </div>
+
             <h3 className="text-xl font-semibold text-green-400 mb-3">55-Day Commitment Period</h3>
             <p className="mb-4">
               Every stake lasts exactly 55 days. This period is optimized for:
@@ -256,6 +328,7 @@ const Whitepaper = () => {
               <li>• Behavioral commitment reinforcement</li>
               <li>• OCBotz optimization cycles</li>
               <li>• Market volatility smoothing</li>
+              <li>• Strategic planning window</li>
             </ul>
 
             <h3 className="text-xl font-semibold text-green-400 mb-3">Reward Structure</h3>
@@ -272,6 +345,21 @@ const Whitepaper = () => {
                   * Actual yields may vary based on OCBotz performance, market conditions, and total staked amount
                 </p>
               </div>
+            </div>
+
+            <h3 className="text-xl font-semibold text-green-400 mb-3">Strategic Implications</h3>
+            <div className="p-4 border border-yellow-400/30 rounded bg-yellow-400/5 mb-6">
+              <h4 className="text-yellow-400 font-semibold mb-2">THE ACCUMULATION STRATEGY</h4>
+              <p className="text-yellow-300 text-sm mb-2">
+                The one-stake rule creates powerful incentives for users to accumulate as much OCAI as possible 
+                before committing to a 55-day stake. This creates:
+              </p>
+              <ul className="space-y-1 text-yellow-300 text-sm">
+                <li>• Natural buying pressure as users accumulate</li>
+                <li>• Reduced selling pressure from committed stakers</li>
+                <li>• Strategic timing decisions that favor long-term thinking</li>
+                <li>• Reward concentration among serious participants</li>
+              </ul>
             </div>
 
             <h3 className="text-xl font-semibold text-green-400 mb-3">Penalty System</h3>
@@ -523,6 +611,11 @@ const Whitepaper = () => {
               through advanced game theory and innovative reward mechanisms. By privileging 
               committed stakers over speculators, OCAI builds a foundation for long-term growth 
               and community prosperity.
+            </p>
+            <p className="mb-4">
+              The revolutionary one-stake-per-address constraint creates unprecedented strategic 
+              depth, incentivizing accumulation and long-term thinking while punishing speculation 
+              and short-term behavior.
             </p>
             <p className="mb-4">
               The integration with TBILL and FED tokens, combined with autonomous OCBotz operations, 
