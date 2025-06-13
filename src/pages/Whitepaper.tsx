@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -233,7 +232,8 @@ const Whitepaper = () => {
             <h3 className="text-xl font-semibold text-green-400 mb-3">Supply Mechanics</h3>
             <p className="mb-4">
               Total supply is dynamically determined by Early Bird Angels round performance. 
-              After ICO completion, supply increases by 50%: 25% for liquidity, 25% for OCBotz operations.
+              After ICO completion, supply increases by 400%. Of this increased amount: 
+              10% of this is used for liquidity, and 90% for OCBotz operations.
             </p>
           </CardContent>
         </Card>
