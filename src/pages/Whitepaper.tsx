@@ -1,8 +1,8 @@
-
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useNavigate } from 'react-router-dom';
+import { Bot } from 'lucide-react';
 
 const Whitepaper = () => {
   const navigate = useNavigate();
@@ -13,11 +13,7 @@ const Whitepaper = () => {
       <nav className="p-6 border-b border-green-400/30 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <div className="flex items-center gap-3">
-            <img 
-              src="/lovable-uploads/9c595eda-81ce-4709-a06b-75f909a4540c.png" 
-              alt="OCAI Logo" 
-              className="h-10 w-10 drop-shadow-[0_0_15px_rgba(0,255,65,0.7)]"
-            />
+            <Bot className="h-10 w-10 text-green-400 drop-shadow-[0_0_15px_rgba(0,255,65,0.7)]" />
             <h1 className="text-2xl font-bold text-green-400 drop-shadow-[0_0_15px_rgba(0,255,65,0.7)]">
               OVERCLOCKED<span className="text-green-300">AI</span>
             </h1>
@@ -37,19 +33,11 @@ const Whitepaper = () => {
         {/* Header */}
         <div className="text-center py-12">
           <div className="flex items-center justify-center gap-4 mb-6">
-            <img 
-              src="/lovable-uploads/9c595eda-81ce-4709-a06b-75f909a4540c.png" 
-              alt="OCAI" 
-              className="h-16 w-16 drop-shadow-[0_0_30px_rgba(0,255,65,0.8)]"
-            />
+            <Bot className="h-16 w-16 text-green-400 drop-shadow-[0_0_30px_rgba(0,255,65,0.8)]" />
             <h1 className="text-6xl font-bold drop-shadow-[0_0_35px_rgba(0,255,65,0.9)]">
               OVERCLOCKED<span className="text-green-300">AI</span>
             </h1>
-            <img 
-              src="/lovable-uploads/9c595eda-81ce-4709-a06b-75f909a4540c.png" 
-              alt="OCAI" 
-              className="h-16 w-16 drop-shadow-[0_0_30px_rgba(0,255,65,0.8)]"
-            />
+            <Bot className="h-16 w-16 text-green-400 drop-shadow-[0_0_30px_rgba(0,255,65,0.8)]" />
           </div>
           <p className="text-2xl text-green-300 mb-4 drop-shadow-[0_0_20px_rgba(0,255,65,0.6)]">TECHNICAL WHITEPAPER</p>
           <p className="text-lg text-green-300/80">Version 1.0 • Q3 2025</p>
@@ -66,13 +54,13 @@ const Whitepaper = () => {
           </CardHeader>
           <CardContent className="text-green-300 space-y-4">
             <p>
-              OverClocked <img src="/lovable-uploads/9c595eda-81ce-4709-a06b-75f909a4540c.png" alt="AI" className="inline h-4 w-4 mx-1" /> (
-              <img src="/lovable-uploads/9c595eda-81ce-4709-a06b-75f909a4540c.png" alt="OCAI" className="inline h-4 w-4 mx-1" />OCAI) represents a revolutionary approach to decentralized finance, 
+              OverClocked <Bot className="inline h-4 w-4 mx-1 text-green-400" /> (
+              <Bot className="inline h-4 w-4 mx-1 text-green-400" />OCAI) represents a revolutionary approach to decentralized finance, 
               combining advanced game theory with autonomous bot technology to create a sustainable 
               yield-generating ecosystem exclusively for committed stakers.
             </p>
             <p>
-              Built on PulseChain, <img src="/lovable-uploads/9c595eda-81ce-4709-a06b-75f909a4540c.png" alt="OCAI" className="inline h-4 w-4 mx-1" />OCAI introduces the concept of NFT Proof-of-Stake (POS), 
+              Built on PulseChain, <Bot className="inline h-4 w-4 mx-1 text-green-400" />OCAI introduces the concept of NFT Proof-of-Stake (POS), 
               where users can only stake once per address, creating powerful economic incentives 
               that favor long-term commitment over speculative trading. The protocol's autonomous 
               🤖 OCBotz employ Reverse Liquidity Engineering to target 555% yield in Treasury Bill 
@@ -113,13 +101,13 @@ const Whitepaper = () => {
             <p>
               The decentralized finance (DeFi) landscape has been dominated by speculative trading 
               and short-term profit extraction, leaving long-term believers and committed participants 
-              underrewarded. OverClocked <img src="/lovable-uploads/9c595eda-81ce-4709-a06b-75f909a4540c.png" alt="AI" className="inline h-4 w-4 mx-1" /> addresses this fundamental imbalance 
+              underrewarded. OverClocked <Bot className="inline h-4 w-4 mx-1 text-green-400" /> addresses this fundamental imbalance 
               by creating a system that exclusively rewards commitment and punishes speculation.
             </p>
             <p>
               Traditional staking mechanisms allow users to unstake at any time, creating market 
               volatility and reducing the effectiveness of long-term wealth accumulation strategies. 
-              <img src="/lovable-uploads/9c595eda-81ce-4709-a06b-75f909a4540c.png" alt="OCAI" className="inline h-4 w-4 mx-1" />OCAI's revolutionary approach requires a 55-day commitment period, enforced through 
+              <Bot className="inline h-4 w-4 mx-1 text-green-400" />OCAI's revolutionary approach requires a 55-day commitment period, enforced through 
               NFT ownership, creating a new class of market participants: The Staker Class.
             </p>
           </CardContent>
@@ -134,7 +122,7 @@ const Whitepaper = () => {
             <h3 className="text-xl font-semibold text-green-400 drop-shadow-[0_0_10px_rgba(0,255,65,0.6)]">2.1 Fundamental Principles</h3>
             <p>
               The Staker Class represents a paradigm shift in crypto economics. Unlike traditional 
-              DeFi protocols that serve both traders and stakers equally, <img src="/lovable-uploads/9c595eda-81ce-4709-a06b-75f909a4540c.png" alt="OCAI" className="inline h-4 w-4 mx-1" />OCAI explicitly 
+              DeFi protocols that serve both traders and stakers equally, <Bot className="inline h-4 w-4 mx-1 text-green-400" />OCAI explicitly 
               prioritizes committed stakers through:
             </p>
             <ul className="list-disc list-inside space-y-2 ml-4">
@@ -150,7 +138,7 @@ const Whitepaper = () => {
               desired behaviors:
             </p>
             <ul className="list-disc list-inside space-y-2 ml-4">
-              <li><strong>Accumulation Strategy:</strong> Users benefit from waiting to acquire more <img src="/lovable-uploads/9c595eda-81ce-4709-a06b-75f909a4540c.png" alt="OCAI" className="inline h-3 w-3 mx-1" />OCAI before staking</li>
+              <li><strong>Accumulation Strategy:</strong> Users benefit from waiting to acquire more <Bot className="inline h-3 w-3 mx-1 text-green-400" />OCAI before staking</li>
               <li><strong>Proportional Rewards:</strong> Larger stakes receive proportionally larger rewards</li>
               <li><strong>Supply Reduction:</strong> More tokens staked = less liquid supply = price appreciation</li>
               <li><strong>Network Effects:</strong> Each staker benefits from others' commitment</li>
@@ -166,7 +154,7 @@ const Whitepaper = () => {
           <CardContent className="text-green-300 space-y-4">
             <h3 className="text-xl font-semibold text-green-400 drop-shadow-[0_0_10px_rgba(0,255,65,0.6)]">3.1 Technical Implementation</h3>
             <p>
-              When a user stakes <img src="/lovable-uploads/9c595eda-81ce-4709-a06b-75f909a4540c.png" alt="OCAI" className="inline h-4 w-4 mx-1" />OCAI tokens, the protocol mints a unique NFT that serves 
+              When a user stakes <Bot className="inline h-4 w-4 mx-1 text-green-400" />OCAI tokens, the protocol mints a unique NFT that serves 
               as proof of their stake. This NFT contains metadata including:
             </p>
             <ul className="list-disc list-inside space-y-2 ml-4">
@@ -182,7 +170,7 @@ const Whitepaper = () => {
               Stakers receive multiple types of rewards:
             </p>
             <ul className="list-disc list-inside space-y-2 ml-4">
-              <li><strong>Guaranteed <img src="/lovable-uploads/9c595eda-81ce-4709-a06b-75f909a4540c.png" alt="OCAI" className="inline h-3 w-3 mx-1" />OCAI Yield:</strong> 3.69% of staked amount</li>
+              <li><strong>Guaranteed <Bot className="inline h-3 w-3 mx-1 text-green-400" />OCAI Yield:</strong> 3.69% of staked amount</li>
               <li><strong>TBILL Rewards:</strong> Variable based on 🤖 OCBotz performance</li>
               <li><strong>FED Rewards:</strong> Variable based on 🤖 OCBotz performance</li>
               <li><strong>Target Combined Yield:</strong> 555% over 55 days</li>
@@ -193,7 +181,7 @@ const Whitepaper = () => {
               To claim rewards, stakers must burn their NFT. This can happen in two ways:
             </p>
             <ul className="list-disc list-inside space-y-2 ml-4">
-              <li><strong>Mature Exit (After 55 days):</strong> Full rewards + staked <img src="/lovable-uploads/9c595eda-81ce-4709-a06b-75f909a4540c.png" alt="OCAI" className="inline h-3 w-3 mx-1" />OCAI returned</li>
+              <li><strong>Mature Exit (After 55 days):</strong> Full rewards + staked <Bot className="inline h-3 w-3 mx-1 text-green-400" />OCAI returned</li>
               <li><strong>Early Exit (Before 55 days):</strong> 25% penalty + no rewards</li>
             </ul>
           </CardContent>
@@ -253,11 +241,11 @@ const Whitepaper = () => {
           <CardContent className="text-green-300 space-y-4">
             <h3 className="text-xl font-semibold text-green-400 drop-shadow-[0_0_10px_rgba(0,255,65,0.6)]">5.1 Strategic Decision Framework</h3>
             <p>
-              <img src="/lovable-uploads/9c595eda-81ce-4709-a06b-75f909a4540c.png" alt="OCAI" className="inline h-4 w-4 mx-1" />OCAI's one-stake-per-address mechanism creates a fascinating game theory scenario 
+              <Bot className="inline h-4 w-4 mx-1 text-green-400" />OCAI's one-stake-per-address mechanism creates a fascinating game theory scenario 
               where rational actors must make strategic decisions about timing and stake size:
             </p>
             <ul className="list-disc list-inside space-y-2 ml-4">
-              <li><strong>Accumulation Game:</strong> Users compete to accumulate more <img src="/lovable-uploads/9c595eda-81ce-4709-a06b-75f909a4540c.png" alt="OCAI" className="inline h-3 w-3 mx-1" />OCAI before staking</li>
+              <li><strong>Accumulation Game:</strong> Users compete to accumulate more <Bot className="inline h-3 w-3 mx-1 text-green-400" />OCAI before staking</li>
               <li><strong>Timing Pressure:</strong> ICO discounts create urgency</li>
               <li><strong>Commitment Premium:</strong> Longer lock periods = higher rewards</li>
               <li><strong>Network Effects:</strong> More stakers = higher individual rewards</li>
@@ -269,7 +257,7 @@ const Whitepaper = () => {
               for all participants is to:
             </p>
             <ol className="list-decimal list-inside space-y-2 ml-4">
-              <li>Accumulate maximum <img src="/lovable-uploads/9c595eda-81ce-4709-a06b-75f909a4540c.png" alt="OCAI" className="inline h-3 w-3 mx-1" />OCAI tokens possible</li>
+              <li>Accumulate maximum <Bot className="inline h-3 w-3 mx-1 text-green-400" />OCAI tokens possible</li>
               <li>Stake once with full holdings</li>
               <li>Hold for full 55-day period</li>
               <li>Reinvest rewards into new stake cycles</li>
@@ -285,7 +273,7 @@ const Whitepaper = () => {
           <CardContent className="text-green-300 space-y-4">
             <h3 className="text-xl font-semibold text-green-400 drop-shadow-[0_0_10px_rgba(0,255,65,0.6)]">6.1 Dual Token Strategy</h3>
             <p>
-              <img src="/lovable-uploads/9c595eda-81ce-4709-a06b-75f909a4540c.png" alt="OCAI" className="inline h-4 w-4 mx-1" />OCAI leverages the unique properties of Treasury Bill (TBILL) and Reserve Teh (FED) 
+              <Bot className="inline h-4 w-4 mx-1 text-green-400" />OCAI leverages the unique properties of Treasury Bill (TBILL) and Reserve Teh (FED) 
               tokens to maximize staker rewards. Both tokens are designed to peg to $1 USD, 
               creating massive potential upside for current holders.
             </p>
@@ -304,8 +292,8 @@ const Whitepaper = () => {
 
             <h3 className="text-xl font-semibold text-green-400 mt-6 drop-shadow-[0_0_10px_rgba(0,255,65,0.6)]">6.3 The Ultimate TBILL & FED Printer</h3>
             <p>
-              <img src="/lovable-uploads/9c595eda-81ce-4709-a06b-75f909a4540c.png" alt="OCAI" className="inline h-4 w-4 mx-1" />OCAI aims to become the most efficient TBILL & FED printing mechanism 
-              in the ecosystem. Instead of manually minting FED, users can stake <img src="/lovable-uploads/9c595eda-81ce-4709-a06b-75f909a4540c.png" alt="OCAI" className="inline h-3 w-3 mx-1" />OCAI 
+              <Bot className="inline h-4 w-4 mx-1 text-green-400" />OCAI aims to become the most efficient TBILL & FED printing mechanism 
+              in the ecosystem. Instead of manually minting FED, users can stake <Bot className="inline h-3 w-3 mx-1 text-green-400" />OCAI 
               and earn both tokens at an overclocked rate through our automated system.
             </p>
 
@@ -318,7 +306,7 @@ const Whitepaper = () => {
               <li><strong>Auto-Pairing:</strong> One-click TBILL/FED LP token creation</li>
               <li><strong>Fee Generation:</strong> Earn trading fees from the liquidity pool</li>
               <li><strong>Dollar Peg Upside:</strong> When both tokens reach $1, LP fees become substantial</li>
-              <li><strong>Compound Strategy:</strong> Reinvest LP fees into new <img src="/lovable-uploads/9c595eda-81ce-4709-a06b-75f909a4540c.png" alt="OCAI" className="inline h-3 w-3 mx-1" />OCAI stakes</li>
+              <li><strong>Compound Strategy:</strong> Reinvest LP fees into new <Bot className="inline h-3 w-3 mx-1 text-green-400" />OCAI stakes</li>
             </ul>
           </CardContent>
         </Card>
@@ -331,7 +319,7 @@ const Whitepaper = () => {
           <CardContent className="text-green-300 space-y-4">
             <h3 className="text-xl font-semibold text-green-400 drop-shadow-[0_0_10px_rgba(0,255,65,0.6)]">7.1 ICO Phases</h3>
             <p>
-              The <img src="/lovable-uploads/9c595eda-81ce-4709-a06b-75f909a4540c.png" alt="OCAI" className="inline h-4 w-4 mx-1" />OCAI ICO consists of four strategic phases designed to reward early commitment:
+              The <Bot className="inline h-4 w-4 mx-1 text-green-400" />OCAI ICO consists of four strategic phases designed to reward early commitment:
             </p>
             
             <div className="overflow-x-auto">
@@ -399,7 +387,7 @@ const Whitepaper = () => {
           <CardContent className="text-green-300 space-y-4">
             <h3 className="text-xl font-semibold text-green-400 drop-shadow-[0_0_10px_rgba(0,255,65,0.6)]">8.1 Transparent Distribution</h3>
             <p>
-              <img src="/lovable-uploads/9c595eda-81ce-4709-a06b-75f909a4540c.png" alt="OCAI" className="inline h-4 w-4 mx-1" />OCAI maintains complete transparency in fund allocation to ensure investor confidence 
+              <Bot className="inline h-4 w-4 mx-1 text-green-400" />OCAI maintains complete transparency in fund allocation to ensure investor confidence 
               and optimal protocol development:
             </p>
 
@@ -429,7 +417,7 @@ const Whitepaper = () => {
 
             <h3 className="text-xl font-semibold text-green-400 mt-6 drop-shadow-[0_0_10px_rgba(0,255,65,0.6)]">8.2 Value Creation Focus</h3>
             <p>
-              Unlike many projects that extract significant value for founders, <img src="/lovable-uploads/9c595eda-81ce-4709-a06b-75f909a4540c.png" alt="OCAI" className="inline h-4 w-4 mx-1" />OCAI 
+              Unlike many projects that extract significant value for founders, <Bot className="inline h-4 w-4 mx-1 text-green-400" />OCAI 
               dedicates 98% of raised funds directly to protocol value creation:
             </p>
             <ul className="list-disc list-inside space-y-2 ml-4">
@@ -449,10 +437,10 @@ const Whitepaper = () => {
           <CardContent className="text-green-300 space-y-4">
             <h3 className="text-xl font-semibold text-green-400 drop-shadow-[0_0_10px_rgba(0,255,65,0.6)]">9.1 Smart Contract Infrastructure</h3>
             <p>
-              <img src="/lovable-uploads/9c595eda-81ce-4709-a06b-75f909a4540c.png" alt="OCAI" className="inline h-4 w-4 mx-1" />OCAI is built on PulseChain using a modular smart contract architecture:
+              <Bot className="inline h-4 w-4 mx-1 text-green-400" />OCAI is built on PulseChain using a modular smart contract architecture:
             </p>
             <ul className="list-disc list-inside space-y-2 ml-4">
-              <li><strong><img src="/lovable-uploads/9c595eda-81ce-4709-a06b-75f909a4540c.png" alt="OCAI" className="inline h-3 w-3 mr-1" />OCAI Token Contract:</strong> ERC-20 compatible with enhanced features</li>
+              <li><strong><Bot className="inline h-3 w-3 mr-1 text-green-400" />OCAI Token Contract:</strong> ERC-20 compatible with enhanced features</li>
               <li><strong>Staking Contract:</strong> Manages NFT minting and reward calculations</li>
               <li><strong>🤖 OCBotz Controller:</strong> Coordinates autonomous bot operations</li>
               <li><strong>Reward Distribution:</strong> Handles TBILL and FED distribution</li>
@@ -461,7 +449,7 @@ const Whitepaper = () => {
 
             <h3 className="text-xl font-semibold text-green-400 mt-6 drop-shadow-[0_0_10px_rgba(0,255,65,0.6)]">9.2 Security Measures</h3>
             <p>
-              Security is paramount in the <img src="/lovable-uploads/9c595eda-81ce-4709-a06b-75f909a4540c.png" alt="OCAI" className="inline h-4 w-4 mx-1" />OCAI ecosystem:
+              Security is paramount in the <Bot className="inline h-4 w-4 mx-1 text-green-400" />OCAI ecosystem:
             </p>
             <ul className="list-disc list-inside space-y-2 ml-4">
               <li><strong>Multi-signature Wallets:</strong> All critical functions require multiple signatures</li>
@@ -543,7 +531,7 @@ const Whitepaper = () => {
           </CardHeader>
           <CardContent className="text-green-300 space-y-4">
             <p>
-              OverClocked <img src="/lovable-uploads/9c595eda-81ce-4709-a06b-75f909a4540c.png" alt="AI" className="inline h-4 w-4 mx-1" /> represents a paradigm shift in decentralized finance, 
+              OverClocked <Bot className="inline h-4 w-4 mx-1 text-green-400" /> represents a paradigm shift in decentralized finance, 
               prioritizing committed stakers over speculative traders through innovative game theory 
               and autonomous technology. By combining NFT Proof-of-Stake mechanics with 
               sophisticated 🤖 OCBotz operations, the protocol creates a sustainable ecosystem 
@@ -553,12 +541,12 @@ const Whitepaper = () => {
               The integration with Treasury Bill and Reserve Teh tokens, coupled with the potential 
               for these assets to reach their $1 peg, creates unprecedented wealth generation 
               opportunities for early adopters. With minimal developer extraction (2%) and maximum 
-              protocol reinvestment (98%), <img src="/lovable-uploads/9c595eda-81ce-4709-a06b-75f909a4540c.png" alt="OCAI" className="inline h-4 w-4 mx-1" />OCAI aligns incentives between 
+              protocol reinvestment (98%), <Bot className="inline h-4 w-4 mx-1 text-green-400" />OCAI aligns incentives between 
               all participants toward long-term success.
             </p>
             <p>
               As the crypto space matures, protocols that prioritize utility over speculation 
-              will capture the most value. <img src="/lovable-uploads/9c595eda-81ce-4709-a06b-75f909a4540c.png" alt="OCAI" className="inline h-4 w-4 mx-1" />OCAI is positioned to lead this evolution, 
+              will capture the most value. <Bot className="inline h-4 w-4 mx-1 text-green-400" />OCAI is positioned to lead this evolution, 
               creating generational wealth for the Staker Class while establishing new standards 
               for sustainable DeFi innovation.
             </p>
@@ -573,7 +561,7 @@ const Whitepaper = () => {
           <CardContent className="text-red-300 text-sm space-y-2">
             <p>
               This whitepaper is for informational purposes only and does not constitute an offer 
-              to sell or a solicitation to buy any securities. <img src="/lovable-uploads/9c595eda-81ce-4709-a06b-75f909a4540c.png" alt="OCAI" className="inline h-3 w-3 mx-1" />OCAI tokens are utility 
+              to sell or a solicitation to buy any securities. <Bot className="inline h-3 w-3 mx-1 text-green-400" />OCAI tokens are utility 
               tokens and not investment securities.
             </p>
             <p>
