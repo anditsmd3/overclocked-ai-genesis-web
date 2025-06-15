@@ -219,12 +219,12 @@ const Whitepaper = () => {
           </CardContent>
         </Card>
 
-        {/* Tokenomics - Enhanced Section */}
+        {/* Tokenomics & Fund Allocation - Enhanced Section */}
         <Card className="bg-black border-green-400/50">
           <CardHeader>
             <CardTitle className="text-green-400 text-2xl flex items-center gap-2">
               <DollarSign className="h-6 w-6" />
-              TOKENOMICS & ICO STRUCTURE
+              TOKENOMICS & FUND ALLOCATION
             </CardTitle>
           </CardHeader>
           <CardContent className="text-green-300 leading-relaxed">
@@ -269,6 +269,56 @@ const Whitepaper = () => {
               </div>
             </div>
 
+            <h3 className="text-xl font-semibold text-green-400 mb-3">Strategic Fund Allocation</h3>
+            <p className="mb-4">
+              OCAI implements a transparent and growth-focused fund allocation strategy designed to maximize 
+              ecosystem value and long-term sustainability. All ICO funds are allocated strategically to 
+              ensure aggressive growth and market dominance:
+            </p>
+            
+            <div className="grid md:grid-cols-2 gap-6 mb-6">
+              <div className="p-4 border border-green-400/30 rounded bg-green-400/5">
+                <h4 className="text-green-400 font-semibold mb-3">DEVELOPMENT & OPERATIONS (2%)</h4>
+                <div className="space-y-2 text-sm">
+                  <div className="flex justify-between">
+                    <span>• Core Development</span>
+                    <span className="text-green-400">1%</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span>• Strategic Marketing</span>
+                    <span className="text-green-400">1%</span>
+                  </div>
+                </div>
+                <p className="text-xs text-green-300/70 mt-2">
+                  Ensures continuous innovation and global reach across X, YouTube, TikTok & Instagram
+                </p>
+              </div>
+              <div className="p-4 border border-green-400/30 rounded bg-green-400/5">
+                <h4 className="text-green-400 font-semibold mb-3">PROTOCOL EXPANSION (98%)</h4>
+                <div className="space-y-1 text-sm">
+                  <div>• Advanced OCBotz Operations</div>
+                  <div>• Cross-Chain Liquidity Pools</div>
+                  <div>• CEX Listings & Market Making</div>
+                  <div>• Enhanced Marketing Campaigns</div>
+                  <div>• Strategic Partnerships</div>
+                  <div>• Ecosystem Development</div>
+                </div>
+              </div>
+            </div>
+
+            <div className="p-4 border border-blue-400/30 rounded bg-blue-400/5 mb-6">
+              <h4 className="text-blue-400 font-semibold mb-2">AGGRESSIVE GROWTH STRATEGY</h4>
+              <p className="text-blue-300 text-sm mb-2">
+                With 98% of funds dedicated to protocol expansion, OCAI is positioned for explosive growth:
+              </p>
+              <ul className="space-y-1 text-blue-300 text-sm">
+                <li>• Maximum liquidity across multiple chains</li>
+                <li>• Tier-1 CEX listings for institutional access</li>
+                <li>• Advanced OCBotz deployment for superior yields</li>
+                <li>• Global marketing reach to capture maximum adoption</li>
+              </ul>
+            </div>
+
             <h3 className="text-xl font-semibold text-green-400 mb-3">Tax Structure</h3>
             <p className="mb-3">Every OCAI transaction includes a 3% tax distributed as follows:</p>
             <div className="grid md:grid-cols-3 gap-4 mb-6">
@@ -293,7 +343,7 @@ const Whitepaper = () => {
             <p className="mb-4">
               Total supply is dynamically determined by Early Bird Angels round performance. 
               After ICO completion, supply increases by 400%. Of this increased amount: 
-              10% of this is used for liquidity, and 90% for OCBotz operations.
+              10% is used for liquidity, and 90% for OCBotz operations.
             </p>
           </CardContent>
         </Card>
