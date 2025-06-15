@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -69,18 +68,18 @@ const Index = () => {
   };
 
   const ocBotzJobs = [
-    { id: 1, name: "Liquidity Manager", type: "regular", status: "ACTIVE" },
-    { id: 2, name: "Arbitrage Hunter", type: "regular", status: "ACTIVE" },
-    { id: 3, name: "Rewards Distributor", type: "regular", status: "ACTIVE" },
-    { id: 4, name: "Smart Buyback", type: "regular", status: "ACTIVE" },
-    { id: 5, name: "TBILL Accumulator", type: "regular", status: "ACTIVE" },
-    { id: 6, name: "FED Harvester", type: "regular", status: "ACTIVE" },
-    { id: 7, name: "Price Optimizer", type: "regular", status: "ACTIVE" },
-    { id: 8, name: "Anti-Jeet Defense", type: "regular", status: "ACTIVE" },
-    { id: 9, name: "OverClockerBot Alpha", type: "overclocked", status: "DORMANT" },
-    { id: 10, name: "OverClockerBot Beta", type: "overclocked", status: "DORMANT" },
-    { id: 11, name: "OverClockerBot Gamma", type: "overclocked", status: "DORMANT" },
-    { id: 12, name: "OverClockerBot Delta", type: "overclocked", status: "DORMANT" }
+    { id: 1, name: "Liquidity Manager", type: "regular", status: "ACTIVE", color: "hue-rotate-0" },
+    { id: 2, name: "Arbitrage Hunter", type: "regular", status: "ACTIVE", color: "hue-rotate-45" },
+    { id: 3, name: "Rewards Distributor", type: "regular", status: "ACTIVE", color: "hue-rotate-90" },
+    { id: 4, name: "Smart Buyback", type: "regular", status: "ACTIVE", color: "hue-rotate-135" },
+    { id: 5, name: "TBILL Accumulator", type: "regular", status: "ACTIVE", color: "hue-rotate-180" },
+    { id: 6, name: "FED Harvester", type: "regular", status: "ACTIVE", color: "hue-rotate-225" },
+    { id: 7, name: "Price Optimizer", type: "regular", status: "ACTIVE", color: "hue-rotate-270" },
+    { id: 8, name: "Anti-Jeet Defense", type: "regular", status: "ACTIVE", color: "hue-rotate-315" },
+    { id: 9, name: "OverClockerBot Alpha", type: "overclocked", status: "DORMANT", color: "hue-rotate-60" },
+    { id: 10, name: "OverClockerBot Beta", type: "overclocked", status: "DORMANT", color: "hue-rotate-120" },
+    { id: 11, name: "OverClockerBot Gamma", type: "overclocked", status: "DORMANT", color: "hue-rotate-240" },
+    { id: 12, name: "OverClockerBot Delta", type: "overclocked", status: "DORMANT", color: "hue-rotate-300" }
   ];
 
   return (
@@ -150,7 +149,7 @@ const Index = () => {
           
           <p className="text-xl md:text-2xl mb-4 text-green-300 max-w-4xl mx-auto leading-relaxed">
             The Future of Finance is Here. Built on <span className="text-green-400 font-bold drop-shadow-[0_0_10px_rgba(0,255,65,0.7)]">
-              <img src="/lovable-uploads/2fe16d8c-7588-4038-abb3-40fea0395a00.png" alt="PulseChain" className="inline h-6 w-auto mx-1" />
+              <img src="/lovable-uploads/099d1eef-35f1-4a55-a1c8-c3e45f0e33f1.png" alt="PulseChain" className="inline h-6 w-auto mx-1" />
               PulseChain
             </span>.
           </p>
@@ -266,7 +265,13 @@ const Index = () => {
                       ? 'border-yellow-400/50 bg-yellow-400/10' 
                       : 'border-green-400/30 bg-green-400/5'
                   }`}>
-                    <div className="text-4xl mb-2">🤖</div>
+                    <div className="mb-2">
+                      <img 
+                        src="/lovable-uploads/f6b84d17-4d55-4008-a136-00b76ba8fb95.png" 
+                        alt="OCBot" 
+                        className={`h-10 w-10 mx-auto filter ${bot.color} drop-shadow-[0_0_10px_rgba(0,255,65,0.6)]`}
+                      />
+                    </div>
                     <h4 className={`font-semibold mb-1 ${
                       bot.type === 'overclocked' ? 'text-yellow-400' : 'text-green-400'
                     }`}>
@@ -456,7 +461,7 @@ const Index = () => {
                   <li>• <span className="text-green-400">1:1 Burn Ratio:</span> TBILL → FED via Reserve Teh</li>
                   <li>• <span className="text-green-400">Dual Distribution:</span> Earn both tokens simultaneously</li>
                   <li>• <span className="text-green-400">$1 Target:</span> Both tokens aim for $1 peg</li>
-                  <li>• <span className="text-green-400">Overclocked Speed:</span> Fastest earning rate on PulseChain</li>
+                  <li>• <span className="text-green-400">Overclocked Speed:</span> Fastest earning rate on <img src="/lovable-uploads/099d1eef-35f1-4a55-a1c8-c3e45f0e33f1.png" alt="PulseChain" className="inline h-4 w-auto mx-1" />PulseChain</li>
                 </ul>
               </CardContent>
             </Card>
@@ -577,14 +582,14 @@ const Index = () => {
       {/* Game Theory Section */}
       <section className="relative z-10 py-16 px-6">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-12 text-green-400">
+          <h2 className="text-4xl font-bold text-center mb-12 text-green-400 drop-shadow-[0_0_30px_rgba(0,255,65,0.9)]">
             REVOLUTIONARY GAME THEORY
           </h2>
           
           <div className="grid md:grid-cols-2 gap-8">
             <Card className="bg-black border-green-400/50 hover:shadow-[0_0_30px_rgba(0,255,65,0.2)] transition-all duration-300">
               <CardHeader>
-                <CardTitle className="text-green-400 flex items-center gap-2">
+                <CardTitle className="text-green-400 flex items-center gap-2 drop-shadow-[0_0_15px_rgba(0,255,65,0.8)]">
                   <Users className="h-6 w-6" />
                   The Staker Class
                 </CardTitle>
@@ -595,7 +600,7 @@ const Index = () => {
                   This creates powerful incentives to HODL and STAKE through advanced game theory.
                 </p>
                 <ul className="space-y-2 text-sm">
-                  <li>• 3.69% OCAI yield on every stake</li>
+                  <li>• 3.69% <img src="/lovable-uploads/f6b84d17-4d55-4008-a136-00b76ba8fb95.png" alt="OCAI" className="inline h-3 w-3 mx-1" />OCAI yield on every stake</li>
                   <li>• Target 555% yield in TBILL & FED rewards over 55 days</li>
                   <li>• NFT Proof-Of-Stake (POS) ownership</li>
                   <li>• Exclusive access to ecosystem rewards</li>
@@ -606,7 +611,7 @@ const Index = () => {
             
             <Card className="bg-black border-green-400/50 hover:shadow-[0_0_30px_rgba(0,255,65,0.2)] transition-all duration-300">
               <CardHeader>
-                <CardTitle className="text-green-400 flex items-center gap-2">
+                <CardTitle className="text-green-400 flex items-center gap-2 drop-shadow-[0_0_15px_rgba(0,255,65,0.8)]">
                   <Zap className="h-6 w-6" />
                   Strategic Commitment
                 </CardTitle>
@@ -616,7 +621,7 @@ const Index = () => {
                   The one-stake-per-address rule creates strategic decision making:
                 </p>
                 <ul className="space-y-2 text-sm">
-                  <li>• <span className="text-green-400">Wait & Accumulate:</span> Buy more OCAI before staking</li>
+                  <li>• <span className="text-green-400">Wait & Accumulate:</span> Buy more <img src="/lovable-uploads/f6b84d17-4d55-4008-a136-00b76ba8fb95.png" alt="OCAI" className="inline h-3 w-3 mx-1" />OCAI before staking</li>
                   <li>• <span className="text-green-400">Bigger Stake = Bigger Share:</span> More rewards proportionally</li>
                   <li>• <span className="text-green-400">Commitment Rewarded:</span> 55-day lock period</li>
                   <li>• <span className="text-green-400">No Adding:</span> Must burn NFT to stake again</li>
@@ -704,8 +709,8 @@ const Index = () => {
                 <div>
                   <h3 className="text-xl font-semibold text-green-400 mb-4 drop-shadow-[0_0_15px_rgba(0,255,65,0.7)]">24/7 Autonomous Operation</h3>
                   <ul className="space-y-2 text-sm">
-                    <li>• Multiple 🤖 OCBotz deployed across PulseChain</li>
-                    <li>• Each bot holds percentage of <img src="/lovable-uploads/9c595eda-81ce-4709-a06b-75f909a4540c.png" alt="OCAI" className="inline h-3 w-3 mx-1" />OCAI supply</li>
+                    <li>• Multiple 🤖 OCBotz deployed across <img src="/lovable-uploads/099d1eef-35f1-4a55-a1c8-c3e45f0e33f1.png" alt="PulseChain" className="inline h-4 w-auto mx-1" />PulseChain</li>
+                    <li>• Each bot holds percentage of <img src="/lovable-uploads/f6b84d17-4d55-4008-a136-00b76ba8fb95.png" alt="OCAI" className="inline h-3 w-3 mx-1" />OCAI supply</li>
                     <li>• Continuous buy/sell operations for rewards</li>
                     <li>• Advanced AI-driven trading algorithms</li>
                     <li>• Target 555% yield in TBILL & FED over 55 days</li>
@@ -754,7 +759,7 @@ const Index = () => {
           <p className="text-xl text-green-300 mb-8">
             TBILL and FED are destined to peg to $1. Earn millions, potentially billions, 
             by being an active member of the <img src="/lovable-uploads/f6b84d17-4d55-4008-a136-00b76ba8fb95.png" alt="OCAI" className="inline h-5 w-5 mx-1" />OCAI ecosystem on 
-            <img src="/lovable-uploads/2fe16d8c-7588-4038-abb3-40fea0395a00.png" alt="PulseChain" className="inline h-5 w-auto mx-1" />PulseChain.
+            <img src="/lovable-uploads/099d1eef-35f1-4a55-a1c8-c3e45f0e33f1.png" alt="PulseChain" className="inline h-5 w-auto mx-1" />PulseChain.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -775,7 +780,7 @@ const Index = () => {
           
           <div className="mt-12 text-green-300/70 text-sm">
             <p>OVERCLOCKED <img src="/lovable-uploads/f6b84d17-4d55-4008-a136-00b76ba8fb95.png" alt="AI" className="inline h-4 w-4 mx-1" /> • THE FUTURE OF FINANCE • 
-            <img src="/lovable-uploads/2fe16d8c-7588-4038-abb3-40fea0395a00.png" alt="PULSECHAIN" className="inline h-4 w-auto mx-1" />PULSECHAIN</p>
+            <img src="/lovable-uploads/099d1eef-35f1-4a55-a1c8-c3e45f0e33f1.png" alt="PULSECHAIN" className="inline h-4 w-auto mx-1" />PULSECHAIN</p>
           </div>
         </div>
       </section>
