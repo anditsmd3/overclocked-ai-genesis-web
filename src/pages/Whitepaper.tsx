@@ -1,7 +1,7 @@
+
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowLeft, Shield, Cpu, TrendingUp, Zap, Users, Award, DollarSign, Clock, Target, BarChart3 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 const Whitepaper = () => {
@@ -12,679 +12,602 @@ const Whitepaper = () => {
       {/* Navigation */}
       <nav className="p-6 border-b border-green-400/30 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
+          <div className="flex items-center gap-3">
+            <img 
+              src="/lovable-uploads/9c595eda-81ce-4709-a06b-75f909a4540c.png" 
+              alt="OCAI Logo" 
+              className="h-10 w-10 drop-shadow-[0_0_15px_rgba(0,255,65,0.7)]"
+            />
+            <h1 className="text-2xl font-bold text-green-400 drop-shadow-[0_0_15px_rgba(0,255,65,0.7)]">
+              OVERCLOCKED<span className="text-green-300">AI</span>
+            </h1>
+          </div>
           <Button 
             onClick={() => navigate('/')}
-            className="bg-transparent border-2 border-green-400 text-green-400 hover:bg-green-400 hover:text-black transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,255,65,0.5)]"
+            className="bg-transparent border-2 border-green-400 text-green-400 hover:bg-green-400 hover:text-black transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,255,65,0.8)]"
             variant="outline"
           >
-            <ArrowLeft className="h-4 w-4 mr-2" />
-            BACK TO MAIN
+            BACK TO HOME
           </Button>
-          <h1 className="text-2xl font-bold text-green-400 drop-shadow-[0_0_15px_rgba(0,255,65,0.6)]">
-            OVERCLOCKED<span className="text-green-300">AI</span> WHITEPAPER
-          </h1>
-          <div className="w-32"></div>
         </div>
       </nav>
 
+      {/* Whitepaper Content */}
       <div className="max-w-4xl mx-auto p-6 space-y-8">
-        {/* Title Section */}
+        {/* Header */}
         <div className="text-center py-12">
-          <h1 className="text-5xl font-bold mb-4 text-green-400 drop-shadow-[0_0_20px_rgba(0,255,65,0.7)]">
-            OVERCLOCKED AI
-          </h1>
-          <h2 className="text-3xl mb-6 text-green-300 drop-shadow-[0_0_15px_rgba(0,255,65,0.5)]">
-            TECHNICAL WHITEPAPER
-          </h2>
-          <p className="text-xl text-green-300/80">
-            Revolutionizing DeFi Through Advanced Game Theory & Proof-Of-Stake (POS)
-          </p>
-          <p className="text-lg text-green-300/60 mt-4">
-            Built on PulseChain • The Future of Finance
+          <div className="flex items-center justify-center gap-4 mb-6">
+            <img 
+              src="/lovable-uploads/9c595eda-81ce-4709-a06b-75f909a4540c.png" 
+              alt="OCAI" 
+              className="h-16 w-16 drop-shadow-[0_0_30px_rgba(0,255,65,0.8)]"
+            />
+            <h1 className="text-6xl font-bold drop-shadow-[0_0_35px_rgba(0,255,65,0.9)]">
+              OVERCLOCKED<span className="text-green-300">AI</span>
+            </h1>
+            <img 
+              src="/lovable-uploads/9c595eda-81ce-4709-a06b-75f909a4540c.png" 
+              alt="OCAI" 
+              className="h-16 w-16 drop-shadow-[0_0_30px_rgba(0,255,65,0.8)]"
+            />
+          </div>
+          <p className="text-2xl text-green-300 mb-4 drop-shadow-[0_0_20px_rgba(0,255,65,0.6)]">TECHNICAL WHITEPAPER</p>
+          <p className="text-lg text-green-300/80">Version 1.0 • Q3 2025</p>
+          <p className="text-lg text-green-300/80">Built on 
+            <img src="/lovable-uploads/2fe16d8c-7588-4038-abb3-40fea0395a00.png" alt="PulseChain" className="inline h-5 w-auto mx-2" />
+            PulseChain
           </p>
         </div>
 
         {/* Abstract */}
-        <Card className="bg-black border-green-400/50 shadow-[0_0_30px_rgba(0,255,65,0.2)]">
+        <Card className="bg-gradient-to-br from-black to-green-900/20 border-green-400/50 shadow-[0_0_30px_rgba(0,255,65,0.2)]">
           <CardHeader>
-            <CardTitle className="text-green-400 text-2xl drop-shadow-[0_0_10px_rgba(0,255,65,0.6)]">ABSTRACT</CardTitle>
+            <CardTitle className="text-green-400 text-2xl drop-shadow-[0_0_15px_rgba(0,255,65,0.8)]">ABSTRACT</CardTitle>
           </CardHeader>
-          <CardContent className="text-green-300 leading-relaxed">
-            <p className="mb-4">
-              OverClocked AI (OCAI) introduces a revolutionary Proof-Of-Stake (POS) ecosystem that fundamentally 
-              reshapes DeFi rewards distribution through advanced game theory mechanics. Built on PulseChain, 
-              OCAI creates the "Staker Class" - a privileged group of participants who receive exponential 
-              rewards while speculators earn nothing.
-            </p>
-            <p className="mb-4">
-              Our autonomous 🤖 OCBotz utilize proprietary Reverse Liquidity Engineering Technology to generate 
-              a targeted 555% yield in TBILL and FED rewards over each 55-day staking period, alongside 
-              guaranteed 3.69% OCAI yield.
+          <CardContent className="text-green-300 space-y-4">
+            <p>
+              OverClocked <img src="/lovable-uploads/9c595eda-81ce-4709-a06b-75f909a4540c.png" alt="AI" className="inline h-4 w-4 mx-1" /> (
+              <img src="/lovable-uploads/9c595eda-81ce-4709-a06b-75f909a4540c.png" alt="OCAI" className="inline h-4 w-4 mx-1" />OCAI) represents a revolutionary approach to decentralized finance, 
+              combining advanced game theory with autonomous bot technology to create a sustainable 
+              yield-generating ecosystem exclusively for committed stakers.
             </p>
             <p>
-              This whitepaper details the technical architecture, tokenomics, and game theory that positions 
-              OCAI as the future of sustainable DeFi on PulseChain.
+              Built on PulseChain, <img src="/lovable-uploads/9c595eda-81ce-4709-a06b-75f909a4540c.png" alt="OCAI" className="inline h-4 w-4 mx-1" />OCAI introduces the concept of NFT Proof-of-Stake (POS), 
+              where users can only stake once per address, creating powerful economic incentives 
+              that favor long-term commitment over speculative trading. The protocol's autonomous 
+              🤖 OCBotz employ Reverse Liquidity Engineering to target 555% yield in Treasury Bill 
+              (TBILL) and Reserve Teh (FED) tokens over 55-day commitment periods.
             </p>
           </CardContent>
         </Card>
 
-        {/* Problem Statement */}
-        <Card className="bg-black border-green-400/50 shadow-[0_0_30px_rgba(0,255,65,0.2)]">
+        {/* Table of Contents */}
+        <Card className="bg-gradient-to-br from-black to-green-900/20 border-green-400/50 shadow-[0_0_30px_rgba(0,255,65,0.2)]">
           <CardHeader>
-            <CardTitle className="text-green-400 text-2xl flex items-center gap-2 drop-shadow-[0_0_10px_rgba(0,255,65,0.6)]">
-              <Target className="h-6 w-6" />
-              PROBLEM STATEMENT
-            </CardTitle>
+            <CardTitle className="text-green-400 text-2xl drop-shadow-[0_0_15px_rgba(0,255,65,0.8)]">TABLE OF CONTENTS</CardTitle>
           </CardHeader>
-          <CardContent className="text-green-300 leading-relaxed">
-            <p className="mb-4">
-              Traditional DeFi protocols suffer from fundamental flaws:
-            </p>
-            <ul className="space-y-2 ml-6 mb-4">
-              <li>• Rewards distributed to passive holders who add no value</li>
-              <li>• Lack of incentive alignment between stakeholders</li>
-              <li>• Speculation rewarded over commitment</li>
-              <li>• No sustainable yield generation mechanisms</li>
-              <li>• Poor game theory leading to ecosystem decay</li>
-            </ul>
+          <CardContent className="text-green-300">
+            <ol className="list-decimal list-inside space-y-2">
+              <li>Introduction</li>
+              <li>The Staker Class Revolution</li>
+              <li>NFT Proof-of-Stake (POS) Mechanism</li>
+              <li>🤖 OCBotz Autonomous System</li>
+              <li>Game Theory and Economic Design</li>
+              <li>Treasury Bill & Reserve Teh Integration</li>
+              <li>ICO Structure and Tokenomics</li>
+              <li>Fund Allocation Strategy</li>
+              <li>Technical Architecture</li>
+              <li>Risk Management</li>
+              <li>Roadmap and Future Development</li>
+              <li>Conclusion</li>
+            </ol>
+          </CardContent>
+        </Card>
+
+        {/* 1. Introduction */}
+        <Card className="bg-gradient-to-br from-black to-green-900/20 border-green-400/50 shadow-[0_0_30px_rgba(0,255,65,0.2)]">
+          <CardHeader>
+            <CardTitle className="text-green-400 text-2xl drop-shadow-[0_0_15px_rgba(0,255,65,0.8)]">1. INTRODUCTION</CardTitle>
+          </CardHeader>
+          <CardContent className="text-green-300 space-y-4">
             <p>
-              OCAI solves these issues by creating a system where only committed stakers receive rewards, 
-              establishing perfect incentive alignment and sustainable tokenomics.
+              The decentralized finance (DeFi) landscape has been dominated by speculative trading 
+              and short-term profit extraction, leaving long-term believers and committed participants 
+              underrewarded. OverClocked <img src="/lovable-uploads/9c595eda-81ce-4709-a06b-75f909a4540c.png" alt="AI" className="inline h-4 w-4 mx-1" /> addresses this fundamental imbalance 
+              by creating a system that exclusively rewards commitment and punishes speculation.
+            </p>
+            <p>
+              Traditional staking mechanisms allow users to unstake at any time, creating market 
+              volatility and reducing the effectiveness of long-term wealth accumulation strategies. 
+              <img src="/lovable-uploads/9c595eda-81ce-4709-a06b-75f909a4540c.png" alt="OCAI" className="inline h-4 w-4 mx-1" />OCAI's revolutionary approach requires a 55-day commitment period, enforced through 
+              NFT ownership, creating a new class of market participants: The Staker Class.
             </p>
           </CardContent>
         </Card>
 
-        {/* Solution Architecture */}
-        <Card className="bg-black border-green-400/50 shadow-[0_0_30px_rgba(0,255,65,0.2)]">
+        {/* 2. The Staker Class Revolution */}
+        <Card className="bg-gradient-to-br from-black to-green-900/20 border-green-400/50 shadow-[0_0_30px_rgba(0,255,65,0.2)]">
           <CardHeader>
-            <CardTitle className="text-green-400 text-2xl flex items-center gap-2 drop-shadow-[0_0_10px_rgba(0,255,65,0.6)]">
-              <Cpu className="h-6 w-6" />
-              SOLUTION ARCHITECTURE
-            </CardTitle>
+            <CardTitle className="text-green-400 text-2xl drop-shadow-[0_0_15px_rgba(0,255,65,0.8)]">2. THE STAKER CLASS REVOLUTION</CardTitle>
           </CardHeader>
-          <CardContent className="text-green-300 leading-relaxed">
-            <h3 className="text-xl font-semibold text-green-400 mb-3">The Staker Class System</h3>
-            <p className="mb-4">
-              OCAI implements a binary reward system: Stakers vs Non-Stakers. Only those who stake 
-              their OCAI tokens for the full 55-day period receive rewards. This creates powerful 
-              game theory incentives for long-term commitment.
+          <CardContent className="text-green-300 space-y-4">
+            <h3 className="text-xl font-semibold text-green-400 drop-shadow-[0_0_10px_rgba(0,255,65,0.6)]">2.1 Fundamental Principles</h3>
+            <p>
+              The Staker Class represents a paradigm shift in crypto economics. Unlike traditional 
+              DeFi protocols that serve both traders and stakers equally, <img src="/lovable-uploads/9c595eda-81ce-4709-a06b-75f909a4540c.png" alt="OCAI" className="inline h-4 w-4 mx-1" />OCAI explicitly 
+              prioritizes committed stakers through:
+            </p>
+            <ul className="list-disc list-inside space-y-2 ml-4">
+              <li><strong>Exclusive Reward Distribution:</strong> Only stakers receive yield</li>
+              <li><strong>One-Stake-Per-Address:</strong> Prevents gaming and encourages accumulation</li>
+              <li><strong>55-Day Lock Period:</strong> Eliminates market manipulation</li>
+              <li><strong>NFT Ownership Model:</strong> Creates tangible proof of commitment</li>
+            </ul>
+
+            <h3 className="text-xl font-semibold text-green-400 mt-6 drop-shadow-[0_0_10px_rgba(0,255,65,0.6)]">2.2 Economic Incentives</h3>
+            <p>
+              The protocol's design creates powerful economic incentives that naturally encourage 
+              desired behaviors:
+            </p>
+            <ul className="list-disc list-inside space-y-2 ml-4">
+              <li><strong>Accumulation Strategy:</strong> Users benefit from waiting to acquire more <img src="/lovable-uploads/9c595eda-81ce-4709-a06b-75f909a4540c.png" alt="OCAI" className="inline h-3 w-3 mx-1" />OCAI before staking</li>
+              <li><strong>Proportional Rewards:</strong> Larger stakes receive proportionally larger rewards</li>
+              <li><strong>Supply Reduction:</strong> More tokens staked = less liquid supply = price appreciation</li>
+              <li><strong>Network Effects:</strong> Each staker benefits from others' commitment</li>
+            </ul>
+          </CardContent>
+        </Card>
+
+        {/* 3. NFT Proof-of-Stake */}
+        <Card className="bg-gradient-to-br from-black to-green-900/20 border-green-400/50 shadow-[0_0_30px_rgba(0,255,65,0.2)]">
+          <CardHeader>
+            <CardTitle className="text-green-400 text-2xl drop-shadow-[0_0_15px_rgba(0,255,65,0.8)]">3. NFT PROOF-OF-STAKE (POS) MECHANISM</CardTitle>
+          </CardHeader>
+          <CardContent className="text-green-300 space-y-4">
+            <h3 className="text-xl font-semibold text-green-400 drop-shadow-[0_0_10px_rgba(0,255,65,0.6)]">3.1 Technical Implementation</h3>
+            <p>
+              When a user stakes <img src="/lovable-uploads/9c595eda-81ce-4709-a06b-75f909a4540c.png" alt="OCAI" className="inline h-4 w-4 mx-1" />OCAI tokens, the protocol mints a unique NFT that serves 
+              as proof of their stake. This NFT contains metadata including:
+            </p>
+            <ul className="list-disc list-inside space-y-2 ml-4">
+              <li>Stake amount</li>
+              <li>Stake timestamp</li>
+              <li>Maturity date (55 days from stake)</li>
+              <li>Accumulated rewards</li>
+              <li>Unique stake identifier</li>
+            </ul>
+
+            <h3 className="text-xl font-semibold text-green-400 mt-6 drop-shadow-[0_0_10px_rgba(0,255,65,0.6)]">3.2 Rewards Calculation</h3>
+            <p>
+              Stakers receive multiple types of rewards:
+            </p>
+            <ul className="list-disc list-inside space-y-2 ml-4">
+              <li><strong>Guaranteed <img src="/lovable-uploads/9c595eda-81ce-4709-a06b-75f909a4540c.png" alt="OCAI" className="inline h-3 w-3 mx-1" />OCAI Yield:</strong> 3.69% of staked amount</li>
+              <li><strong>TBILL Rewards:</strong> Variable based on 🤖 OCBotz performance</li>
+              <li><strong>FED Rewards:</strong> Variable based on 🤖 OCBotz performance</li>
+              <li><strong>Target Combined Yield:</strong> 555% over 55 days</li>
+            </ul>
+
+            <h3 className="text-xl font-semibold text-green-400 mt-6 drop-shadow-[0_0_10px_rgba(0,255,65,0.6)]">3.3 Exit Mechanism</h3>
+            <p>
+              To claim rewards, stakers must burn their NFT. This can happen in two ways:
+            </p>
+            <ul className="list-disc list-inside space-y-2 ml-4">
+              <li><strong>Mature Exit (After 55 days):</strong> Full rewards + staked <img src="/lovable-uploads/9c595eda-81ce-4709-a06b-75f909a4540c.png" alt="OCAI" className="inline h-3 w-3 mx-1" />OCAI returned</li>
+              <li><strong>Early Exit (Before 55 days):</strong> 25% penalty + no rewards</li>
+            </ul>
+          </CardContent>
+        </Card>
+
+        {/* 4. OCBotz System */}
+        <Card className="bg-gradient-to-br from-black to-green-900/20 border-green-400/50 shadow-[0_0_30px_rgba(0,255,65,0.2)]">
+          <CardHeader>
+            <CardTitle className="text-green-400 text-2xl drop-shadow-[0_0_15px_rgba(0,255,65,0.8)]">4. 🤖 OCBOTZ AUTONOMOUS SYSTEM</CardTitle>
+          </CardHeader>
+          <CardContent className="text-green-300 space-y-4">
+            <h3 className="text-xl font-semibold text-green-400 drop-shadow-[0_0_10px_rgba(0,255,65,0.6)]">4.1 Reverse Liquidity Engineering</h3>
+            <p>
+              The 🤖 OCBotz system represents a groundbreaking approach to automated yield generation. 
+              Rather than traditional liquidity provision, our bots employ Reverse Liquidity 
+              Engineering - a sophisticated strategy that:
+            </p>
+            <ul className="list-disc list-inside space-y-2 ml-4">
+              <li>Executes strategic buy/sell operations to accumulate TBILL and FED</li>
+              <li>Maintains price stability through intelligent market making</li>
+              <li>Implements anti-manipulation measures</li>
+              <li>Optimizes gas efficiency across all operations</li>
+            </ul>
+
+            <h3 className="text-xl font-semibold text-green-400 mt-6 drop-shadow-[0_0_10px_rgba(0,255,65,0.6)]">4.2 Bot Deployment Strategy</h3>
+            <p>
+              The protocol deploys multiple specialized 🤖 OCBotz, each with specific functions:
+            </p>
+            <ul className="list-disc list-inside space-y-2 ml-4">
+              <li><strong>Liquidity Manager Bot:</strong> Maintains optimal liquidity ratios</li>
+              <li><strong>Arbitrage Hunter Bot:</strong> Captures cross-DEX price differences</li>
+              <li><strong>Rewards Distributor Bot:</strong> Automates reward calculations and distributions</li>
+              <li><strong>TBILL Accumulator Bot:</strong> Specialized Treasury Bill acquisition</li>
+              <li><strong>FED Harvester Bot:</strong> Optimized Reserve Teh collection</li>
+              <li><strong>Anti-Jeet Defense Bot:</strong> Executes strategic buybacks against sellers</li>
+              <li><strong>OverClockerBotz (4 units):</strong> High-performance bots that massively amplify rewards when activated</li>
+            </ul>
+
+            <h3 className="text-xl font-semibold text-green-400 mt-6 drop-shadow-[0_0_10px_rgba(0,255,65,0.6)]">4.3 Performance Targets</h3>
+            <p>
+              The 🤖 OCBotz system targets aggressive performance metrics:
+            </p>
+            <ul className="list-disc list-inside space-y-2 ml-4">
+              <li><strong>Primary Target:</strong> 555% yield in TBILL & FED over 55 days</li>
+              <li><strong>Uptime:</strong> 99.9% operational availability</li>
+              <li><strong>Response Time:</strong> Sub-second market reaction capability</li>
+              <li><strong>Efficiency:</strong> Minimal gas waste through optimized execution</li>
+            </ul>
+          </CardContent>
+        </Card>
+
+        {/* 5. Game Theory */}
+        <Card className="bg-gradient-to-br from-black to-green-900/20 border-green-400/50 shadow-[0_0_30px_rgba(0,255,65,0.2)]">
+          <CardHeader>
+            <CardTitle className="text-green-400 text-2xl drop-shadow-[0_0_15px_rgba(0,255,65,0.8)]">5. GAME THEORY AND ECONOMIC DESIGN</CardTitle>
+          </CardHeader>
+          <CardContent className="text-green-300 space-y-4">
+            <h3 className="text-xl font-semibold text-green-400 drop-shadow-[0_0_10px_rgba(0,255,65,0.6)]">5.1 Strategic Decision Framework</h3>
+            <p>
+              <img src="/lovable-uploads/9c595eda-81ce-4709-a06b-75f909a4540c.png" alt="OCAI" className="inline h-4 w-4 mx-1" />OCAI's one-stake-per-address mechanism creates a fascinating game theory scenario 
+              where rational actors must make strategic decisions about timing and stake size:
+            </p>
+            <ul className="list-disc list-inside space-y-2 ml-4">
+              <li><strong>Accumulation Game:</strong> Users compete to accumulate more <img src="/lovable-uploads/9c595eda-81ce-4709-a06b-75f909a4540c.png" alt="OCAI" className="inline h-3 w-3 mx-1" />OCAI before staking</li>
+              <li><strong>Timing Pressure:</strong> ICO discounts create urgency</li>
+              <li><strong>Commitment Premium:</strong> Longer lock periods = higher rewards</li>
+              <li><strong>Network Effects:</strong> More stakers = higher individual rewards</li>
+            </ul>
+
+            <h3 className="text-xl font-semibold text-green-400 mt-6 drop-shadow-[0_0_10px_rgba(0,255,65,0.6)]">5.2 Nash Equilibrium Analysis</h3>
+            <p>
+              The protocol is designed to reach a Nash Equilibrium where the optimal strategy 
+              for all participants is to:
+            </p>
+            <ol className="list-decimal list-inside space-y-2 ml-4">
+              <li>Accumulate maximum <img src="/lovable-uploads/9c595eda-81ce-4709-a06b-75f909a4540c.png" alt="OCAI" className="inline h-3 w-3 mx-1" />OCAI tokens possible</li>
+              <li>Stake once with full holdings</li>
+              <li>Hold for full 55-day period</li>
+              <li>Reinvest rewards into new stake cycles</li>
+            </ol>
+          </CardContent>
+        </Card>
+
+        {/* 6. Treasury Bill Integration */}
+        <Card className="bg-gradient-to-br from-black to-green-900/20 border-green-400/50 shadow-[0_0_30px_rgba(0,255,65,0.2)]">
+          <CardHeader>
+            <CardTitle className="text-green-400 text-2xl drop-shadow-[0_0_15px_rgba(0,255,65,0.8)]">6. TREASURY BILL & RESERVE TEH INTEGRATION</CardTitle>
+          </CardHeader>
+          <CardContent className="text-green-300 space-y-4">
+            <h3 className="text-xl font-semibold text-green-400 drop-shadow-[0_0_10px_rgba(0,255,65,0.6)]">6.1 Dual Token Strategy</h3>
+            <p>
+              <img src="/lovable-uploads/9c595eda-81ce-4709-a06b-75f909a4540c.png" alt="OCAI" className="inline h-4 w-4 mx-1" />OCAI leverages the unique properties of Treasury Bill (TBILL) and Reserve Teh (FED) 
+              tokens to maximize staker rewards. Both tokens are designed to peg to $1 USD, 
+              creating massive potential upside for current holders.
+            </p>
+
+            <h3 className="text-xl font-semibold text-green-400 mt-6 drop-shadow-[0_0_10px_rgba(0,255,65,0.6)]">6.2 Treasury Bill Mechanics</h3>
+            <p>
+              Treasury Bill can be burned 1:1 to the Reserve Teh contract to mint Reserve Teh (FED). 
+              This creates a unique arbitrage opportunity that our 🤖 OCBotz can exploit:
+            </p>
+            <ul className="list-disc list-inside space-y-2 ml-4">
+              <li><strong>Minting Ratio:</strong> 1 TBILL = 1 FED (via Reserve Teh contract)</li>
+              <li><strong>Price Discovery:</strong> Market prices may differ from 1:1 ratio</li>
+              <li><strong>Arbitrage Potential:</strong> 🤖 OCBotz can capture price differences</li>
+              <li><strong>Dual Accumulation:</strong> Earn both tokens simultaneously</li>
+            </ul>
+
+            <h3 className="text-xl font-semibold text-green-400 mt-6 drop-shadow-[0_0_10px_rgba(0,255,65,0.6)]">6.3 The Ultimate TBILL & FED Printer</h3>
+            <p>
+              <img src="/lovable-uploads/9c595eda-81ce-4709-a06b-75f909a4540c.png" alt="OCAI" className="inline h-4 w-4 mx-1" />OCAI aims to become the most efficient TBILL & FED printing mechanism 
+              in the ecosystem. Instead of manually minting FED, users can stake <img src="/lovable-uploads/9c595eda-81ce-4709-a06b-75f909a4540c.png" alt="OCAI" className="inline h-3 w-3 mx-1" />OCAI 
+              and earn both tokens at an overclocked rate through our automated system.
+            </p>
+
+            <h3 className="text-xl font-semibold text-green-400 mt-6 drop-shadow-[0_0_10px_rgba(0,255,65,0.6)]">6.4 Liquidity Pool Strategy</h3>
+            <p>
+              At the end of each stake period, users can utilize our LP Zapper feature to 
+              automatically pair their TBILL and FED rewards into a liquidity pool:
+            </p>
+            <ul className="list-disc list-inside space-y-2 ml-4">
+              <li><strong>Auto-Pairing:</strong> One-click TBILL/FED LP token creation</li>
+              <li><strong>Fee Generation:</strong> Earn trading fees from the liquidity pool</li>
+              <li><strong>Dollar Peg Upside:</strong> When both tokens reach $1, LP fees become substantial</li>
+              <li><strong>Compound Strategy:</strong> Reinvest LP fees into new <img src="/lovable-uploads/9c595eda-81ce-4709-a06b-75f909a4540c.png" alt="OCAI" className="inline h-3 w-3 mx-1" />OCAI stakes</li>
+            </ul>
+          </CardContent>
+        </Card>
+
+        {/* 7. ICO Structure */}
+        <Card className="bg-gradient-to-br from-black to-green-900/20 border-green-400/50 shadow-[0_0_30px_rgba(0,255,65,0.2)]">
+          <CardHeader>
+            <CardTitle className="text-green-400 text-2xl drop-shadow-[0_0_15px_rgba(0,255,65,0.8)]">7. ICO STRUCTURE AND TOKENOMICS</CardTitle>
+          </CardHeader>
+          <CardContent className="text-green-300 space-y-4">
+            <h3 className="text-xl font-semibold text-green-400 drop-shadow-[0_0_10px_rgba(0,255,65,0.6)]">7.1 ICO Phases</h3>
+            <p>
+              The <img src="/lovable-uploads/9c595eda-81ce-4709-a06b-75f909a4540c.png" alt="OCAI" className="inline h-4 w-4 mx-1" />OCAI ICO consists of four strategic phases designed to reward early commitment:
             </p>
             
-            <h3 className="text-xl font-semibold text-green-400 mb-3">NFT Proof-Of-Stake (POS)</h3>
-            <p className="mb-4">
-              When users stake OCAI, they receive an NFT that serves as cryptographic proof of their 
-              stake. This NFT must be burned to claim rewards, ensuring no double-spending and 
-              creating verifiable commitment.
-            </p>
+            <div className="overflow-x-auto">
+              <table className="w-full border-collapse border border-green-400/30 mt-4">
+                <thead>
+                  <tr className="bg-green-400/10">
+                    <th className="border border-green-400/30 p-3 text-left">Phase</th>
+                    <th className="border border-green-400/30 p-3 text-left">Duration</th>
+                    <th className="border border-green-400/30 p-3 text-left">Discount</th>
+                    <th className="border border-green-400/30 p-3 text-left">Accepted Tokens</th>
+                    <th className="border border-green-400/30 p-3 text-left">Max Investment</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td className="border border-green-400/30 p-3">Early Bird 😇 Angels</td>
+                    <td className="border border-green-400/30 p-3">14 days</td>
+                    <td className="border border-green-400/30 p-3">5x (80% off)</td>
+                    <td className="border border-green-400/30 p-3">Any token</td>
+                    <td className="border border-green-400/30 p-3">$10,000</td>
+                  </tr>
+                  <tr className="bg-green-400/5">
+                    <td className="border border-green-400/30 p-3">Round 1</td>
+                    <td className="border border-green-400/30 p-3">14 days</td>
+                    <td className="border border-green-400/30 p-3">3x (67% off)</td>
+                    <td className="border border-green-400/30 p-3">PLS only</td>
+                    <td className="border border-green-400/30 p-3">Unlimited</td>
+                  </tr>
+                  <tr>
+                    <td className="border border-green-400/30 p-3">Round 2</td>
+                    <td className="border border-green-400/30 p-3">14 days</td>
+                    <td className="border border-green-400/30 p-3">2x (50% off)</td>
+                    <td className="border border-green-400/30 p-3">PLS only</td>
+                    <td className="border border-green-400/30 p-3">Unlimited</td>
+                  </tr>
+                  <tr className="bg-green-400/5">
+                    <td className="border border-green-400/30 p-3">Last Orders</td>
+                    <td className="border border-green-400/30 p-3">14 days</td>
+                    <td className="border border-green-400/30 p-3">1.25x (20% off)</td>
+                    <td className="border border-green-400/30 p-3">PLS only</td>
+                    <td className="border border-green-400/30 p-3">Unlimited</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
 
-            <h3 className="text-xl font-semibold text-green-400 mb-3">Autonomous 🤖 OCBotz Network</h3>
-            <p className="mb-4">
-              Multiple autonomous 🤖 OCBotz operate 24/7 using Reverse Liquidity Engineering Technology. 
-              Each bot holds a percentage of OCAI supply and executes sophisticated trading strategies 
-              to maximize TBILL and FED accumulation for stakers.
+            <h3 className="text-xl font-semibold text-green-400 mt-6 drop-shadow-[0_0_10px_rgba(0,255,65,0.6)]">7.2 Dynamic Pricing Model</h3>
+            <p>
+              Token pricing scales based on the total amount raised during the Early Bird 😇 Angels round:
             </p>
+            <ul className="list-disc list-inside space-y-2 ml-4">
+              <li><strong>Base Formula:</strong> Launch Price = (😇 Angels Total / 1,000,000) × $9</li>
+              <li><strong>Example:</strong> If $1M raised in 😇 Angels, Launch Price = $9.00</li>
+              <li><strong>Scaling:</strong> Higher 😇 Angels participation = Higher launch price</li>
+              <li><strong>Early Bird Advantage:</strong> 😇 Angels always get 5x discount regardless of final price</li>
+            </ul>
           </CardContent>
         </Card>
 
-        {/* Advanced Game Theory - Enhanced Section */}
-        <Card className="bg-black border-green-400/50 shadow-[0_0_30px_rgba(0,255,65,0.2)]">
+        {/* 8. Fund Allocation */}
+        <Card className="bg-gradient-to-br from-black to-green-900/20 border-green-400/50 shadow-[0_0_30px_rgba(0,255,65,0.2)]">
           <CardHeader>
-            <CardTitle className="text-green-400 text-2xl flex items-center gap-2 drop-shadow-[0_0_10px_rgba(0,255,65,0.6)]">
-              <Users className="h-6 w-6" />
-              ADVANCED GAME THEORY
-            </CardTitle>
+            <CardTitle className="text-green-400 text-2xl drop-shadow-[0_0_15px_rgba(0,255,65,0.8)]">8. STRATEGIC FUND ALLOCATION</CardTitle>
           </CardHeader>
-          <CardContent className="text-green-300 leading-relaxed">
-            <h3 className="text-xl font-semibold text-green-400 mb-3">The One-Stake-Per-Address Rule</h3>
-            <p className="mb-4">
-              OCAI's revolutionary constraint allows only ONE active stake per wallet address at any time. 
-              This creates unprecedented strategic depth and game theory dynamics:
+          <CardContent className="text-green-300 space-y-4">
+            <h3 className="text-xl font-semibold text-green-400 drop-shadow-[0_0_10px_rgba(0,255,65,0.6)]">8.1 Transparent Distribution</h3>
+            <p>
+              <img src="/lovable-uploads/9c595eda-81ce-4709-a06b-75f909a4540c.png" alt="OCAI" className="inline h-4 w-4 mx-1" />OCAI maintains complete transparency in fund allocation to ensure investor confidence 
+              and optimal protocol development:
             </p>
-            
-            <div className="grid md:grid-cols-2 gap-6 mb-6">
+
+            <div className="grid md:grid-cols-2 gap-6 mt-6">
               <div className="p-4 border border-green-400/30 rounded bg-green-400/5">
-                <h4 className="text-green-400 font-semibold mb-2">STRATEGIC ACCUMULATION</h4>
-                <ul className="space-y-1 text-sm">
-                  <li>• Users cannot add to existing stakes</li>
-                  <li>• Must burn NFT to stake again</li>
-                  <li>• Incentivizes waiting to accumulate more OCAI</li>
-                  <li>• Bigger stakes = proportionally bigger rewards</li>
-                  <li>• Creates natural buying pressure</li>
+                <h4 className="text-green-400 font-semibold mb-2">Development & Operations (2%)</h4>
+                <ul className="text-sm space-y-1">
+                  <li>• Developer compensation (1%)</li>
+                  <li>• Marketing expansion (1%)</li>
+                  <li>• Cross-platform campaigns</li>
+                  <li>• Community growth initiatives</li>
                 </ul>
               </div>
-              <div className="p-4 border border-green-400/30 rounded bg-green-400/5">
-                <h4 className="text-green-400 font-semibold mb-2">COMMITMENT MECHANISMS</h4>
-                <ul className="space-y-1 text-sm">
-                  <li>• 55-day lock period enforced by NFT</li>
-                  <li>• Early exit penalty of 25%</li>
-                  <li>• No rewards for early exits</li>
-                  <li>• Decision paralysis favors hodling</li>
-                  <li>• Time decay increases commitment</li>
-                </ul>
-              </div>
-            </div>
 
-            <h3 className="text-xl font-semibold text-green-400 mb-3">The Staker Class Advantage</h3>
-            <p className="mb-4">
-              OCAI creates a two-tier system where only stakers receive the true value:
-            </p>
-            <div className="grid md:grid-cols-2 gap-6 mb-6">
-              <div className="p-4 border border-green-400/30 rounded bg-green-400/5">
-                <h4 className="text-green-400 font-semibold mb-2">STAKERS RECEIVE:</h4>
-                <ul className="space-y-1 text-sm">
-                  <li>• 3.69% guaranteed OCAI yield</li>
-                  <li>• Share of TBILL rewards (target 555% over 55 days)</li>
-                  <li>• Share of FED rewards (target 555% over 55 days)</li>
-                  <li>• NFT proof of commitment</li>
-                  <li>• Voting rights (future implementation)</li>
-                </ul>
-              </div>
-              <div className="p-4 border border-red-400/30 rounded bg-red-400/5">
-                <h4 className="text-red-400 font-semibold mb-2">NON-STAKERS RECEIVE:</h4>
-                <ul className="space-y-1 text-sm text-red-300">
-                  <li>• Nothing from the ecosystem</li>
-                  <li>• No TBILL rewards</li>
-                  <li>• No FED rewards</li>
-                  <li>• No yield generation</li>
-                  <li>• Only speculation profits/losses</li>
-                </ul>
-              </div>
-            </div>
-            
-            <h3 className="text-xl font-semibold text-green-400 mb-3">Behavioral Economics & Decision Theory</h3>
-            <p className="mb-4">
-              The one-stake constraint creates powerful psychological and economic incentives:
-            </p>
-            <ul className="space-y-2 ml-6 mb-4">
-              <li>• <span className="text-green-400">Analysis Paralysis:</span> Users over-analyze optimal staking timing</li>
-              <li>• <span className="text-green-400">FOMO Accumulation:</span> Fear of missing bigger rewards drives token buying</li>
-              <li>• <span className="text-green-400">Commitment Escalation:</span> Larger stakes feel more important to protect</li>
-              <li>• <span className="text-green-400">Sunk Cost Fallacy:</span> Users less likely to exit larger commitments</li>
-              <li>• <span className="text-green-400">Social Proof:</span> Successful stakers become community leaders</li>
-            </ul>
-
-            <h3 className="text-xl font-semibold text-green-400 mb-3">Strategic Decision Framework</h3>
-            <p className="mb-4">
-              Users face a complex strategic decision matrix:
-            </p>
-            <div className="p-4 border border-yellow-400/30 rounded bg-yellow-400/5 mb-4">
-              <h4 className="text-yellow-400 font-semibold mb-2">THE STAKING DILEMMA:</h4>
-              <ul className="space-y-1 text-sm text-yellow-300">
-                <li>• <strong>Stake Now:</strong> Start earning immediately but with smaller rewards share</li>
-                <li>• <strong>Wait & Accumulate:</strong> Risk price increases but potentially earn much more</li>
-                <li>• <strong>Market Timing:</strong> Try to optimize entry point for maximum efficiency</li>
-                <li>• <strong>Opportunity Cost:</strong> Miss current cycle rewards vs future larger rewards</li>
-              </ul>
-            </div>
-          </CardContent>
-        </Card>
-
-        {/* Tokenomics & Fund Allocation - Enhanced Section */}
-        <Card className="bg-black border-green-400/50 shadow-[0_0_30px_rgba(0,255,65,0.2)]">
-          <CardHeader>
-            <CardTitle className="text-green-400 text-2xl flex items-center gap-2 drop-shadow-[0_0_10px_rgba(0,255,65,0.6)]">
-              <DollarSign className="h-6 w-6" />
-              TOKENOMICS & FUND ALLOCATION
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="text-green-300 leading-relaxed">
-            <h3 className="text-xl font-semibold text-green-400 mb-3">ICO Phases</h3>
-            
-            {/* ICO Wallet Address */}
-            <div className="mb-6 p-4 border border-green-400/50 rounded bg-green-400/5">
-              <h4 className="text-green-400 font-semibold mb-2 text-center">ICO WALLET ADDRESS</h4>
-              <p className="text-green-300 text-center font-mono text-sm break-all">
-                0x4e60bfdda8dee4cb6bbfb93a35fa7439e63c067b
-              </p>
-              <p className="text-green-300/70 text-xs text-center mt-2">
-                Send your tokens to this address during ICO rounds
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-4 mb-6">
-              <div className="p-4 border border-green-400/30 rounded">
-                <h4 className="text-green-400 font-semibold">1. Early Bird Angels</h4>
-                <p className="text-sm">• 5x discount from launch price</p>
-                <p className="text-sm">• $10,000 max per wallet</p>
-                <p className="text-sm">• Any token accepted</p>
-                <p className="text-sm text-yellow-300">• Duration: 14 days</p>
-              </div>
-              <div className="p-4 border border-green-400/30 rounded">
-                <h4 className="text-green-400 font-semibold">2. Round 1</h4>
-                <p className="text-sm">• 3x discount from launch price</p>
-                <p className="text-sm">• PLS only accepted</p>
-                <p className="text-sm text-yellow-300">• Duration: 14 days</p>
-              </div>
-              <div className="p-4 border border-green-400/30 rounded">
-                <h4 className="text-green-400 font-semibold">3. Round 2</h4>
-                <p className="text-sm">• 2x discount from launch price</p>
-                <p className="text-sm">• PLS only accepted</p>
-                <p className="text-sm text-yellow-300">• Duration: 14 days</p>
-              </div>
-              <div className="p-4 border border-green-400/30 rounded">
-                <h4 className="text-green-400 font-semibold">4. Last Orders</h4>
-                <p className="text-sm">• 1.25x discount from launch price</p>
-                <p className="text-sm">• PLS only accepted</p>
-                <p className="text-sm text-yellow-300">• Duration: 14 days</p>
-              </div>
-            </div>
-
-            <h3 className="text-xl font-semibold text-green-400 mb-3">Strategic Fund Allocation</h3>
-            <p className="mb-4">
-              OCAI implements a transparent and growth-focused fund allocation strategy designed to maximize 
-              ecosystem value and long-term sustainability. All ICO funds are allocated strategically to 
-              ensure aggressive growth and market dominance:
-            </p>
-            
-            <div className="grid md:grid-cols-2 gap-6 mb-6">
-              <div className="p-4 border border-green-400/30 rounded bg-green-400/5">
-                <h4 className="text-green-400 font-semibold mb-3">DEVELOPMENT & OPERATIONS (2%)</h4>
-                <div className="space-y-2 text-sm">
-                  <div className="flex justify-between">
-                    <span>• Core Development</span>
-                    <span className="text-green-400">1%</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span>• Strategic Marketing</span>
-                    <span className="text-green-400">1%</span>
-                  </div>
-                </div>
-                <p className="text-xs text-green-300/70 mt-2">
-                  Ensures continuous innovation and global reach across X, YouTube, TikTok & Instagram
-                </p>
-              </div>
-              <div className="p-4 border border-green-400/30 rounded bg-green-400/5">
-                <h4 className="text-green-400 font-semibold mb-3">PROTOCOL EXPANSION (98%)</h4>
-                <div className="space-y-1 text-sm">
-                  <div>• Advanced 🤖 OCBotz Operations</div>
-                  <div>• Cross-Chain Liquidity Pools</div>
-                  <div>• CEX Listings & Market Making</div>
-                  <div>• Enhanced Marketing Campaigns</div>
-                  <div>• Strategic Partnerships</div>
-                  <div>• Ecosystem Development</div>
-                </div>
-              </div>
-            </div>
-
-            <div className="p-4 border border-blue-400/30 rounded bg-blue-400/5 mb-6">
-              <h4 className="text-blue-400 font-semibold mb-2">AGGRESSIVE GROWTH STRATEGY</h4>
-              <p className="text-blue-300 text-sm mb-2">
-                With 98% of funds dedicated to protocol expansion, OCAI is positioned for explosive growth:
-              </p>
-              <ul className="space-y-1 text-blue-300 text-sm">
-                <li>• Maximum liquidity across multiple chains</li>
-                <li>• Tier-1 CEX listings for institutional access</li>
-                <li>• Advanced 🤖 OCBotz deployment for superior yields</li>
-                <li>• Global marketing reach to capture maximum adoption</li>
-              </ul>
-            </div>
-
-            <h3 className="text-xl font-semibold text-green-400 mb-3">Tax Structure</h3>
-            <p className="mb-3">Every OCAI transaction includes a 3% tax distributed as follows:</p>
-            <div className="grid md:grid-cols-3 gap-4 mb-6">
-              <div className="p-4 border border-green-400/30 rounded text-center">
-                <h4 className="text-green-400 font-semibold">0.5%</h4>
-                <p className="text-sm">🤖 OCBotz Operations</p>
-                <p className="text-xs text-green-300/70">Buy & burn OCAI</p>
-              </div>
-              <div className="p-4 border border-green-400/30 rounded text-center">
-                <h4 className="text-green-400 font-semibold">1.25%</h4>
-                <p className="text-sm">TBILL Acquisition</p>
-                <p className="text-xs text-green-300/70">For stakers only</p>
-              </div>
-              <div className="p-4 border border-green-400/30 rounded text-center">
-                <h4 className="text-green-400 font-semibold">1.25%</h4>
-                <p className="text-sm">FED Acquisition</p>
-                <p className="text-xs text-green-300/70">For stakers only</p>
-              </div>
-            </div>
-
-            <h3 className="text-xl font-semibold text-green-400 mb-3">Supply Mechanics</h3>
-            <p className="mb-4">
-              Total supply is dynamically determined by Early Bird Angels round performance. 
-              After ICO completion, supply increases by 400%. Of this increased amount: 
-              10% is used for liquidity, and 90% for 🤖 OCBotz operations.
-            </p>
-          </CardContent>
-        </Card>
-
-        {/* Staking Mechanics - Enhanced Section */}
-        <Card className="bg-black border-green-400/50 shadow-[0_0_30px_rgba(0,255,65,0.2)]">
-          <CardHeader>
-            <CardTitle className="text-green-400 text-2xl flex items-center gap-2 drop-shadow-[0_0_10px_rgba(0,255,65,0.6)]">
-              <Clock className="h-6 w-6" />
-              STAKING MECHANICS
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="text-green-300 leading-relaxed">
-            <h3 className="text-xl font-semibold text-green-400 mb-3">The One-Stake Constraint</h3>
-            <div className="p-4 border border-red-400/30 rounded bg-red-400/5 mb-6">
-              <h4 className="text-red-400 font-semibold mb-2">CRITICAL RULE: ONE STAKE PER ADDRESS</h4>
-              <ul className="space-y-1 text-red-300">
-                <li>• Only ONE active stake allowed per wallet address</li>
-                <li>• Cannot add tokens to existing stake</li>
-                <li>• Must burn NFT and claim rewards to stake again</li>
-                <li>• Creates strategic decision-making pressure</li>
-                <li>• Incentivizes accumulation before staking</li>
-              </ul>
-            </div>
-
-            <h3 className="text-xl font-semibold text-green-400 mb-3">55-Day Commitment Period</h3>
-            <p className="mb-4">
-              Every stake lasts exactly 55 days. This period is optimized for:
-            </p>
-            <ul className="space-y-2 ml-6 mb-6">
-              <li>• Maximum reward accumulation</li>
-              <li>• Behavioral commitment reinforcement</li>
-              <li>• OCBotz optimization cycles</li>
-              <li>• Market volatility smoothing</li>
-              <li>• Strategic planning window</li>
-            </ul>
-
-            <h3 className="text-xl font-semibold text-green-400 mb-3">Reward Structure</h3>
-            <div className="space-y-4 mb-6">
-              <div className="p-4 border border-green-400/30 rounded">
-                <h4 className="text-green-400 font-semibold mb-2">Guaranteed Rewards</h4>
-                <p className="mb-2">• <span className="text-green-400">3.69% OCAI yield</span> - Fixed return on staked amount</p>
-              </div>
-              <div className="p-4 border border-green-400/30 rounded">
-                <h4 className="text-green-400 font-semibold mb-2">Dynamic Rewards (Target: 555% over 55 days)</h4>
-                <p className="mb-2">• <span className="text-green-400">TBILL rewards</span> - Proportional to stake size</p>
-                <p className="mb-2">• <span className="text-green-400">FED rewards</span> - Proportional to stake size</p>
-                <p className="text-xs text-green-300/70">
-                  * Actual yields may vary based on OCBotz performance, market conditions, and total staked amount
-                </p>
-              </div>
-            </div>
-
-            <h3 className="text-xl font-semibold text-green-400 mb-3">Strategic Implications</h3>
-            <div className="p-4 border border-yellow-400/30 rounded bg-yellow-400/5 mb-6">
-              <h4 className="text-yellow-400 font-semibold mb-2">THE ACCUMULATION STRATEGY</h4>
-              <p className="text-yellow-300 text-sm mb-2">
-                The one-stake rule creates powerful incentives for users to accumulate as much OCAI as possible 
-                before committing to a 55-day stake. This creates:
-              </p>
-              <ul className="space-y-1 text-yellow-300 text-sm">
-                <li>• Natural buying pressure as users accumulate</li>
-                <li>• Reduced selling pressure from committed stakers</li>
-                <li>• Strategic timing decisions that favor long-term thinking</li>
-                <li>• Reward concentration among serious participants</li>
-              </ul>
-            </div>
-
-            <h3 className="text-xl font-semibold text-green-400 mb-3">Penalty System</h3>
-            <div className="p-4 border border-red-400/30 rounded bg-red-400/5">
-              <h4 className="text-red-400 font-semibold mb-2">Early Exit Penalty</h4>
-              <ul className="space-y-1 text-red-300">
-                <li>• 25% of staked OCAI forfeited</li>
-                <li>• No 3.69% yield received</li>
-                <li>• No TBILL rewards</li>
-                <li>• No FED rewards</li>
-              </ul>
-            </div>
-          </CardContent>
-        </Card>
-
-        {/* OCBotz Technology */}
-        <Card className="bg-black border-green-400/50 shadow-[0_0_30px_rgba(0,255,65,0.2)]">
-          <CardHeader>
-            <CardTitle className="text-green-400 text-2xl flex items-center gap-2 drop-shadow-[0_0_10px_rgba(0,255,65,0.6)]">
-              <Cpu className="h-6 w-6" />
-              OCBOTZ REVERSE LIQUIDITY ENGINEERING
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="text-green-300 leading-relaxed">
-            <h3 className="text-xl font-semibold text-green-400 mb-3">Autonomous Operations</h3>
-            <p className="mb-4">
-              OCBotz operate 24/7 with no human intervention, using advanced AI algorithms to:
-            </p>
-            <ul className="space-y-2 ml-6 mb-6">
-              <li>• Execute optimal buy/sell strategies</li>
-              <li>• Accumulate maximum TBILL and FED</li>
-              <li>• Maintain price stability</li>
-              <li>• Reduce circulating supply through burns</li>
-            </ul>
-
-            <h3 className="text-xl font-semibold text-green-400 mb-3">Reverse Liquidity Engineering</h3>
-            <p className="mb-4">
-              Unlike traditional liquidity provision, our bots extract value from market inefficiencies:
-            </p>
-            <div className="grid md:grid-cols-3 gap-4 mb-6">
-              <div className="p-4 border border-green-400/30 rounded text-center">
-                <TrendingUp className="h-8 w-8 text-green-400 mx-auto mb-2" />
-                <h4 className="text-green-400 font-semibold">Price Growth</h4>
-                <p className="text-sm">Strategic market operations</p>
-              </div>
-              <div className="p-4 border border-green-400/30 rounded text-center">
-                <Award className="h-8 w-8 text-green-400 mx-auto mb-2" />
-                <h4 className="text-green-400 font-semibold">Reward Accumulation</h4>
-                <p className="text-sm">TBILL & FED acquisition</p>
-              </div>
-              <div className="p-4 border border-green-400/30 rounded text-center">
-                <Zap className="h-8 w-8 text-green-400 mx-auto mb-2" />
-                <h4 className="text-green-400 font-semibold">Supply Reduction</h4>
-                <p className="text-sm">Token burning mechanism</p>
-              </div>
-            </div>
-
-            <h3 className="text-xl font-semibold text-green-400 mb-3">Target Performance</h3>
-            <p className="mb-4">
-              OCBotz are designed to generate a combined 555% yield in TBILL and FED rewards 
-              over each 55-day staking period. This ambitious target is achieved through:
-            </p>
-            <ul className="space-y-2 ml-6">
-              <li>• Advanced arbitrage strategies</li>
-              <li>• Market timing algorithms</li>
-              <li>• Cross-DEX optimization</li>
-              <li>• Compound reward mechanisms</li>
-            </ul>
-            <p className="text-sm text-green-300/70 mt-4">
-              * Actual performance may vary due to market conditions, liquidity availability, and other factors
-            </p>
-          </CardContent>
-        </Card>
-
-        {/* TBILL & FED Integration */}
-        <Card className="bg-black border-green-400/50 shadow-[0_0_30px_rgba(0,255,65,0.2)]">
-          <CardHeader>
-            <CardTitle className="text-green-400 text-2xl flex items-center gap-2 drop-shadow-[0_0_10px_rgba(0,255,65,0.6)]">
-              <BarChart3 className="h-6 w-6" />
-              TBILL & FED ECOSYSTEM
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="text-green-300 leading-relaxed">
-            <h3 className="text-xl font-semibold text-green-400 mb-3">Token Overview</h3>
-            <p className="mb-4">
-              TBILL and FED are revolutionary tokens created by renowned developer Maria from 
-              Atropa and Dysnomia projects. Both tokens are designed to peg to $1, offering 
-              unprecedented stability and growth potential.
-            </p>
-
-            <div className="grid md:grid-cols-2 gap-6 mb-6">
-              <div className="p-4 border border-green-400/30 rounded">
-                <h4 className="text-green-400 font-semibold mb-2">TBILL (Treasury Bill)</h4>
-                <ul className="space-y-1 text-sm">
-                  <li>• Backed by real treasury instruments</li>
-                  <li>• Target peg: $1.00</li>
-                  <li>• Deflationary mechanics</li>
-                  <li>• Institutional grade stability</li>
-                </ul>
-              </div>
-              <div className="p-4 border border-green-400/30 rounded">
-                <h4 className="text-green-400 font-semibold mb-2">FED (Reserve Teh)</h4>
-                <ul className="space-y-1 text-sm">
-                  <li>• Federal reserve mechanisms</li>
-                  <li>• Target peg: $1.00</li>
-                  <li>• Monetary policy integration</li>
-                  <li>• Economic stability features</li>
+              <div className="p-4 border border-green-400/30 rounded bg-green-400/10">
+                <h4 className="text-green-400 font-semibold mb-2">Protocol Expansion (98%)</h4>
+                <ul className="text-sm space-y-1">
+                  <li>• Liquidity pool seeding</li>
+                  <li>• 🤖 OCBotz development & deployment</li>
+                  <li>• Advanced strategic buyback systems</li>
+                  <li>• Cross-chain bridge development</li>
+                  <li>• CEX listing preparations</li>
+                  <li>• Additional marketing campaigns</li>
                 </ul>
               </div>
             </div>
 
-            <h3 className="text-xl font-semibold text-green-400 mb-3">Wealth Generation Potential</h3>
-            <p className="mb-4">
-              With both tokens destined to reach $1 peg, OCAI stakers position themselves to earn:
+            <h3 className="text-xl font-semibold text-green-400 mt-6 drop-shadow-[0_0_10px_rgba(0,255,65,0.6)]">8.2 Value Creation Focus</h3>
+            <p>
+              Unlike many projects that extract significant value for founders, <img src="/lovable-uploads/9c595eda-81ce-4709-a06b-75f909a4540c.png" alt="OCAI" className="inline h-4 w-4 mx-1" />OCAI 
+              dedicates 98% of raised funds directly to protocol value creation:
             </p>
-            <ul className="space-y-2 ml-6">
-              <li>• <span className="text-green-400">Millions of TBILL tokens</span> through consistent staking</li>
-              <li>• <span className="text-green-400">Millions of FED tokens</span> through ecosystem participation</li>
-              <li>• <span className="text-green-400">Billions in potential value</span> as tokens reach $1 peg</li>
-              <li>• <span className="text-green-400">Passive income streams</span> from dual-token rewards</li>
+            <ul className="list-disc list-inside space-y-2 ml-4">
+              <li><strong>Minimal Extraction:</strong> Only 2% for essential operations</li>
+              <li><strong>Maximum Reinvestment:</strong> 98% goes back into the ecosystem</li>
+              <li><strong>Sustainable Growth:</strong> Long-term value over short-term extraction</li>
+              <li><strong>Aligned Incentives:</strong> Developer success tied to protocol success</li>
             </ul>
           </CardContent>
         </Card>
 
-        {/* Technical Implementation */}
-        <Card className="bg-black border-green-400/50 shadow-[0_0_30px_rgba(0,255,65,0.2)]">
+        {/* 9. Technical Architecture */}
+        <Card className="bg-gradient-to-br from-black to-green-900/20 border-green-400/50 shadow-[0_0_30px_rgba(0,255,65,0.2)]">
           <CardHeader>
-            <CardTitle className="text-green-400 text-2xl flex items-center gap-2 drop-shadow-[0_0_10px_rgba(0,255,65,0.6)]">
-              <Shield className="h-6 w-6" />
-              TECHNICAL IMPLEMENTATION
-            </CardTitle>
+            <CardTitle className="text-green-400 text-2xl drop-shadow-[0_0_15px_rgba(0,255,65,0.8)]">9. TECHNICAL ARCHITECTURE</CardTitle>
           </CardHeader>
-          <CardContent className="text-green-300 leading-relaxed">
-            <h3 className="text-xl font-semibold text-green-400 mb-3">PulseChain Integration</h3>
-            <p className="mb-4">
-              OCAI is built natively on PulseChain, leveraging its advantages:
+          <CardContent className="text-green-300 space-y-4">
+            <h3 className="text-xl font-semibold text-green-400 drop-shadow-[0_0_10px_rgba(0,255,65,0.6)]">9.1 Smart Contract Infrastructure</h3>
+            <p>
+              <img src="/lovable-uploads/9c595eda-81ce-4709-a06b-75f909a4540c.png" alt="OCAI" className="inline h-4 w-4 mx-1" />OCAI is built on PulseChain using a modular smart contract architecture:
             </p>
-            <ul className="space-y-2 ml-6 mb-6">
-              <li>• Ultra-low transaction fees</li>
-              <li>• Fast block times</li>
-              <li>• Ethereum compatibility</li>
-              <li>• Environmental sustainability</li>
-              <li>• Decentralized governance</li>
+            <ul className="list-disc list-inside space-y-2 ml-4">
+              <li><strong><img src="/lovable-uploads/9c595eda-81ce-4709-a06b-75f909a4540c.png" alt="OCAI" className="inline h-3 w-3 mr-1" />OCAI Token Contract:</strong> ERC-20 compatible with enhanced features</li>
+              <li><strong>Staking Contract:</strong> Manages NFT minting and reward calculations</li>
+              <li><strong>🤖 OCBotz Controller:</strong> Coordinates autonomous bot operations</li>
+              <li><strong>Reward Distribution:</strong> Handles TBILL and FED distribution</li>
+              <li><strong>Emergency Controls:</strong> Multi-signature safety mechanisms</li>
             </ul>
 
-            <h3 className="text-xl font-semibold text-green-400 mb-3">Smart Contract Architecture</h3>
-            <p className="mb-4">
-              The OCAI ecosystem consists of several interconnected smart contracts:
+            <h3 className="text-xl font-semibold text-green-400 mt-6 drop-shadow-[0_0_10px_rgba(0,255,65,0.6)]">9.2 Security Measures</h3>
+            <p>
+              Security is paramount in the <img src="/lovable-uploads/9c595eda-81ce-4709-a06b-75f909a4540c.png" alt="OCAI" className="inline h-4 w-4 mx-1" />OCAI ecosystem:
             </p>
-            <ul className="space-y-2 ml-6 mb-6">
-              <li>• <span className="text-green-400">OCAI Token Contract:</span> Main token with tax mechanisms</li>
-              <li>• <span className="text-green-400">Staking Contract:</span> 55-day lock and NFT minting</li>
-              <li>• <span className="text-green-400">Rewards Contract:</span> TBILL and FED distribution</li>
-              <li>• <span className="text-green-400">OCBotz Contracts:</span> Autonomous trading operations</li>
-              <li>• <span className="text-green-400">NFT Contract:</span> Proof-Of-Stake (POS) certificates</li>
-            </ul>
-
-            <h3 className="text-xl font-semibold text-green-400 mb-3">Security Measures</h3>
-            <ul className="space-y-2 ml-6">
-              <li>• Multi-signature wallet controls</li>
-              <li>• Timelock mechanisms for upgrades</li>
-              <li>• Third-party security audits</li>
-              <li>• Decentralized governance structure</li>
-              <li>• Emergency pause functionality</li>
+            <ul className="list-disc list-inside space-y-2 ml-4">
+              <li><strong>Multi-signature Wallets:</strong> All critical functions require multiple signatures</li>
+              <li><strong>Time-locked Upgrades:</strong> Contract changes have mandatory delay periods</li>
+              <li><strong>Audit Requirements:</strong> All contracts undergo professional security audits</li>
+              <li><strong>Bug Bounty Program:</strong> Incentivized security research</li>
             </ul>
           </CardContent>
         </Card>
 
-        {/* Roadmap */}
-        <Card className="bg-black border-green-400/50 shadow-[0_0_30px_rgba(0,255,65,0.2)]">
+        {/* 10. Risk Management */}
+        <Card className="bg-gradient-to-br from-black to-green-900/20 border-green-400/50 shadow-[0_0_30px_rgba(0,255,65,0.2)]">
           <CardHeader>
-            <CardTitle className="text-green-400 text-2xl drop-shadow-[0_0_10px_rgba(0,255,65,0.6)]">DEVELOPMENT ROADMAP</CardTitle>
+            <CardTitle className="text-green-400 text-2xl drop-shadow-[0_0_15px_rgba(0,255,65,0.8)]">10. RISK MANAGEMENT</CardTitle>
           </CardHeader>
-          <CardContent className="text-green-300 leading-relaxed">
-            <div className="space-y-6">
-              <div className="p-4 border-l-4 border-green-400">
-                <h4 className="text-green-400 font-semibold">Q3 2025 - Foundation</h4>
-                <ul className="mt-2 space-y-1 text-sm">
-                  <li>• ICO launch and token distribution</li>
-                  <li>• PulseX DEX listing</li>
-                  <li>• Initial 🤖 OCBotz deployment</li>
-                  <li>• Community building</li>
-                </ul>
-              </div>
-              
-              <div className="p-4 border-l-4 border-green-400">
-                <h4 className="text-green-400 font-semibold">Q4 2025 - Expansion</h4>
-                <ul className="mt-2 space-y-1 text-sm">
-                  <li>• Advanced 🤖 OCBotz strategies</li>
-                  <li>• Partnership with TBILL and FED</li>
-                  <li>• Staking platform optimization</li>
-                  <li>• Mobile application</li>
-                </ul>
-              </div>
-              
-              <div className="p-4 border-l-4 border-green-400">
-                <h4 className="text-green-400 font-semibold">Q1 2026 - Innovation</h4>
-                <ul className="mt-2 space-y-1 text-sm">
-                  <li>• Cross-chain integration</li>
-                  <li>• Advanced yield strategies</li>
-                  <li>• Governance token launch</li>
-                  <li>• Institutional partnerships</li>
-                </ul>
-              </div>
-              
-              <div className="p-4 border-l-4 border-green-400">
-                <h4 className="text-green-400 font-semibold">Q2 2026 - Maturation</h4>
-                <ul className="mt-2 space-y-1 text-sm">
-                  <li>• Full decentralization</li>
-                  <li>• Advanced AI integration</li>
-                  <li>• Global market expansion</li>
-                  <li>• Ecosystem maturation</li>
-                </ul>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-
-        {/* Risk Factors */}
-        <Card className="bg-black border-red-400/50 shadow-[0_0_30px_rgba(0,255,65,0.2)]">
-          <CardHeader>
-            <CardTitle className="text-red-400 text-2xl drop-shadow-[0_0_10px_rgba(0,255,65,0.6)]">RISK FACTORS</CardTitle>
-          </CardHeader>
-          <CardContent className="text-red-300 leading-relaxed">
-            <p className="mb-4">
-              As with any DeFi investment, OCAI carries inherent risks:
-            </p>
-            <ul className="space-y-2 ml-6 mb-4">
-              <li>• <span className="text-red-400">Market Volatility:</span> Token prices may fluctuate significantly</li>
-              <li>• <span className="text-red-400">Smart Contract Risk:</span> Code vulnerabilities may exist</li>
-              <li>• <span className="text-red-400">OCBotz Performance:</span> Actual yields may differ from targets</li>
-              <li>• <span className="text-red-400">Regulatory Risk:</span> Future regulations may impact operations</li>
-              <li>• <span className="text-red-400">Liquidity Risk:</span> Market conditions may affect token liquidity</li>
+          <CardContent className="text-green-300 space-y-4">
+            <h3 className="text-xl font-semibold text-green-400 drop-shadow-[0_0_10px_rgba(0,255,65,0.6)]">10.1 Identified Risks</h3>
+            <ul className="list-disc list-inside space-y-2 ml-4">
+              <li><strong>Smart Contract Risk:</strong> Potential bugs or vulnerabilities in code</li>
+              <li><strong>Market Risk:</strong> Volatility in underlying token prices</li>
+              <li><strong>Regulatory Risk:</strong> Potential changes in regulatory environment</li>
+              <li><strong>Technical Risk:</strong> 🤖 OCBotz operational failures</li>
             </ul>
-            <p className="text-sm">
-              Investors should conduct their own research and invest only what they can afford to lose.
+
+            <h3 className="text-xl font-semibold text-green-400 mt-6 drop-shadow-[0_0_10px_rgba(0,255,65,0.6)]">10.2 Mitigation Strategies</h3>
+            <ul className="list-disc list-inside space-y-2 ml-4">
+              <li><strong>Diversified Strategies:</strong> Multiple 🤖 OCBotz with different approaches</li>
+              <li><strong>Conservative Targets:</strong> Realistic yield expectations</li>
+              <li><strong>Emergency Protocols:</strong> Ability to pause operations if needed</li>
+              <li><strong>Insurance Coverage:</strong> Protocol insurance for major risks</li>
+            </ul>
+          </CardContent>
+        </Card>
+
+        {/* 11. Roadmap */}
+        <Card className="bg-gradient-to-br from-black to-green-900/20 border-green-400/50 shadow-[0_0_30px_rgba(0,255,65,0.2)]">
+          <CardHeader>
+            <CardTitle className="text-green-400 text-2xl drop-shadow-[0_0_15px_rgba(0,255,65,0.8)]">11. ROADMAP AND FUTURE DEVELOPMENT</CardTitle>
+          </CardHeader>
+          <CardContent className="text-green-300 space-y-4">
+            <h3 className="text-xl font-semibold text-green-400 drop-shadow-[0_0_10px_rgba(0,255,65,0.6)]">Q3 2025 - Foundation</h3>
+            <ul className="list-disc list-inside space-y-2 ml-4">
+              <li>Early Bird 😇 Angels ICO launch</li>
+              <li>Core smart contract deployment</li>
+              <li>Initial 🤖 OCBotz development</li>
+              <li>Community building and marketing</li>
+            </ul>
+
+            <h3 className="text-xl font-semibold text-green-400 mt-6 drop-shadow-[0_0_10px_rgba(0,255,65,0.6)]">Q4 2025 - Launch</h3>
+            <ul className="list-disc list-inside space-y-2 ml-4">
+              <li>ICO completion and token distribution</li>
+              <li>PulseX DEX listing</li>
+              <li>Staking platform launch</li>
+              <li>First 🤖 OCBotz deployment</li>
+            </ul>
+
+            <h3 className="text-xl font-semibold text-green-400 mt-6 drop-shadow-[0_0_10px_rgba(0,255,65,0.6)]">Q1 2026 - Expansion</h3>
+            <ul className="list-disc list-inside space-y-2 ml-4">
+              <li>Additional 🤖 OCBotz deployment</li>
+              <li>Cross-chain bridge development</li>
+              <li>CEX listing preparations</li>
+              <li>Advanced features rollout</li>
+            </ul>
+
+            <h3 className="text-xl font-semibold text-green-400 mt-6 drop-shadow-[0_0_10px_rgba(0,255,65,0.6)]">Q2 2026 - Maturation</h3>
+            <ul className="list-disc list-inside space-y-2 ml-4">
+              <li>Full ecosystem maturity</li>
+              <li>OverClockerBot activation</li>
+              <li>Global exchange listings</li>
+              <li>Ecosystem partnerships</li>
+            </ul>
+          </CardContent>
+        </Card>
+
+        {/* 12. Conclusion */}
+        <Card className="bg-gradient-to-br from-black to-green-900/20 border-green-400/50 shadow-[0_0_30px_rgba(0,255,65,0.2)]">
+          <CardHeader>
+            <CardTitle className="text-green-400 text-2xl drop-shadow-[0_0_15px_rgba(0,255,65,0.8)]">12. CONCLUSION</CardTitle>
+          </CardHeader>
+          <CardContent className="text-green-300 space-y-4">
+            <p>
+              OverClocked <img src="/lovable-uploads/9c595eda-81ce-4709-a06b-75f909a4540c.png" alt="AI" className="inline h-4 w-4 mx-1" /> represents a paradigm shift in decentralized finance, 
+              prioritizing committed stakers over speculative traders through innovative game theory 
+              and autonomous technology. By combining NFT Proof-of-Stake mechanics with 
+              sophisticated 🤖 OCBotz operations, the protocol creates a sustainable ecosystem 
+              that rewards patience and punishes short-term thinking.
+            </p>
+            <p>
+              The integration with Treasury Bill and Reserve Teh tokens, coupled with the potential 
+              for these assets to reach their $1 peg, creates unprecedented wealth generation 
+              opportunities for early adopters. With minimal developer extraction (2%) and maximum 
+              protocol reinvestment (98%), <img src="/lovable-uploads/9c595eda-81ce-4709-a06b-75f909a4540c.png" alt="OCAI" className="inline h-4 w-4 mx-1" />OCAI aligns incentives between 
+              all participants toward long-term success.
+            </p>
+            <p>
+              As the crypto space matures, protocols that prioritize utility over speculation 
+              will capture the most value. <img src="/lovable-uploads/9c595eda-81ce-4709-a06b-75f909a4540c.png" alt="OCAI" className="inline h-4 w-4 mx-1" />OCAI is positioned to lead this evolution, 
+              creating generational wealth for the Staker Class while establishing new standards 
+              for sustainable DeFi innovation.
             </p>
           </CardContent>
         </Card>
 
-        {/* Conclusion */}
-        <Card className="bg-black border-green-400/50 shadow-[0_0_30px_rgba(0,255,65,0.2)]">
+        {/* Legal Disclaimer */}
+        <Card className="bg-red-900/20 border-red-400/50">
           <CardHeader>
-            <CardTitle className="text-green-400 text-2xl drop-shadow-[0_0_10px_rgba(0,255,65,0.6)]">CONCLUSION</CardTitle>
+            <CardTitle className="text-red-400 text-xl drop-shadow-[0_0_10px_rgba(255,0,0,0.8)]">LEGAL DISCLAIMER</CardTitle>
           </CardHeader>
-          <CardContent className="text-green-300 leading-relaxed">
-            <p className="mb-4">
-              OverClocked AI represents a paradigm shift in DeFi, creating sustainable value 
-              through advanced game theory and innovative reward mechanisms. By privileging 
-              committed stakers over speculators, OCAI builds a foundation for long-term growth 
-              and community prosperity.
+          <CardContent className="text-red-300 text-sm space-y-2">
+            <p>
+              This whitepaper is for informational purposes only and does not constitute an offer 
+              to sell or a solicitation to buy any securities. <img src="/lovable-uploads/9c595eda-81ce-4709-a06b-75f909a4540c.png" alt="OCAI" className="inline h-3 w-3 mx-1" />OCAI tokens are utility 
+              tokens and not investment securities.
             </p>
-            <p className="mb-4">
-              The revolutionary one-stake-per-address constraint creates unprecedented strategic 
-              depth, incentivizing accumulation and long-term thinking while punishing speculation 
-              and short-term behavior.
+            <p>
+              All yield targets are aspirational and not guaranteed. Cryptocurrency investments 
+              carry significant risks including total loss of capital. Participants should conduct 
+              their own research and consult financial advisors before participating.
             </p>
-            <p className="mb-4">
-              The integration with TBILL and FED tokens, combined with autonomous 🤖 OCBotz operations, 
-              positions OCAI at the forefront of next-generation finance on PulseChain. Early 
-              participants have the opportunity to earn millions, potentially billions, in rewards 
-              as the ecosystem matures.
-            </p>
-            <p className="text-green-400 font-semibold text-lg text-center mt-8">
-              The future of finance is here. Join the Staker Class today.
+            <p>
+              The 🤖 OCBotz system performance is dependent on market conditions and technical 
+              factors beyond the team's control. Past performance does not guarantee future results.
             </p>
           </CardContent>
         </Card>
 
         {/* Footer */}
-        <div className="text-center py-12 text-green-300/70">
-          <p className="mb-4">© 2025 OverClocked AI • Built on PulseChain</p>
-          <p className="text-sm">
-            This whitepaper is for informational purposes only and does not constitute investment advice.
+        <div className="text-center py-8">
+          <p className="text-green-300/70 mb-4">
+            For more information, visit our website or join our Telegram community.
           </p>
+          <div className="flex justify-center gap-4">
+            <Button 
+              onClick={() => navigate('/')}
+              className="bg-green-400 text-black hover:bg-green-300 px-6 py-2"
+            >
+              VISIT WEBSITE
+            </Button>
+            <Button 
+              variant="outline"
+              onClick={() => window.open('https://t.me/OverclockedAI', '_blank')}
+              className="border-green-400 text-green-400 hover:bg-green-400 hover:text-black px-6 py-2"
+            >
+              JOIN TELEGRAM
+            </Button>
+          </div>
         </div>
       </div>
     </div>
