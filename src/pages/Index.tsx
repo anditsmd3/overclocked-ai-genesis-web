@@ -447,7 +447,7 @@ const Index = () => {
                   <li>• <span className="text-green-400">1:1 Burn Ratio:</span> TBILL → FED via Reserve Teh</li>
                   <li>• <span className="text-green-400">Dual Distribution:</span> Earn both tokens simultaneously</li>
                   <li>• <span className="text-green-400">$1 Target:</span> Both tokens aim for $1 peg</li>
-                  <li>• <span className="text-green-400">Overclocked Speed:</span> Fastest earning rate on <img src="/lovable-uploads/099d1eef-35f1-4a55-a1c8-c3e45f0e33f1.png" alt="PulseChain" className="inline h-4 w-auto mx-1" />PulseChain</li>
+                  <li>• <span className="text-green-400">Overclocked Speed:</span> Fastest earning rate on <img src="/lovable-uploads/099d1eef-35f1-4a55-a1c8-c3e45f0e33f1.png" alt=\"PulseChain" className="inline h-4 w-auto mx-1" />PulseChain</li>
                 </ul>
               </CardContent>
             </Card>
