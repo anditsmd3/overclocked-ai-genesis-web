@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -102,7 +103,7 @@ const Index = () => {
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <div className="flex items-center gap-3">
             <img 
-              src="/lovable-uploads/9c595eda-81ce-4709-a06b-75f909a4540c.png" 
+              src="/lovable-uploads/f6b84d17-4d55-4008-a136-00b76ba8fb95.png" 
               alt="OCAI Logo" 
               className="h-10 w-10 drop-shadow-[0_0_15px_rgba(0,255,65,0.7)]"
             />
@@ -126,7 +127,7 @@ const Index = () => {
           <div className="relative">
             <div className="flex items-center justify-center gap-4 mb-6">
               <img 
-                src="/lovable-uploads/9c595eda-81ce-4709-a06b-75f909a4540c.png" 
+                src="/lovable-uploads/f6b84d17-4d55-4008-a136-00b76ba8fb95.png" 
                 alt="OCAI" 
                 className="h-16 w-16 drop-shadow-[0_0_30px_rgba(0,255,65,0.8)]"
               />
@@ -137,7 +138,7 @@ const Index = () => {
             <div className="flex items-center justify-center gap-4">
               <span className="text-6xl md:text-8xl font-bold text-green-300 animate-pulse drop-shadow-[0_0_25px_rgba(0,255,65,0.6)]">AI</span>
               <img 
-                src="/lovable-uploads/9c595eda-81ce-4709-a06b-75f909a4540c.png" 
+                src="/lovable-uploads/f6b84d17-4d55-4008-a136-00b76ba8fb95.png" 
                 alt="OCAI" 
                 className="h-16 w-16 drop-shadow-[0_0_30px_rgba(0,255,65,0.8)]"
               />
@@ -154,7 +155,7 @@ const Index = () => {
             </span>.
           </p>
           <p className="text-lg md:text-xl mb-8 text-green-300 max-w-4xl mx-auto leading-relaxed">
-            Stake <img src="/lovable-uploads/9c595eda-81ce-4709-a06b-75f909a4540c.png" alt="OCAI" className="inline h-5 w-5 mx-1" />OCAI, Earn 3.69% Yield + 555% Target in TBILL & FED Rewards.
+            Stake <img src="/lovable-uploads/f6b84d17-4d55-4008-a136-00b76ba8fb95.png" alt="OCAI" className="inline h-5 w-5 mx-1" />OCAI, Earn 3.69% Yield + 555% Target in TBILL & FED Rewards.
             <br />
             <span className="text-green-400 font-semibold drop-shadow-[0_0_10px_rgba(0,255,65,0.5)]">Bringing the Staker Class Back Through Advanced Game Theory.</span>
           </p>
@@ -315,7 +316,7 @@ const Index = () => {
               <CardContent className="space-y-4">
                 <div className="p-4 border border-green-400/30 rounded bg-gradient-to-r from-green-400/5 to-green-400/10">
                   <div className="flex justify-between items-center">
-                    <span className="text-green-300">Current <img src="/lovable-uploads/9c595eda-81ce-4709-a06b-75f909a4540c.png" alt="OCAI" className="inline h-4 w-4 mx-1" />OCAI Stake:</span>
+                    <span className="text-green-300">Current <img src="/lovable-uploads/f6b84d17-4d55-4008-a136-00b76ba8fb95.png" alt="OCAI" className="inline h-4 w-4 mx-1" />OCAI Stake:</span>
                     <div className="text-right">
                       <span className="text-green-400 font-bold text-xl drop-shadow-[0_0_15px_rgba(0,255,65,0.7)]">{mockData.currentStake.toLocaleString()}</span>
                       <div className="text-xs text-green-300/70">🔒 Locked for 55 days</div>
@@ -329,7 +330,7 @@ const Index = () => {
                   </div>
                   <div className="space-y-2 text-sm">
                     <div className="flex justify-between">
-                      <span className="text-green-300/80"><img src="/lovable-uploads/9c595eda-81ce-4709-a06b-75f909a4540c.png" alt="OCAI" className="inline h-3 w-3 mr-1" />OCAI:</span>
+                      <span className="text-green-300/80"><img src="/lovable-uploads/f6b84d17-4d55-4008-a136-00b76ba8fb95.png" alt="OCAI" className="inline h-3 w-3 mr-1" />OCAI:</span>
                       <span className="text-green-400 font-bold">{mockData.ocaiRewards.toLocaleString()} ($0.00)</span>
                     </div>
                     <div className="flex justify-between">
@@ -345,7 +346,7 @@ const Index = () => {
                 
                 <div className="p-4 border border-green-400/30 rounded bg-gradient-to-r from-green-400/5 to-green-400/10">
                   <div className="flex justify-between items-center">
-                    <span className="text-green-300"><img src="/lovable-uploads/9c595eda-81ce-4709-a06b-75f909a4540c.png" alt="OCAI" className="inline h-4 w-4 mx-1" />OCAI Holdings:</span>
+                    <span className="text-green-300"><img src="/lovable-uploads/f6b84d17-4d55-4008-a136-00b76ba8fb95.png" alt="OCAI" className="inline h-4 w-4 mx-1" />OCAI Holdings:</span>
                     <div className="text-right">
                       <span className="text-green-400 font-bold text-xl drop-shadow-[0_0_15px_rgba(0,255,65,0.7)]">{mockData.holdings.toLocaleString()}</span>
                       <div className="text-xs text-green-300/70">💎 Available to stake</div>
@@ -380,7 +381,7 @@ const Index = () => {
               <CardContent className="space-y-6">
                 <div>
                   <label className="block text-green-300 mb-2">
-                    Enter <img src="/lovable-uploads/9c595eda-81ce-4709-a06b-75f909a4540c.png" alt="OCAI" className="inline h-4 w-4 mx-1" />OCAI Amount to Stake:
+                    Enter <img src="/lovable-uploads/f6b84d17-4d55-4008-a136-00b76ba8fb95.png" alt="OCAI" className="inline h-4 w-4 mx-1" />OCAI Amount to Stake:
                   </label>
                   <input
                     type="number"
@@ -423,8 +424,8 @@ const Index = () => {
                     💡 <strong>Strategy Tips:</strong>
                   </p>
                   <ul className="text-yellow-300 text-xs space-y-1">
-                    <li>• Wait to accumulate more <img src="/lovable-uploads/9c595eda-81ce-4709-a06b-75f909a4540c.png" alt="OCAI" className="inline h-3 w-3 mx-1" />OCAI before staking for bigger rewards share!</li>
-                    <li>• More <img src="/lovable-uploads/9c595eda-81ce-4709-a06b-75f909a4540c.png" alt="OCAI" className="inline h-3 w-3 mx-1" />OCAI staked = Higher price (less liquid supply)</li>
+                    <li>• Wait to accumulate more <img src="/lovable-uploads/f6b84d17-4d55-4008-a136-00b76ba8fb95.png" alt="OCAI" className="inline h-3 w-3 mx-1" />OCAI before staking for bigger rewards share!</li>
+                    <li>• More <img src="/lovable-uploads/f6b84d17-4d55-4008-a136-00b76ba8fb95.png" alt="OCAI" className="inline h-3 w-3 mx-1" />OCAI staked = Higher price (less liquid supply)</li>
                     <li>• When TBILL & FED reach $1, LP fees will be massive!</li>
                   </ul>
                 </div>
@@ -449,7 +450,7 @@ const Index = () => {
               <CardContent className="text-green-300">
                 <p className="mb-4">
                   Treasury Bill (TBILL) can be burned 1:1 to the Reserve Teh contract to mint Reserve Teh (FED). 
-                  The <img src="/lovable-uploads/9c595eda-81ce-4709-a06b-75f909a4540c.png" alt="OCAI" className="inline h-4 w-4 mx-1" />OCAI ecosystem will distribute massive amounts of both TBILL and FED.
+                  The <img src="/lovable-uploads/f6b84d17-4d55-4008-a136-00b76ba8fb95.png" alt="OCAI" className="inline h-4 w-4 mx-1" />OCAI ecosystem will distribute massive amounts of both TBILL and FED.
                 </p>
                 <ul className="space-y-2 text-sm">
                   <li>• <span className="text-green-400">1:1 Burn Ratio:</span> TBILL → FED via Reserve Teh</li>
@@ -466,7 +467,7 @@ const Index = () => {
               </CardHeader>
               <CardContent className="text-green-300">
                 <p className="mb-4">
-                  Instead of manually minting FED, let <img src="/lovable-uploads/9c595eda-81ce-4709-a06b-75f909a4540c.png" alt="OCAI" className="inline h-4 w-4 mx-1" />OCAI do the heavy lifting! 
+                  Instead of manually minting FED, let <img src="/lovable-uploads/f6b84d17-4d55-4008-a136-00b76ba8fb95.png" alt="OCAI" className="inline h-4 w-4 mx-1" />OCAI do the heavy lifting! 
                   Our system targets to be the most efficient TBILL & FED printer in existence.
                 </p>
                 <ul className="space-y-2 text-sm">
@@ -640,7 +641,7 @@ const Index = () => {
               </CardHeader>
               <CardContent className="text-center text-green-300">
                 <div className="text-6xl mb-4">🔒</div>
-                <p className="mb-4">Lock your <img src="/lovable-uploads/9c595eda-81ce-4709-a06b-75f909a4540c.png" alt="OCAI" className="inline h-4 w-4 mx-1" />OCAI for exactly 55 days</p>
+                <p className="mb-4">Lock your <img src="/lovable-uploads/f6b84d17-4d55-4008-a136-00b76ba8fb95.png" alt="OCAI" className="inline h-4 w-4 mx-1" />OCAI for exactly 55 days</p>
                 <p className="text-sm text-green-300/70">NFT minted as Proof-Of-Stake (POS)</p>
               </CardContent>
             </Card>
@@ -652,7 +653,7 @@ const Index = () => {
               <CardContent className="text-center text-green-300">
                 <div className="text-6xl mb-4">💰</div>
                 <p className="mb-4">🤖 OCBotz target 555% yield in TBILL & FED over 55 days</p>
-                <p className="text-sm text-green-300/70">Plus guaranteed 3.69% <img src="/lovable-uploads/9c595eda-81ce-4709-a06b-75f909a4540c.png" alt="OCAI" className="inline h-3 w-3 mx-1" />OCAI Yield</p>
+                <p className="text-sm text-green-300/70">Plus guaranteed 3.69% <img src="/lovable-uploads/f6b84d17-4d55-4008-a136-00b76ba8fb95.png" alt="OCAI" className="inline h-3 w-3 mx-1" />OCAI Yield</p>
               </CardContent>
             </Card>
             
@@ -663,7 +664,7 @@ const Index = () => {
               <CardContent className="text-center text-green-300">
                 <div className="text-6xl mb-4">🎁</div>
                 <p className="mb-4">Burn NFT to claim all rewards</p>
-                <p className="text-sm text-green-300/70"><img src="/lovable-uploads/9c595eda-81ce-4709-a06b-75f909a4540c.png" alt="OCAI" className="inline h-3 w-3 mx-1" />OCAI + Yield + TBILL + FED</p>
+                <p className="text-sm text-green-300/70"><img src="/lovable-uploads/f6b84d17-4d55-4008-a136-00b76ba8fb95.png" alt="OCAI" className="inline h-3 w-3 mx-1" />OCAI + Yield + TBILL + FED</p>
               </CardContent>
             </Card>
           </div>
@@ -691,7 +692,7 @@ const Index = () => {
             <CardHeader>
               <CardTitle className="text-green-400 text-center text-2xl flex items-center justify-center gap-2 drop-shadow-[0_0_20px_rgba(0,255,65,0.8)]">
                 <img 
-                  src="/lovable-uploads/9c595eda-81ce-4709-a06b-75f909a4540c.png" 
+                  src="/lovable-uploads/f6b84d17-4d55-4008-a136-00b76ba8fb95.png" 
                   alt="OCBotz" 
                   className="h-8 w-8 drop-shadow-[0_0_15px_rgba(0,255,65,0.7)]"
                 />
@@ -725,13 +726,13 @@ const Index = () => {
               
               <div className="mt-8 p-6 bg-green-400/10 rounded border border-green-400/30 shadow-[0_0_30px_rgba(0,255,65,0.3)]">
                 <p className="text-center text-green-300 text-lg mb-4">
-                  "The 🤖 OCBotz work tirelessly to maximize value for every <img src="/lovable-uploads/9c595eda-81ce-4709-a06b-75f909a4540c.png" alt="OCAI" className="inline h-4 w-4 mx-1" />OCAI staker, 
+                  "The 🤖 OCBotz work tirelessly to maximize value for every <img src="/lovable-uploads/f6b84d17-4d55-4008-a136-00b76ba8fb95.png" alt="OCAI" className="inline h-4 w-4 mx-1" />OCAI staker, 
                   using cutting-edge Reverse Liquidity Engineering to optimize the entire ecosystem 
                   and target exceptional yields for the Staker Class."
                 </p>
                 <div className="p-4 bg-yellow-400/10 border border-yellow-400/30 rounded">
                   <p className="text-yellow-300 text-center font-semibold">
-                    🚀 <img src="/lovable-uploads/9c595eda-81ce-4709-a06b-75f909a4540c.png" alt="OCAI" className="inline h-4 w-4 mx-1" />OCAI is designed for staking! 
+                    🚀 <img src="/lovable-uploads/f6b84d17-4d55-4008-a136-00b76ba8fb95.png" alt="OCAI" className="inline h-4 w-4 mx-1" />OCAI is designed for staking! 
                     More tokens staked = Less liquid supply = Number go up! 📈
                   </p>
                 </div>
@@ -752,7 +753,7 @@ const Index = () => {
           </h2>
           <p className="text-xl text-green-300 mb-8">
             TBILL and FED are destined to peg to $1. Earn millions, potentially billions, 
-            by being an active member of the <img src="/lovable-uploads/9c595eda-81ce-4709-a06b-75f909a4540c.png" alt="OCAI" className="inline h-5 w-5 mx-1" />OCAI ecosystem on 
+            by being an active member of the <img src="/lovable-uploads/f6b84d17-4d55-4008-a136-00b76ba8fb95.png" alt="OCAI" className="inline h-5 w-5 mx-1" />OCAI ecosystem on 
             <img src="/lovable-uploads/2fe16d8c-7588-4038-abb3-40fea0395a00.png" alt="PulseChain" className="inline h-5 w-auto mx-1" />PulseChain.
           </p>
           
@@ -773,7 +774,7 @@ const Index = () => {
           </div>
           
           <div className="mt-12 text-green-300/70 text-sm">
-            <p>OVERCLOCKED <img src="/lovable-uploads/9c595eda-81ce-4709-a06b-75f909a4540c.png" alt="AI" className="inline h-4 w-4 mx-1" /> • THE FUTURE OF FINANCE • 
+            <p>OVERCLOCKED <img src="/lovable-uploads/f6b84d17-4d55-4008-a136-00b76ba8fb95.png" alt="AI" className="inline h-4 w-4 mx-1" /> • THE FUTURE OF FINANCE • 
             <img src="/lovable-uploads/2fe16d8c-7588-4038-abb3-40fea0395a00.png" alt="PULSECHAIN" className="inline h-4 w-auto mx-1" />PULSECHAIN</p>
           </div>
         </div>
