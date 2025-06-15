@@ -10,17 +10,17 @@ const Whitepaper = () => {
   return (
     <div className="min-h-screen bg-black text-green-400 font-mono">
       {/* Navigation */}
-      <nav className="p-6 border-b border-green-400/30">
+      <nav className="p-6 border-b border-green-400/30 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <Button 
             onClick={() => navigate('/')}
-            className="bg-transparent border-2 border-green-400 text-green-400 hover:bg-green-400 hover:text-black transition-all duration-300"
+            className="bg-transparent border-2 border-green-400 text-green-400 hover:bg-green-400 hover:text-black transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,255,65,0.5)]"
             variant="outline"
           >
             <ArrowLeft className="h-4 w-4 mr-2" />
             BACK TO MAIN
           </Button>
-          <h1 className="text-2xl font-bold text-green-400">
+          <h1 className="text-2xl font-bold text-green-400 drop-shadow-[0_0_15px_rgba(0,255,65,0.6)]">
             OVERCLOCKED<span className="text-green-300">AI</span> WHITEPAPER
           </h1>
           <div className="w-32"></div>
@@ -30,10 +30,10 @@ const Whitepaper = () => {
       <div className="max-w-4xl mx-auto p-6 space-y-8">
         {/* Title Section */}
         <div className="text-center py-12">
-          <h1 className="text-5xl font-bold mb-4 text-green-400">
+          <h1 className="text-5xl font-bold mb-4 text-green-400 drop-shadow-[0_0_20px_rgba(0,255,65,0.7)]">
             OVERCLOCKED AI
           </h1>
-          <h2 className="text-3xl mb-6 text-green-300">
+          <h2 className="text-3xl mb-6 text-green-300 drop-shadow-[0_0_15px_rgba(0,255,65,0.5)]">
             TECHNICAL WHITEPAPER
           </h2>
           <p className="text-xl text-green-300/80">
@@ -45,9 +45,9 @@ const Whitepaper = () => {
         </div>
 
         {/* Abstract */}
-        <Card className="bg-black border-green-400/50">
+        <Card className="bg-black border-green-400/50 shadow-[0_0_30px_rgba(0,255,65,0.2)]">
           <CardHeader>
-            <CardTitle className="text-green-400 text-2xl">ABSTRACT</CardTitle>
+            <CardTitle className="text-green-400 text-2xl drop-shadow-[0_0_10px_rgba(0,255,65,0.6)]">ABSTRACT</CardTitle>
           </CardHeader>
           <CardContent className="text-green-300 leading-relaxed">
             <p className="mb-4">
@@ -57,7 +57,7 @@ const Whitepaper = () => {
               rewards while speculators earn nothing.
             </p>
             <p className="mb-4">
-              Our autonomous OCBotz utilize proprietary Reverse Liquidity Engineering Technology to generate 
+              Our autonomous 🤖 OCBotz utilize proprietary Reverse Liquidity Engineering Technology to generate 
               a targeted 555% yield in TBILL and FED rewards over each 55-day staking period, alongside 
               guaranteed 3.69% OCAI yield.
             </p>
@@ -69,9 +69,9 @@ const Whitepaper = () => {
         </Card>
 
         {/* Problem Statement */}
-        <Card className="bg-black border-green-400/50">
+        <Card className="bg-black border-green-400/50 shadow-[0_0_30px_rgba(0,255,65,0.2)]">
           <CardHeader>
-            <CardTitle className="text-green-400 text-2xl flex items-center gap-2">
+            <CardTitle className="text-green-400 text-2xl flex items-center gap-2 drop-shadow-[0_0_10px_rgba(0,255,65,0.6)]">
               <Target className="h-6 w-6" />
               PROBLEM STATEMENT
             </CardTitle>
@@ -95,9 +95,9 @@ const Whitepaper = () => {
         </Card>
 
         {/* Solution Architecture */}
-        <Card className="bg-black border-green-400/50">
+        <Card className="bg-black border-green-400/50 shadow-[0_0_30px_rgba(0,255,65,0.2)]">
           <CardHeader>
-            <CardTitle className="text-green-400 text-2xl flex items-center gap-2">
+            <CardTitle className="text-green-400 text-2xl flex items-center gap-2 drop-shadow-[0_0_10px_rgba(0,255,65,0.6)]">
               <Cpu className="h-6 w-6" />
               SOLUTION ARCHITECTURE
             </CardTitle>
@@ -117,9 +117,9 @@ const Whitepaper = () => {
               creating verifiable commitment.
             </p>
 
-            <h3 className="text-xl font-semibold text-green-400 mb-3">Autonomous OCBotz Network</h3>
+            <h3 className="text-xl font-semibold text-green-400 mb-3">Autonomous 🤖 OCBotz Network</h3>
             <p className="mb-4">
-              Multiple autonomous OCBotz operate 24/7 using Reverse Liquidity Engineering Technology. 
+              Multiple autonomous 🤖 OCBotz operate 24/7 using Reverse Liquidity Engineering Technology. 
               Each bot holds a percentage of OCAI supply and executes sophisticated trading strategies 
               to maximize TBILL and FED accumulation for stakers.
             </p>
@@ -127,9 +127,9 @@ const Whitepaper = () => {
         </Card>
 
         {/* Advanced Game Theory - Enhanced Section */}
-        <Card className="bg-black border-green-400/50">
+        <Card className="bg-black border-green-400/50 shadow-[0_0_30px_rgba(0,255,65,0.2)]">
           <CardHeader>
-            <CardTitle className="text-green-400 text-2xl flex items-center gap-2">
+            <CardTitle className="text-green-400 text-2xl flex items-center gap-2 drop-shadow-[0_0_10px_rgba(0,255,65,0.6)]">
               <Users className="h-6 w-6" />
               ADVANCED GAME THEORY
             </CardTitle>
@@ -220,9 +220,9 @@ const Whitepaper = () => {
         </Card>
 
         {/* Tokenomics & Fund Allocation - Enhanced Section */}
-        <Card className="bg-black border-green-400/50">
+        <Card className="bg-black border-green-400/50 shadow-[0_0_30px_rgba(0,255,65,0.2)]">
           <CardHeader>
-            <CardTitle className="text-green-400 text-2xl flex items-center gap-2">
+            <CardTitle className="text-green-400 text-2xl flex items-center gap-2 drop-shadow-[0_0_10px_rgba(0,255,65,0.6)]">
               <DollarSign className="h-6 w-6" />
               TOKENOMICS & FUND ALLOCATION
             </CardTitle>
@@ -296,7 +296,7 @@ const Whitepaper = () => {
               <div className="p-4 border border-green-400/30 rounded bg-green-400/5">
                 <h4 className="text-green-400 font-semibold mb-3">PROTOCOL EXPANSION (98%)</h4>
                 <div className="space-y-1 text-sm">
-                  <div>• Advanced OCBotz Operations</div>
+                  <div>• Advanced 🤖 OCBotz Operations</div>
                   <div>• Cross-Chain Liquidity Pools</div>
                   <div>• CEX Listings & Market Making</div>
                   <div>• Enhanced Marketing Campaigns</div>
@@ -314,7 +314,7 @@ const Whitepaper = () => {
               <ul className="space-y-1 text-blue-300 text-sm">
                 <li>• Maximum liquidity across multiple chains</li>
                 <li>• Tier-1 CEX listings for institutional access</li>
-                <li>• Advanced OCBotz deployment for superior yields</li>
+                <li>• Advanced 🤖 OCBotz deployment for superior yields</li>
                 <li>• Global marketing reach to capture maximum adoption</li>
               </ul>
             </div>
@@ -324,7 +324,7 @@ const Whitepaper = () => {
             <div className="grid md:grid-cols-3 gap-4 mb-6">
               <div className="p-4 border border-green-400/30 rounded text-center">
                 <h4 className="text-green-400 font-semibold">0.5%</h4>
-                <p className="text-sm">OCBotz Operations</p>
+                <p className="text-sm">🤖 OCBotz Operations</p>
                 <p className="text-xs text-green-300/70">Buy & burn OCAI</p>
               </div>
               <div className="p-4 border border-green-400/30 rounded text-center">
@@ -343,15 +343,15 @@ const Whitepaper = () => {
             <p className="mb-4">
               Total supply is dynamically determined by Early Bird Angels round performance. 
               After ICO completion, supply increases by 400%. Of this increased amount: 
-              10% is used for liquidity, and 90% for OCBotz operations.
+              10% is used for liquidity, and 90% for 🤖 OCBotz operations.
             </p>
           </CardContent>
         </Card>
 
         {/* Staking Mechanics - Enhanced Section */}
-        <Card className="bg-black border-green-400/50">
+        <Card className="bg-black border-green-400/50 shadow-[0_0_30px_rgba(0,255,65,0.2)]">
           <CardHeader>
-            <CardTitle className="text-green-400 text-2xl flex items-center gap-2">
+            <CardTitle className="text-green-400 text-2xl flex items-center gap-2 drop-shadow-[0_0_10px_rgba(0,255,65,0.6)]">
               <Clock className="h-6 w-6" />
               STAKING MECHANICS
             </CardTitle>
@@ -426,9 +426,9 @@ const Whitepaper = () => {
         </Card>
 
         {/* OCBotz Technology */}
-        <Card className="bg-black border-green-400/50">
+        <Card className="bg-black border-green-400/50 shadow-[0_0_30px_rgba(0,255,65,0.2)]">
           <CardHeader>
-            <CardTitle className="text-green-400 text-2xl flex items-center gap-2">
+            <CardTitle className="text-green-400 text-2xl flex items-center gap-2 drop-shadow-[0_0_10px_rgba(0,255,65,0.6)]">
               <Cpu className="h-6 w-6" />
               OCBOTZ REVERSE LIQUIDITY ENGINEERING
             </CardTitle>
@@ -485,9 +485,9 @@ const Whitepaper = () => {
         </Card>
 
         {/* TBILL & FED Integration */}
-        <Card className="bg-black border-green-400/50">
+        <Card className="bg-black border-green-400/50 shadow-[0_0_30px_rgba(0,255,65,0.2)]">
           <CardHeader>
-            <CardTitle className="text-green-400 text-2xl flex items-center gap-2">
+            <CardTitle className="text-green-400 text-2xl flex items-center gap-2 drop-shadow-[0_0_10px_rgba(0,255,65,0.6)]">
               <BarChart3 className="h-6 w-6" />
               TBILL & FED ECOSYSTEM
             </CardTitle>
@@ -535,9 +535,9 @@ const Whitepaper = () => {
         </Card>
 
         {/* Technical Implementation */}
-        <Card className="bg-black border-green-400/50">
+        <Card className="bg-black border-green-400/50 shadow-[0_0_30px_rgba(0,255,65,0.2)]">
           <CardHeader>
-            <CardTitle className="text-green-400 text-2xl flex items-center gap-2">
+            <CardTitle className="text-green-400 text-2xl flex items-center gap-2 drop-shadow-[0_0_10px_rgba(0,255,65,0.6)]">
               <Shield className="h-6 w-6" />
               TECHNICAL IMPLEMENTATION
             </CardTitle>
@@ -579,26 +579,26 @@ const Whitepaper = () => {
         </Card>
 
         {/* Roadmap */}
-        <Card className="bg-black border-green-400/50">
+        <Card className="bg-black border-green-400/50 shadow-[0_0_30px_rgba(0,255,65,0.2)]">
           <CardHeader>
-            <CardTitle className="text-green-400 text-2xl">DEVELOPMENT ROADMAP</CardTitle>
+            <CardTitle className="text-green-400 text-2xl drop-shadow-[0_0_10px_rgba(0,255,65,0.6)]">DEVELOPMENT ROADMAP</CardTitle>
           </CardHeader>
           <CardContent className="text-green-300 leading-relaxed">
             <div className="space-y-6">
               <div className="p-4 border-l-4 border-green-400">
-                <h4 className="text-green-400 font-semibold">Q1 2024 - Foundation</h4>
+                <h4 className="text-green-400 font-semibold">Q3 2025 - Foundation</h4>
                 <ul className="mt-2 space-y-1 text-sm">
                   <li>• ICO launch and token distribution</li>
                   <li>• PulseX DEX listing</li>
-                  <li>• Initial OCBotz deployment</li>
+                  <li>• Initial 🤖 OCBotz deployment</li>
                   <li>• Community building</li>
                 </ul>
               </div>
               
               <div className="p-4 border-l-4 border-green-400">
-                <h4 className="text-green-400 font-semibold">Q2 2024 - Expansion</h4>
+                <h4 className="text-green-400 font-semibold">Q4 2025 - Expansion</h4>
                 <ul className="mt-2 space-y-1 text-sm">
-                  <li>• Advanced OCBotz strategies</li>
+                  <li>• Advanced 🤖 OCBotz strategies</li>
                   <li>• Partnership with TBILL and FED</li>
                   <li>• Staking platform optimization</li>
                   <li>• Mobile application</li>
@@ -606,7 +606,7 @@ const Whitepaper = () => {
               </div>
               
               <div className="p-4 border-l-4 border-green-400">
-                <h4 className="text-green-400 font-semibold">Q3 2024 - Innovation</h4>
+                <h4 className="text-green-400 font-semibold">Q1 2026 - Innovation</h4>
                 <ul className="mt-2 space-y-1 text-sm">
                   <li>• Cross-chain integration</li>
                   <li>• Advanced yield strategies</li>
@@ -616,7 +616,7 @@ const Whitepaper = () => {
               </div>
               
               <div className="p-4 border-l-4 border-green-400">
-                <h4 className="text-green-400 font-semibold">Q4 2024 - Maturation</h4>
+                <h4 className="text-green-400 font-semibold">Q2 2026 - Maturation</h4>
                 <ul className="mt-2 space-y-1 text-sm">
                   <li>• Full decentralization</li>
                   <li>• Advanced AI integration</li>
@@ -629,9 +629,9 @@ const Whitepaper = () => {
         </Card>
 
         {/* Risk Factors */}
-        <Card className="bg-black border-red-400/50">
+        <Card className="bg-black border-red-400/50 shadow-[0_0_30px_rgba(0,255,65,0.2)]">
           <CardHeader>
-            <CardTitle className="text-red-400 text-2xl">RISK FACTORS</CardTitle>
+            <CardTitle className="text-red-400 text-2xl drop-shadow-[0_0_10px_rgba(0,255,65,0.6)]">RISK FACTORS</CardTitle>
           </CardHeader>
           <CardContent className="text-red-300 leading-relaxed">
             <p className="mb-4">
@@ -651,9 +651,9 @@ const Whitepaper = () => {
         </Card>
 
         {/* Conclusion */}
-        <Card className="bg-black border-green-400/50">
+        <Card className="bg-black border-green-400/50 shadow-[0_0_30px_rgba(0,255,65,0.2)]">
           <CardHeader>
-            <CardTitle className="text-green-400 text-2xl">CONCLUSION</CardTitle>
+            <CardTitle className="text-green-400 text-2xl drop-shadow-[0_0_10px_rgba(0,255,65,0.6)]">CONCLUSION</CardTitle>
           </CardHeader>
           <CardContent className="text-green-300 leading-relaxed">
             <p className="mb-4">
@@ -668,7 +668,7 @@ const Whitepaper = () => {
               and short-term behavior.
             </p>
             <p className="mb-4">
-              The integration with TBILL and FED tokens, combined with autonomous OCBotz operations, 
+              The integration with TBILL and FED tokens, combined with autonomous 🤖 OCBotz operations, 
               positions OCAI at the forefront of next-generation finance on PulseChain. Early 
               participants have the opportunity to earn millions, potentially billions, in rewards 
               as the ecosystem matures.
@@ -681,7 +681,7 @@ const Whitepaper = () => {
 
         {/* Footer */}
         <div className="text-center py-12 text-green-300/70">
-          <p className="mb-4">© 2024 OverClocked AI • Built on PulseChain</p>
+          <p className="mb-4">© 2025 OverClocked AI • Built on PulseChain</p>
           <p className="text-sm">
             This whitepaper is for informational purposes only and does not constitute investment advice.
           </p>

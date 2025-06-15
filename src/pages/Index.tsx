@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Calculator, Shield, Cpu, TrendingUp, Zap, Users, Award, DollarSign, Clock, Coins, Activity } from 'lucide-react';
+import { Calculator, Shield, Cpu, TrendingUp, Zap, Users, Award, DollarSign, Clock, Coins, Activity, Bot } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 const Index = () => {
@@ -12,7 +12,7 @@ const Index = () => {
 
   // Matrix rain effect text
   useEffect(() => {
-    const chars = '01';
+    const chars = '01🤖';
     let result = '';
     for (let i = 0; i < 20; i++) {
       result += chars.charAt(Math.floor(Math.random() * chars.length));
@@ -74,14 +74,14 @@ const Index = () => {
       </div>
 
       {/* Navigation */}
-      <nav className="relative z-10 p-6 border-b border-green-400/30">
+      <nav className="relative z-10 p-6 border-b border-green-400/30 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
-          <h1 className="text-2xl font-bold text-green-400">
+          <h1 className="text-2xl font-bold text-green-400 drop-shadow-[0_0_15px_rgba(0,255,65,0.7)]">
             OVERCLOCKED<span className="text-green-300">AI</span>
           </h1>
           <Button 
             onClick={() => navigate('/whitepaper')}
-            className="bg-transparent border-2 border-green-400 text-green-400 hover:bg-green-400 hover:text-black transition-all duration-300 glow-on-hover"
+            className="bg-transparent border-2 border-green-400 text-green-400 hover:bg-green-400 hover:text-black transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,255,65,0.8)]"
             variant="outline"
           >
             ACCESS WHITEPAPER
@@ -93,53 +93,53 @@ const Index = () => {
       <section className="relative z-10 py-20 px-6">
         <div className="max-w-6xl mx-auto text-center">
           <div className="relative">
-            <h1 className="text-6xl md:text-8xl font-bold mb-6">
+            <h1 className="text-6xl md:text-8xl font-bold mb-6 drop-shadow-[0_0_30px_rgba(0,255,65,0.8)]">
               OVERCLOCKED
-              <span className="block text-green-300 animate-pulse">AI</span>
+              <span className="block text-green-300 animate-pulse drop-shadow-[0_0_25px_rgba(0,255,65,0.6)]">AI</span>
             </h1>
-            <div className="absolute -top-2 -right-2 text-green-300 opacity-50 text-sm">
-              {matrixText}
+            <div className="absolute -top-2 -right-2 text-green-300 opacity-50 text-sm animate-pulse">
+              🤖{matrixText}
             </div>
           </div>
           
           <p className="text-xl md:text-2xl mb-4 text-green-300 max-w-4xl mx-auto leading-relaxed">
-            The Future of Finance is Here. Built on <span className="text-green-400 font-bold">PulseChain</span>.
+            The Future of Finance is Here. Built on <span className="text-green-400 font-bold drop-shadow-[0_0_10px_rgba(0,255,65,0.7)]">PulseChain</span>.
           </p>
           <p className="text-lg md:text-xl mb-8 text-green-300 max-w-4xl mx-auto leading-relaxed">
             Stake OCAI, Earn 3.69% Yield + 555% Target in TBILL & FED Rewards.
             <br />
-            <span className="text-green-400 font-semibold">Bringing the Staker Class Back Through Advanced Game Theory.</span>
+            <span className="text-green-400 font-semibold drop-shadow-[0_0_10px_rgba(0,255,65,0.5)]">Bringing the Staker Class Back Through Advanced Game Theory.</span>
           </p>
           
           <div className="grid md:grid-cols-4 gap-6 mt-12">
-            <Card className="bg-black border-green-400/50 hover:border-green-400 transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,255,65,0.3)]">
+            <Card className="bg-black border-green-400/50 hover:border-green-400 transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,255,65,0.4)]">
               <CardContent className="p-6 text-center">
-                <TrendingUp className="h-12 w-12 text-green-400 mx-auto mb-4" />
-                <h3 className="text-lg font-semibold text-green-400 mb-2">3.69% YIELD</h3>
+                <TrendingUp className="h-12 w-12 text-green-400 mx-auto mb-4 drop-shadow-[0_0_10px_rgba(0,255,65,0.6)]" />
+                <h3 className="text-lg font-semibold text-green-400 mb-2 drop-shadow-[0_0_8px_rgba(0,255,65,0.5)]">3.69% YIELD</h3>
                 <p className="text-green-300 text-sm">Fixed yield on every stake</p>
               </CardContent>
             </Card>
             
-            <Card className="bg-black border-green-400/50 hover:border-green-400 transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,255,65,0.3)]">
+            <Card className="bg-black border-green-400/50 hover:border-green-400 transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,255,65,0.4)]">
               <CardContent className="p-6 text-center">
-                <Award className="h-12 w-12 text-green-400 mx-auto mb-4" />
-                <h3 className="text-lg font-semibold text-green-400 mb-2">555% TARGET</h3>
+                <Award className="h-12 w-12 text-green-400 mx-auto mb-4 drop-shadow-[0_0_10px_rgba(0,255,65,0.6)]" />
+                <h3 className="text-lg font-semibold text-green-400 mb-2 drop-shadow-[0_0_8px_rgba(0,255,65,0.5)]">555% TARGET</h3>
                 <p className="text-green-300 text-sm">TBILL & FED rewards over 55 days</p>
               </CardContent>
             </Card>
             
-            <Card className="bg-black border-green-400/50 hover:border-green-400 transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,255,65,0.3)]">
+            <Card className="bg-black border-green-400/50 hover:border-green-400 transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,255,65,0.4)]">
               <CardContent className="p-6 text-center">
-                <Shield className="h-12 w-12 text-green-400 mx-auto mb-4" />
-                <h3 className="text-lg font-semibold text-green-400 mb-2">NFT PROOF-OF-STAKE</h3>
+                <Shield className="h-12 w-12 text-green-400 mx-auto mb-4 drop-shadow-[0_0_10px_rgba(0,255,65,0.6)]" />
+                <h3 className="text-lg font-semibold text-green-400 mb-2 drop-shadow-[0_0_8px_rgba(0,255,65,0.5)]">NFT PROOF-OF-STAKE</h3>
                 <p className="text-green-300 text-sm">Your stake secured by NFTs</p>
               </CardContent>
             </Card>
 
-            <Card className="bg-black border-green-400/50 hover:border-green-400 transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,255,65,0.3)]">
+            <Card className="bg-black border-green-400/50 hover:border-green-400 transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,255,65,0.4)]">
               <CardContent className="p-6 text-center">
-                <Clock className="h-12 w-12 text-green-400 mx-auto mb-4" />
-                <h3 className="text-lg font-semibold text-green-400 mb-2">55-DAY STAKES</h3>
+                <Clock className="h-12 w-12 text-green-400 mx-auto mb-4 drop-shadow-[0_0_10px_rgba(0,255,65,0.6)]" />
+                <h3 className="text-lg font-semibold text-green-400 mb-2 drop-shadow-[0_0_8px_rgba(0,255,65,0.5)]">55-DAY STAKES</h3>
                 <p className="text-green-300 text-sm">Perfect commitment period</p>
               </CardContent>
             </Card>
@@ -147,88 +147,149 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Live Statistics Widget */}
+      {/* Enhanced Live Statistics Widget with Creative Design */}
       <section className="relative z-10 py-8 px-6 bg-gradient-to-b from-black to-gray-900">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-8 text-green-400">
-            LIVE ECOSYSTEM STATS
+          <h2 className="text-3xl font-bold text-center mb-8 text-green-400 drop-shadow-[0_0_20px_rgba(0,255,65,0.7)]">
+            🤖 LIVE ECOSYSTEM STATS 🤖
           </h2>
           
-          <div className="grid md:grid-cols-4 gap-4">
-            <Card className="bg-black border-green-400/50 hover:shadow-[0_0_20px_rgba(0,255,65,0.2)]">
-              <CardContent className="p-4 text-center">
-                <Coins className="h-8 w-8 text-green-400 mx-auto mb-2" />
-                <h4 className="text-green-400 font-semibold">Current Supply</h4>
-                <p className="text-2xl font-bold text-green-300">{mockData.currentSupply.toLocaleString()}</p>
+          {/* Custom Grid Layout with Enhanced Visuals */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <Card className="bg-gradient-to-br from-black to-green-900/20 border-green-400/50 hover:shadow-[0_0_40px_rgba(0,255,65,0.3)] transition-all duration-300">
+              <CardContent className="p-6 text-center relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-green-400/5 to-transparent animate-pulse"></div>
+                <Coins className="h-10 w-10 text-green-400 mx-auto mb-3 drop-shadow-[0_0_10px_rgba(0,255,65,0.6)]" />
+                <h4 className="text-green-400 font-semibold mb-1 drop-shadow-[0_0_8px_rgba(0,255,65,0.5)]">Current Supply</h4>
+                <p className="text-3xl font-bold text-green-300 drop-shadow-[0_0_10px_rgba(0,255,65,0.4)]">{mockData.currentSupply.toLocaleString()}</p>
+                <div className="mt-2 w-full bg-green-400/20 rounded-full h-1">
+                  <div className="bg-green-400 h-1 rounded-full w-3/4 shadow-[0_0_10px_rgba(0,255,65,0.6)]"></div>
+                </div>
               </CardContent>
             </Card>
             
-            <Card className="bg-black border-green-400/50 hover:shadow-[0_0_20px_rgba(0,255,65,0.2)]">
-              <CardContent className="p-4 text-center">
-                <DollarSign className="h-8 w-8 text-green-400 mx-auto mb-2" />
-                <h4 className="text-green-400 font-semibold">Current Price</h4>
-                <p className="text-2xl font-bold text-green-300">${mockData.currentPrice}</p>
+            <Card className="bg-gradient-to-br from-black to-green-900/20 border-green-400/50 hover:shadow-[0_0_40px_rgba(0,255,65,0.3)] transition-all duration-300">
+              <CardContent className="p-6 text-center relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-green-400/5 to-transparent animate-pulse"></div>
+                <DollarSign className="h-10 w-10 text-green-400 mx-auto mb-3 drop-shadow-[0_0_10px_rgba(0,255,65,0.6)]" />
+                <h4 className="text-green-400 font-semibold mb-1 drop-shadow-[0_0_8px_rgba(0,255,65,0.5)]">Current Price</h4>
+                <p className="text-3xl font-bold text-green-300 drop-shadow-[0_0_10px_rgba(0,255,65,0.4)]">${mockData.currentPrice}</p>
+                <p className="text-xs text-green-300/70 mt-1">📈 +24.5% (24h)</p>
               </CardContent>
             </Card>
             
-            <Card className="bg-black border-green-400/50 hover:shadow-[0_0_20px_rgba(0,255,65,0.2)]">
-              <CardContent className="p-4 text-center">
-                <Cpu className="h-8 w-8 text-green-400 mx-auto mb-2" />
-                <h4 className="text-green-400 font-semibold">OCBotz Deployed</h4>
-                <p className="text-2xl font-bold text-green-300">{mockData.ocBotzDeployed}</p>
+            <Card className="bg-gradient-to-br from-black to-green-900/20 border-green-400/50 hover:shadow-[0_0_40px_rgba(0,255,65,0.3)] transition-all duration-300">
+              <CardContent className="p-6 text-center relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-green-400/5 to-transparent animate-pulse"></div>
+                <Bot className="h-10 w-10 text-green-400 mx-auto mb-3 drop-shadow-[0_0_10px_rgba(0,255,65,0.6)]" />
+                <h4 className="text-green-400 font-semibold mb-1 drop-shadow-[0_0_8px_rgba(0,255,65,0.5)]">🤖 OCBotz Deployed</h4>
+                <p className="text-3xl font-bold text-green-300 drop-shadow-[0_0_10px_rgba(0,255,65,0.4)]">{mockData.ocBotzDeployed}</p>
+                <div className="flex justify-center mt-2 space-x-1">
+                  {Array.from({ length: 5 }, (_, i) => (
+                    <div key={i} className="w-2 h-2 bg-green-400 rounded-full animate-pulse shadow-[0_0_5px_rgba(0,255,65,0.6)]" style={{ animationDelay: `${i * 0.2}s` }}></div>
+                  ))}
+                </div>
               </CardContent>
             </Card>
             
-            <Card className="bg-black border-green-400/50 hover:shadow-[0_0_20px_rgba(0,255,65,0.2)]">
-              <CardContent className="p-4 text-center">
-                <Activity className="h-8 w-8 text-green-400 mx-auto mb-2" />
-                <h4 className="text-green-400 font-semibold">Rewards Locked</h4>
-                <p className="text-2xl font-bold text-green-300">{mockData.rewardsLocked.toLocaleString()}</p>
+            <Card className="bg-gradient-to-br from-black to-green-900/20 border-green-400/50 hover:shadow-[0_0_40px_rgba(0,255,65,0.3)] transition-all duration-300">
+              <CardContent className="p-6 text-center relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-green-400/5 to-transparent animate-pulse"></div>
+                <Activity className="h-10 w-10 text-green-400 mx-auto mb-3 drop-shadow-[0_0_10px_rgba(0,255,65,0.6)]" />
+                <h4 className="text-green-400 font-semibold mb-1 drop-shadow-[0_0_8px_rgba(0,255,65,0.5)]">Rewards Locked</h4>
+                <p className="text-3xl font-bold text-green-300 drop-shadow-[0_0_10px_rgba(0,255,65,0.4)]">{mockData.rewardsLocked.toLocaleString()}</p>
+                <p className="text-xs text-green-300/70 mt-1">🔒 Stakers Only</p>
               </CardContent>
             </Card>
           </div>
+
+          {/* Enhanced Robot Activity Visualization */}
+          <Card className="mt-8 bg-gradient-to-br from-black to-green-900/10 border-green-400/50 shadow-[0_0_40px_rgba(0,255,65,0.2)]">
+            <CardHeader>
+              <CardTitle className="text-green-400 text-center drop-shadow-[0_0_15px_rgba(0,255,65,0.6)]">
+                🤖 REAL-TIME OCBOTZ ACTIVITY 🤖
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="grid md:grid-cols-3 gap-4 text-center">
+                <div className="p-4 border border-green-400/30 rounded bg-green-400/5">
+                  <div className="text-4xl mb-2">🤖</div>
+                  <h4 className="text-green-400 font-semibold">Bot #1 - Liquidity</h4>
+                  <div className="flex items-center justify-center mt-2">
+                    <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse mr-2"></div>
+                    <span className="text-green-300 text-sm">ACTIVE</span>
+                  </div>
+                </div>
+                <div className="p-4 border border-green-400/30 rounded bg-green-400/5">
+                  <div className="text-4xl mb-2">🤖</div>
+                  <h4 className="text-green-400 font-semibold">Bot #2 - Arbitrage</h4>
+                  <div className="flex items-center justify-center mt-2">
+                    <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse mr-2"></div>
+                    <span className="text-green-300 text-sm">ACTIVE</span>
+                  </div>
+                </div>
+                <div className="p-4 border border-green-400/30 rounded bg-green-400/5">
+                  <div className="text-4xl mb-2">🤖</div>
+                  <h4 className="text-green-400 font-semibold">Bot #3 - Rewards</h4>
+                  <div className="flex items-center justify-center mt-2">
+                    <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse mr-2"></div>
+                    <span className="text-green-300 text-sm">ACTIVE</span>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
         </div>
       </section>
 
-      {/* Staking Interface */}
+      {/* Enhanced Staking Interface */}
       <section className="relative z-10 py-16 px-6">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-12 text-green-400">
+          <h2 className="text-4xl font-bold text-center mb-12 text-green-400 drop-shadow-[0_0_25px_rgba(0,255,65,0.7)]">
             STAKING INTERFACE
           </h2>
           
           <div className="grid md:grid-cols-2 gap-8">
-            {/* User Holdings */}
-            <Card className="bg-black border-green-400/50 hover:shadow-[0_0_30px_rgba(0,255,65,0.2)]">
+            {/* Enhanced User Holdings */}
+            <Card className="bg-gradient-to-br from-black to-green-900/20 border-green-400/50 hover:shadow-[0_0_40px_rgba(0,255,65,0.3)] transition-all duration-300">
               <CardHeader>
-                <CardTitle className="text-green-400 text-center">YOUR HOLDINGS</CardTitle>
+                <CardTitle className="text-green-400 text-center drop-shadow-[0_0_15px_rgba(0,255,65,0.6)]">YOUR HOLDINGS</CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
-                <div className="p-4 border border-green-400/30 rounded">
-                  <div className="flex justify-between">
+                <div className="p-4 border border-green-400/30 rounded bg-gradient-to-r from-green-400/5 to-green-400/10">
+                  <div className="flex justify-between items-center">
                     <span className="text-green-300">Current OCAI Stake:</span>
-                    <span className="text-green-400 font-bold">{mockData.currentStake.toLocaleString()}</span>
+                    <div className="text-right">
+                      <span className="text-green-400 font-bold text-xl drop-shadow-[0_0_10px_rgba(0,255,65,0.5)]">{mockData.currentStake.toLocaleString()}</span>
+                      <div className="text-xs text-green-300/70">🔒 Locked for 55 days</div>
+                    </div>
                   </div>
                 </div>
-                <div className="p-4 border border-green-400/30 rounded">
-                  <div className="flex justify-between">
+                <div className="p-4 border border-green-400/30 rounded bg-gradient-to-r from-green-400/5 to-green-400/10">
+                  <div className="flex justify-between items-center">
                     <span className="text-green-300">Pending Rewards:</span>
-                    <span className="text-green-400 font-bold">{mockData.rewards.toLocaleString()}</span>
+                    <div className="text-right">
+                      <span className="text-green-400 font-bold text-xl drop-shadow-[0_0_10px_rgba(0,255,65,0.5)]">{mockData.rewards.toLocaleString()}</span>
+                      <div className="text-xs text-green-300/70">💰 TBILL + FED + OCAI</div>
+                    </div>
                   </div>
                 </div>
-                <div className="p-4 border border-green-400/30 rounded">
-                  <div className="flex justify-between">
+                <div className="p-4 border border-green-400/30 rounded bg-gradient-to-r from-green-400/5 to-green-400/10">
+                  <div className="flex justify-between items-center">
                     <span className="text-green-300">OCAI Holdings:</span>
-                    <span className="text-green-400 font-bold">{mockData.holdings.toLocaleString()}</span>
+                    <div className="text-right">
+                      <span className="text-green-400 font-bold text-xl drop-shadow-[0_0_10px_rgba(0,255,65,0.5)]">{mockData.holdings.toLocaleString()}</span>
+                      <div className="text-xs text-green-300/70">💎 Available to stake</div>
+                    </div>
                   </div>
                 </div>
               </CardContent>
             </Card>
 
-            {/* Staking Actions */}
-            <Card className="bg-black border-green-400/50 hover:shadow-[0_0_30px_rgba(0,255,65,0.2)]">
+            {/* Enhanced Staking Actions */}
+            <Card className="bg-gradient-to-br from-black to-green-900/20 border-green-400/50 hover:shadow-[0_0_40px_rgba(0,255,65,0.3)] transition-all duration-300">
               <CardHeader>
-                <CardTitle className="text-green-400 text-center">STAKING ACTIONS</CardTitle>
+                <CardTitle className="text-green-400 text-center drop-shadow-[0_0_15px_rgba(0,255,65,0.6)]">STAKING ACTIONS</CardTitle>
               </CardHeader>
               <CardContent className="space-y-6">
                 <div>
@@ -239,7 +300,7 @@ const Index = () => {
                     type="number"
                     value={stakeAmount}
                     onChange={(e) => setStakeAmount(e.target.value)}
-                    className="w-full p-3 bg-black border border-green-400/50 text-green-400 rounded focus:border-green-400 focus:outline-none"
+                    className="w-full p-3 bg-black border border-green-400/50 text-green-400 rounded focus:border-green-400 focus:outline-none focus:shadow-[0_0_15px_rgba(0,255,65,0.3)]"
                     placeholder="0"
                   />
                   <p className="text-xs text-green-300/70 mt-1">
@@ -248,20 +309,20 @@ const Index = () => {
                 </div>
                 
                 <Button 
-                  className="w-full bg-green-400 text-black hover:bg-green-300 py-3 text-lg font-semibold transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,255,65,0.5)]"
+                  className="w-full bg-green-400 text-black hover:bg-green-300 py-3 text-lg font-semibold transition-all duration-300 hover:shadow-[0_0_25px_rgba(0,255,65,0.7)]"
                   disabled={!stakeAmount || parseFloat(stakeAmount) <= 0}
                 >
-                  MINT NFT & STAKE
+                  🎭 MINT NFT & STAKE
                 </Button>
                 
                 <Button 
                   variant="outline"
-                  className="w-full border-red-400 text-red-400 hover:bg-red-400 hover:text-black py-3 text-lg font-semibold transition-all duration-300"
+                  className="w-full border-red-400 text-red-400 hover:bg-red-400 hover:text-black py-3 text-lg font-semibold transition-all duration-300 hover:shadow-[0_0_20px_rgba(255,0,0,0.5)]"
                 >
-                  BURN NFT & COLLECT YIELD
+                  🔥 BURN NFT & COLLECT YIELD
                 </Button>
                 
-                <div className="p-4 border border-yellow-400/50 rounded bg-yellow-400/5">
+                <div className="p-4 border border-yellow-400/50 rounded bg-yellow-400/5 shadow-[0_0_15px_rgba(255,255,0,0.1)]">
                   <p className="text-yellow-300 text-sm text-center">
                     💡 <strong>Strategy Tip:</strong> Wait to accumulate more OCAI before staking for bigger rewards share!
                   </p>
@@ -275,13 +336,13 @@ const Index = () => {
       {/* ICO Calculator Section */}
       <section className="relative z-10 py-16 px-6 bg-gradient-to-b from-black to-gray-900">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-12 text-green-400">
+          <h2 className="text-4xl font-bold text-center mb-12 text-green-400 drop-shadow-[0_0_25px_rgba(0,255,65,0.7)]">
             ICO CALCULATOR
           </h2>
           
-          <Card className="bg-black border-green-400/50 p-8 hover:shadow-[0_0_30px_rgba(0,255,65,0.2)]">
+          <Card className="bg-gradient-to-br from-black to-green-900/10 border-green-400/50 p-8 hover:shadow-[0_0_40px_rgba(0,255,65,0.3)] transition-all duration-300">
             <CardHeader>
-              <CardTitle className="text-green-400 text-center text-2xl">
+              <CardTitle className="text-green-400 text-center text-2xl drop-shadow-[0_0_15px_rgba(0,255,65,0.6)]">
                 Dynamic Pricing Based on Early Bird Angels Round
               </CardTitle>
             </CardHeader>
@@ -294,7 +355,7 @@ const Index = () => {
                   type="number"
                   value={angelRoundValue}
                   onChange={(e) => setAngelRoundValue(Number(e.target.value))}
-                  className="w-full p-3 bg-black border border-green-400/50 text-green-400 rounded focus:border-green-400 focus:outline-none"
+                  className="w-full p-3 bg-black border border-green-400/50 text-green-400 rounded focus:border-green-400 focus:outline-none focus:shadow-[0_0_15px_rgba(0,255,65,0.3)]"
                   min="100000"
                   max="10000000"
                   step="100000"
@@ -302,9 +363,9 @@ const Index = () => {
               </div>
 
               {/* Wallet Address */}
-              <div className="mb-8 p-4 border border-green-400/50 rounded bg-green-400/5">
-                <h3 className="text-green-400 font-semibold mb-2 text-center">ICO WALLET ADDRESS</h3>
-                <p className="text-green-300 text-center font-mono text-sm break-all">
+              <div className="mb-8 p-4 border border-green-400/50 rounded bg-green-400/5 shadow-[0_0_20px_rgba(0,255,65,0.1)]">
+                <h3 className="text-green-400 font-semibold mb-2 text-center drop-shadow-[0_0_10px_rgba(0,255,65,0.6)]">ICO WALLET ADDRESS</h3>
+                <p className="text-green-300 text-center font-mono text-sm break-all drop-shadow-[0_0_8px_rgba(0,255,65,0.4)]">
                   0x4e60bfdda8dee4cb6bbfb93a35fa7439e63c067b
                 </p>
                 <p className="text-green-300/70 text-xs text-center mt-2">
@@ -313,9 +374,9 @@ const Index = () => {
               </div>
               
               <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-4">
-                <div className="text-center p-4 border border-green-400/30 rounded bg-green-400/5">
-                  <h4 className="text-green-400 font-semibold mb-2">Early Bird Angels</h4>
-                  <p className="text-2xl font-bold text-green-300">${tokenomics.earlyBirdPrice}</p>
+                <div className="text-center p-4 border border-green-400/30 rounded bg-gradient-to-br from-green-400/10 to-green-400/5 hover:shadow-[0_0_20px_rgba(0,255,65,0.2)] transition-all duration-300">
+                  <h4 className="text-green-400 font-semibold mb-2 drop-shadow-[0_0_8px_rgba(0,255,65,0.5)]">Early Bird Angels</h4>
+                  <p className="text-2xl font-bold text-green-300 drop-shadow-[0_0_10px_rgba(0,255,65,0.4)]">${tokenomics.earlyBirdPrice}</p>
                   <p className="text-sm text-green-300/70">5x discount • $10k max</p>
                   <p className="text-xs text-green-300/50">Any token accepted</p>
                   <p className="text-xs text-yellow-300 font-semibold">14 days</p>
@@ -468,22 +529,22 @@ const Index = () => {
       <section className="relative z-10 py-16 px-6">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl font-bold text-center mb-12 text-green-400">
-            AUTONOMOUS OCBOTZ
+            🤖 AUTONOMOUS OCBOTZ 🤖
           </h2>
           
-          <Card className="bg-black border-green-400/50 hover:shadow-[0_0_30px_rgba(0,255,65,0.3)]">
+          <Card className="bg-gradient-to-br from-black to-green-900/10 border-green-400/50 hover:shadow-[0_0_40px_rgba(0,255,65,0.4)] transition-all duration-300">
             <CardHeader>
-              <CardTitle className="text-green-400 text-center text-2xl flex items-center justify-center gap-2">
-                <Cpu className="h-8 w-8" />
+              <CardTitle className="text-green-400 text-center text-2xl flex items-center justify-center gap-2 drop-shadow-[0_0_15px_rgba(0,255,65,0.6)]">
+                <Bot className="h-8 w-8" />
                 Reverse Liquidity Engineering Technology
               </CardTitle>
             </CardHeader>
             <CardContent className="text-green-300">
               <div className="grid md:grid-cols-2 gap-8">
                 <div>
-                  <h3 className="text-xl font-semibold text-green-400 mb-4">24/7 Autonomous Operation</h3>
+                  <h3 className="text-xl font-semibold text-green-400 mb-4 drop-shadow-[0_0_10px_rgba(0,255,65,0.5)]">24/7 Autonomous Operation</h3>
                   <ul className="space-y-2 text-sm">
-                    <li>• Multiple OCBotz deployed across PulseChain</li>
+                    <li>• Multiple 🤖 OCBotz deployed across PulseChain</li>
                     <li>• Each bot holds percentage of OCAI supply</li>
                     <li>• Continuous buy/sell operations</li>
                     <li>• Advanced AI-driven trading algorithms</li>
@@ -492,7 +553,7 @@ const Index = () => {
                 </div>
                 
                 <div>
-                  <h3 className="text-xl font-semibold text-green-400 mb-4">Triple Purpose System</h3>
+                  <h3 className="text-xl font-semibold text-green-400 mb-4 drop-shadow-[0_0_10px_rgba(0,255,65,0.5)]">Triple Purpose System</h3>
                   <ul className="space-y-2 text-sm">
                     <li>• <span className="text-green-400">Price Growth:</span> Strategic market operations</li>
                     <li>• <span className="text-green-400">Reward Accumulation:</span> TBILL & FED acquisition</li>
@@ -501,9 +562,9 @@ const Index = () => {
                 </div>
               </div>
               
-              <div className="mt-8 p-6 bg-green-400/10 rounded border border-green-400/30">
+              <div className="mt-8 p-6 bg-green-400/10 rounded border border-green-400/30 shadow-[0_0_25px_rgba(0,255,65,0.2)]">
                 <p className="text-center text-green-300 text-lg">
-                  "The OCBotz work tirelessly to maximize value for every OCAI staker, 
+                  "The 🤖 OCBotz work tirelessly to maximize value for every OCAI staker, 
                   using cutting-edge Reverse Liquidity Engineering to optimize the entire ecosystem 
                   and target exceptional yields for the Staker Class."
                 </p>
