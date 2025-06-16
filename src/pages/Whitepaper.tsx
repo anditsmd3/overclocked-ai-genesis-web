@@ -3,14 +3,18 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useNavigate } from 'react-router-dom';
 import { Bot } from 'lucide-react';
+import MatrixBackground from '@/components/MatrixBackground';
 
 const Whitepaper = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen bg-black text-green-400 font-mono">
+    <div className="min-h-screen bg-black text-green-400 font-mono relative">
+      {/* Matrix Background */}
+      <MatrixBackground timeout={50} />
+
       {/* Navigation */}
-      <nav className="p-6 border-b border-green-400/30 backdrop-blur-sm">
+      <nav className="relative z-10 p-6 border-b border-green-400/30 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <div className="flex items-center gap-3">
             <Bot className="h-10 w-10 text-green-400 drop-shadow-[0_0_15px_rgba(0,255,65,0.7)]" />
@@ -29,7 +33,7 @@ const Whitepaper = () => {
       </nav>
 
       {/* Whitepaper Content */}
-      <div className="max-w-4xl mx-auto p-6 space-y-8">
+      <div className="relative z-10 max-w-4xl mx-auto p-6 space-y-8">
         {/* Header */}
         <div className="text-center py-12">
           <div className="flex items-center justify-center gap-4 mb-6">
@@ -41,14 +45,11 @@ const Whitepaper = () => {
           </div>
           <p className="text-2xl text-green-300 mb-4 drop-shadow-[0_0_20px_rgba(0,255,65,0.6)]">TECHNICAL WHITEPAPER</p>
           <p className="text-lg text-green-300/80">Version 1.0 • Q3 2025</p>
-          <p className="text-lg text-green-300/80">Built on 
-            <img src="/lovable-uploads/2fe16d8c-7588-4038-abb3-40fea0395a00.png" alt="PulseChain" className="inline h-5 w-auto mx-2" />
-            PulseChain
-          </p>
+          <p className="text-lg text-green-300/80">Built on PulseChain</p>
         </div>
 
         {/* Abstract */}
-        <Card className="bg-gradient-to-br from-black to-green-900/20 border-green-400/50 shadow-[0_0_30px_rgba(0,255,65,0.2)]">
+        <Card className="bg-black border-green-400/50 shadow-[0_0_30px_rgba(0,255,65,0.2)]">
           <CardHeader>
             <CardTitle className="text-green-400 text-2xl drop-shadow-[0_0_15px_rgba(0,255,65,0.8)]">ABSTRACT</CardTitle>
           </CardHeader>
@@ -63,14 +64,14 @@ const Whitepaper = () => {
               Built on PulseChain, <Bot className="inline h-4 w-4 mx-1 text-green-400" />OCAI introduces the concept of NFT Proof-of-Stake (POS), 
               where users can only stake once per address, creating powerful economic incentives 
               that favor long-term commitment over speculative trading. The protocol's autonomous 
-              🤖 OCBotz employ Reverse Liquidity Engineering to target 555% yield in Treasury Bill 
+              OCBotz employ Reverse Liquidity Engineering to target 555% minimum yield in Treasury Bill 
               (TBILL) and Reserve Teh (FED) tokens over 55-day commitment periods.
             </p>
           </CardContent>
         </Card>
 
         {/* Table of Contents */}
-        <Card className="bg-gradient-to-br from-black to-green-900/20 border-green-400/50 shadow-[0_0_30px_rgba(0,255,65,0.2)]">
+        <Card className="bg-black border-green-400/50 shadow-[0_0_30px_rgba(0,255,65,0.2)]">
           <CardHeader>
             <CardTitle className="text-green-400 text-2xl drop-shadow-[0_0_15px_rgba(0,255,65,0.8)]">TABLE OF CONTENTS</CardTitle>
           </CardHeader>
@@ -79,7 +80,7 @@ const Whitepaper = () => {
               <li>Introduction</li>
               <li>The Staker Class Revolution</li>
               <li>NFT Proof-of-Stake (POS) Mechanism</li>
-              <li>🤖 OCBotz Autonomous System</li>
+              <li>OCBotz Autonomous System</li>
               <li>Game Theory and Economic Design</li>
               <li>Treasury Bill & Reserve Teh Integration</li>
               <li>ICO Structure and Tokenomics</li>
@@ -93,7 +94,7 @@ const Whitepaper = () => {
         </Card>
 
         {/* 1. Introduction */}
-        <Card className="bg-gradient-to-br from-black to-green-900/20 border-green-400/50 shadow-[0_0_30px_rgba(0,255,65,0.2)]">
+        <Card className="bg-black border-green-400/50 shadow-[0_0_30px_rgba(0,255,65,0.2)]">
           <CardHeader>
             <CardTitle className="text-green-400 text-2xl drop-shadow-[0_0_15px_rgba(0,255,65,0.8)]">1. INTRODUCTION</CardTitle>
           </CardHeader>
@@ -114,7 +115,7 @@ const Whitepaper = () => {
         </Card>
 
         {/* 2. The Staker Class Revolution */}
-        <Card className="bg-gradient-to-br from-black to-green-900/20 border-green-400/50 shadow-[0_0_30px_rgba(0,255,65,0.2)]">
+        <Card className="bg-black border-green-400/50 shadow-[0_0_30px_rgba(0,255,65,0.2)]">
           <CardHeader>
             <CardTitle className="text-green-400 text-2xl drop-shadow-[0_0_15px_rgba(0,255,65,0.8)]">2. THE STAKER CLASS REVOLUTION</CardTitle>
           </CardHeader>
@@ -147,7 +148,7 @@ const Whitepaper = () => {
         </Card>
 
         {/* 3. NFT Proof-of-Stake */}
-        <Card className="bg-gradient-to-br from-black to-green-900/20 border-green-400/50 shadow-[0_0_30px_rgba(0,255,65,0.2)]">
+        <Card className="bg-black border-green-400/50 shadow-[0_0_30px_rgba(0,255,65,0.2)]">
           <CardHeader>
             <CardTitle className="text-green-400 text-2xl drop-shadow-[0_0_15px_rgba(0,255,65,0.8)]">3. NFT PROOF-OF-STAKE (POS) MECHANISM</CardTitle>
           </CardHeader>
@@ -171,8 +172,8 @@ const Whitepaper = () => {
             </p>
             <ul className="list-disc list-inside space-y-2 ml-4">
               <li><strong>Guaranteed <Bot className="inline h-3 w-3 mx-1 text-green-400" />OCAI Yield:</strong> 3.69% of staked amount</li>
-              <li><strong>TBILL Rewards:</strong> Variable based on 🤖 OCBotz performance</li>
-              <li><strong>FED Rewards:</strong> Variable based on 🤖 OCBotz performance</li>
+              <li><strong>TBILL Rewards:</strong> Variable based on OCBotz performance</li>
+              <li><strong>FED Rewards:</strong> Variable based on OCBotz performance</li>
               <li><strong>Target Combined Yield:</strong> 555% over 55 days</li>
             </ul>
 
@@ -188,14 +189,14 @@ const Whitepaper = () => {
         </Card>
 
         {/* 4. OCBotz System */}
-        <Card className="bg-gradient-to-br from-black to-green-900/20 border-green-400/50 shadow-[0_0_30px_rgba(0,255,65,0.2)]">
+        <Card className="bg-black border-green-400/50 shadow-[0_0_30px_rgba(0,255,65,0.2)]">
           <CardHeader>
-            <CardTitle className="text-green-400 text-2xl drop-shadow-[0_0_15px_rgba(0,255,65,0.8)]">4. 🤖 OCBOTZ AUTONOMOUS SYSTEM</CardTitle>
+            <CardTitle className="text-green-400 text-2xl drop-shadow-[0_0_15px_rgba(0,255,65,0.8)]">4. OCBOTZ AUTONOMOUS SYSTEM</CardTitle>
           </CardHeader>
           <CardContent className="text-green-300 space-y-4">
             <h3 className="text-xl font-semibold text-green-400 drop-shadow-[0_0_10px_rgba(0,255,65,0.6)]">4.1 Reverse Liquidity Engineering</h3>
             <p>
-              The 🤖 OCBotz system represents a groundbreaking approach to automated yield generation. 
+              The OCBotz system represents a groundbreaking approach to automated yield generation. 
               Rather than traditional liquidity provision, our bots employ Reverse Liquidity 
               Engineering - a sophisticated strategy that:
             </p>
@@ -208,7 +209,7 @@ const Whitepaper = () => {
 
             <h3 className="text-xl font-semibold text-green-400 mt-6 drop-shadow-[0_0_10px_rgba(0,255,65,0.6)]">4.2 Bot Deployment Strategy</h3>
             <p>
-              The protocol deploys multiple specialized 🤖 OCBotz, each with specific functions:
+              The protocol deploys multiple specialized OCBotz, each with specific functions:
             </p>
             <ul className="list-disc list-inside space-y-2 ml-4">
               <li><strong>Liquidity Manager Bot:</strong> Maintains optimal liquidity ratios</li>
@@ -222,7 +223,7 @@ const Whitepaper = () => {
 
             <h3 className="text-xl font-semibold text-green-400 mt-6 drop-shadow-[0_0_10px_rgba(0,255,65,0.6)]">4.3 Performance Targets</h3>
             <p>
-              The 🤖 OCBotz system targets aggressive performance metrics:
+              The OCBotz system targets aggressive performance metrics:
             </p>
             <ul className="list-disc list-inside space-y-2 ml-4">
               <li><strong>Primary Target:</strong> 555% yield in TBILL & FED over 55 days</li>
@@ -234,7 +235,7 @@ const Whitepaper = () => {
         </Card>
 
         {/* 5. Game Theory */}
-        <Card className="bg-gradient-to-br from-black to-green-900/20 border-green-400/50 shadow-[0_0_30px_rgba(0,255,65,0.2)]">
+        <Card className="bg-black border-green-400/50 shadow-[0_0_30px_rgba(0,255,65,0.2)]">
           <CardHeader>
             <CardTitle className="text-green-400 text-2xl drop-shadow-[0_0_15px_rgba(0,255,65,0.8)]">5. GAME THEORY AND ECONOMIC DESIGN</CardTitle>
           </CardHeader>
@@ -266,7 +267,7 @@ const Whitepaper = () => {
         </Card>
 
         {/* 6. Treasury Bill Integration */}
-        <Card className="bg-gradient-to-br from-black to-green-900/20 border-green-400/50 shadow-[0_0_30px_rgba(0,255,65,0.2)]">
+        <Card className="bg-black border-green-400/50 shadow-[0_0_30px_rgba(0,255,65,0.2)]">
           <CardHeader>
             <CardTitle className="text-green-400 text-2xl drop-shadow-[0_0_15px_rgba(0,255,65,0.8)]">6. TREASURY BILL & RESERVE TEH INTEGRATION</CardTitle>
           </CardHeader>
@@ -281,12 +282,12 @@ const Whitepaper = () => {
             <h3 className="text-xl font-semibold text-green-400 mt-6 drop-shadow-[0_0_10px_rgba(0,255,65,0.6)]">6.2 Treasury Bill Mechanics</h3>
             <p>
               Treasury Bill can be burned 1:1 to the Reserve Teh contract to mint Reserve Teh (FED). 
-              This creates a unique arbitrage opportunity that our 🤖 OCBotz can exploit:
+              This creates a unique arbitrage opportunity that our OCBotz can exploit:
             </p>
             <ul className="list-disc list-inside space-y-2 ml-4">
               <li><strong>Minting Ratio:</strong> 1 TBILL = 1 FED (via Reserve Teh contract)</li>
               <li><strong>Price Discovery:</strong> Market prices may differ from 1:1 ratio</li>
-              <li><strong>Arbitrage Potential:</strong> 🤖 OCBotz can capture price differences</li>
+              <li><strong>Arbitrage Potential:</strong> OCBotz can capture price differences</li>
               <li><strong>Dual Accumulation:</strong> Earn both tokens simultaneously</li>
             </ul>
 
@@ -312,7 +313,7 @@ const Whitepaper = () => {
         </Card>
 
         {/* 7. ICO Structure */}
-        <Card className="bg-gradient-to-br from-black to-green-900/20 border-green-400/50 shadow-[0_0_30px_rgba(0,255,65,0.2)]">
+        <Card className="bg-black border-green-400/50 shadow-[0_0_30px_rgba(0,255,65,0.2)]">
           <CardHeader>
             <CardTitle className="text-green-400 text-2xl drop-shadow-[0_0_15px_rgba(0,255,65,0.8)]">7. ICO STRUCTURE AND TOKENOMICS</CardTitle>
           </CardHeader>
@@ -380,7 +381,7 @@ const Whitepaper = () => {
         </Card>
 
         {/* 8. Fund Allocation */}
-        <Card className="bg-gradient-to-br from-black to-green-900/20 border-green-400/50 shadow-[0_0_30px_rgba(0,255,65,0.2)]">
+        <Card className="bg-black border-green-400/50 shadow-[0_0_30px_rgba(0,255,65,0.2)]">
           <CardHeader>
             <CardTitle className="text-green-400 text-2xl drop-shadow-[0_0_15px_rgba(0,255,65,0.8)]">8. STRATEGIC FUND ALLOCATION</CardTitle>
           </CardHeader>
@@ -406,7 +407,7 @@ const Whitepaper = () => {
                 <h4 className="text-green-400 font-semibold mb-2">Protocol Expansion (98%)</h4>
                 <ul className="text-sm space-y-1">
                   <li>• Liquidity pool seeding</li>
-                  <li>• 🤖 OCBotz development & deployment</li>
+                  <li>• OCBotz development & deployment</li>
                   <li>• Advanced strategic buyback systems</li>
                   <li>• Cross-chain bridge development</li>
                   <li>• CEX listing preparations</li>
@@ -430,7 +431,7 @@ const Whitepaper = () => {
         </Card>
 
         {/* 9. Technical Architecture */}
-        <Card className="bg-gradient-to-br from-black to-green-900/20 border-green-400/50 shadow-[0_0_30px_rgba(0,255,65,0.2)]">
+        <Card className="bg-black border-green-400/50 shadow-[0_0_30px_rgba(0,255,65,0.2)]">
           <CardHeader>
             <CardTitle className="text-green-400 text-2xl drop-shadow-[0_0_15px_rgba(0,255,65,0.8)]">9. TECHNICAL ARCHITECTURE</CardTitle>
           </CardHeader>
@@ -442,7 +443,7 @@ const Whitepaper = () => {
             <ul className="list-disc list-inside space-y-2 ml-4">
               <li><strong><Bot className="inline h-3 w-3 mr-1 text-green-400" />OCAI Token Contract:</strong> ERC-20 compatible with enhanced features</li>
               <li><strong>Staking Contract:</strong> Manages NFT minting and reward calculations</li>
-              <li><strong>🤖 OCBotz Controller:</strong> Coordinates autonomous bot operations</li>
+              <li><strong>OCBotz Controller:</strong> Coordinates autonomous bot operations</li>
               <li><strong>Reward Distribution:</strong> Handles TBILL and FED distribution</li>
               <li><strong>Emergency Controls:</strong> Multi-signature safety mechanisms</li>
             </ul>
@@ -461,7 +462,7 @@ const Whitepaper = () => {
         </Card>
 
         {/* 10. Risk Management */}
-        <Card className="bg-gradient-to-br from-black to-green-900/20 border-green-400/50 shadow-[0_0_30px_rgba(0,255,65,0.2)]">
+        <Card className="bg-black border-green-400/50 shadow-[0_0_30px_rgba(0,255,65,0.2)]">
           <CardHeader>
             <CardTitle className="text-green-400 text-2xl drop-shadow-[0_0_15px_rgba(0,255,65,0.8)]">10. RISK MANAGEMENT</CardTitle>
           </CardHeader>
@@ -471,12 +472,12 @@ const Whitepaper = () => {
               <li><strong>Smart Contract Risk:</strong> Potential bugs or vulnerabilities in code</li>
               <li><strong>Market Risk:</strong> Volatility in underlying token prices</li>
               <li><strong>Regulatory Risk:</strong> Potential changes in regulatory environment</li>
-              <li><strong>Technical Risk:</strong> 🤖 OCBotz operational failures</li>
+              <li><strong>Technical Risk:</strong> OCBotz operational failures</li>
             </ul>
 
             <h3 className="text-xl font-semibold text-green-400 mt-6 drop-shadow-[0_0_10px_rgba(0,255,65,0.6)]">10.2 Mitigation Strategies</h3>
             <ul className="list-disc list-inside space-y-2 ml-4">
-              <li><strong>Diversified Strategies:</strong> Multiple 🤖 OCBotz with different approaches</li>
+              <li><strong>Diversified Strategies:</strong> Multiple OCBotz with different approaches</li>
               <li><strong>Conservative Targets:</strong> Realistic yield expectations</li>
               <li><strong>Emergency Protocols:</strong> Ability to pause operations if needed</li>
               <li><strong>Insurance Coverage:</strong> Protocol insurance for major risks</li>
@@ -485,7 +486,7 @@ const Whitepaper = () => {
         </Card>
 
         {/* 11. Roadmap */}
-        <Card className="bg-gradient-to-br from-black to-green-900/20 border-green-400/50 shadow-[0_0_30px_rgba(0,255,65,0.2)]">
+        <Card className="bg-black border-green-400/50 shadow-[0_0_30px_rgba(0,255,65,0.2)]">
           <CardHeader>
             <CardTitle className="text-green-400 text-2xl drop-shadow-[0_0_15px_rgba(0,255,65,0.8)]">11. ROADMAP AND FUTURE DEVELOPMENT</CardTitle>
           </CardHeader>
@@ -494,7 +495,7 @@ const Whitepaper = () => {
             <ul className="list-disc list-inside space-y-2 ml-4">
               <li>Early Bird 😇 Angels ICO launch</li>
               <li>Core smart contract deployment</li>
-              <li>Initial 🤖 OCBotz development</li>
+              <li>Initial OCBotz development</li>
               <li>Community building and marketing</li>
             </ul>
 
@@ -503,12 +504,12 @@ const Whitepaper = () => {
               <li>ICO completion and token distribution</li>
               <li>PulseX DEX listing</li>
               <li>Staking platform launch</li>
-              <li>First 🤖 OCBotz deployment</li>
+              <li>First OCBotz deployment</li>
             </ul>
 
             <h3 className="text-xl font-semibold text-green-400 mt-6 drop-shadow-[0_0_10px_rgba(0,255,65,0.6)]">Q1 2026 - Expansion</h3>
             <ul className="list-disc list-inside space-y-2 ml-4">
-              <li>Additional 🤖 OCBotz deployment</li>
+              <li>Additional OCBotz deployment</li>
               <li>Cross-chain bridge development</li>
               <li>CEX listing preparations</li>
               <li>Advanced features rollout</li>
@@ -525,7 +526,7 @@ const Whitepaper = () => {
         </Card>
 
         {/* 12. Conclusion */}
-        <Card className="bg-gradient-to-br from-black to-green-900/20 border-green-400/50 shadow-[0_0_30px_rgba(0,255,65,0.2)]">
+        <Card className="bg-black border-green-400/50 shadow-[0_0_30px_rgba(0,255,65,0.2)]">
           <CardHeader>
             <CardTitle className="text-green-400 text-2xl drop-shadow-[0_0_15px_rgba(0,255,65,0.8)]">12. CONCLUSION</CardTitle>
           </CardHeader>
@@ -534,7 +535,7 @@ const Whitepaper = () => {
               OverClocked <Bot className="inline h-4 w-4 mx-1 text-green-400" /> represents a paradigm shift in decentralized finance, 
               prioritizing committed stakers over speculative traders through innovative game theory 
               and autonomous technology. By combining NFT Proof-of-Stake mechanics with 
-              sophisticated 🤖 OCBotz operations, the protocol creates a sustainable ecosystem 
+              sophisticated OCBotz operations, the protocol creates a sustainable ecosystem 
               that rewards patience and punishes short-term thinking.
             </p>
             <p>
@@ -570,7 +571,7 @@ const Whitepaper = () => {
               their own research and consult financial advisors before participating.
             </p>
             <p>
-              The 🤖 OCBotz system performance is dependent on market conditions and technical 
+              The OCBotz system performance is dependent on market conditions and technical 
               factors beyond the team's control. Past performance does not guarantee future results.
             </p>
           </CardContent>

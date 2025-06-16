@@ -24,17 +24,31 @@ function MatrixBackground({ timeout = 50 }) {
         context.fillStyle = '#000';
         context.fillRect(0, 0, width, height);
 
+        const botColors = ['#ff0066', '#00ff66', '#6600ff', '#ff6600', '#00ffff', '#ffff00', '#ff3366', '#33ff66'];
+
         const matrixEffect = () => {
             context.fillStyle = '#0001';
             context.fillRect(0, 0, width, height);
 
-            context.fillStyle = '#0f0';
             context.font = '15pt monospace';
 
             yPositions.forEach((y, index) => {
-                const text = String.fromCharCode(Math.random() * 128);
-                const x = index * 20;
-                context.fillText(text, x, y);
+                // 10% chance for bot icon, 90% for regular characters
+                const isBotIcon = Math.random() < 0.1;
+                
+                if (isBotIcon) {
+                    // Set random bright color for bot icon
+                    context.fillStyle = botColors[Math.floor(Math.random() * botColors.length)];
+                    const text = '🤖';
+                    const x = index * 20;
+                    context.fillText(text, x, y);
+                } else {
+                    // Regular green matrix characters
+                    context.fillStyle = '#0f0';
+                    const text = String.fromCharCode(Math.random() * 128);
+                    const x = index * 20;
+                    context.fillText(text, x, y);
+                }
 
                 if (y > 100 + Math.random() * 10000) {
                     yPositions[index] = 0;
@@ -58,7 +72,7 @@ function MatrixBackground({ timeout = 50 }) {
                 position: 'fixed',
                 height: '100%',
                 width: '100%',
-                zIndex: -1,
+                zIndex: 0,
                 left: '0',
                 top: '0',
             }}
