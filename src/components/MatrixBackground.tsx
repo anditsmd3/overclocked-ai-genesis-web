@@ -37,11 +37,16 @@ function MatrixBackground({ timeout = 50 }) {
                 const isBotIcon = Math.random() < 0.1;
                 
                 if (isBotIcon) {
-                    // Set random bright color for bot icon
-                    context.fillStyle = botColors[Math.floor(Math.random() * botColors.length)];
-                    const text = '🤖';
+                    // Set random bright color for bot icon with glow effect
+                    const botColor = botColors[Math.floor(Math.random() * botColors.length)];
+                    context.fillStyle = botColor;
+                    context.shadowColor = botColor;
+                    context.shadowBlur = 15;
+                    const text = '⚡'; // Using a distinctive character as placeholder for bot
                     const x = index * 20;
                     context.fillText(text, x, y);
+                    // Reset shadow for regular characters
+                    context.shadowBlur = 0;
                 } else {
                     // Regular green matrix characters
                     context.fillStyle = '#0f0';
