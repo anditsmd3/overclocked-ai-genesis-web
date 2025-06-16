@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Calculator, Shield, Cpu, TrendingUp, Zap, Users, Award, DollarSign, Clock, Coins, Activity, Bot } from 'lucide-react';
+import { Calculator, Shield, Cpu, TrendingUp, Zap, Users, Award, DollarSign, Clock, Coins, Activity, Wallet, Plus } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 const Index = () => {
@@ -12,23 +12,59 @@ const Index = () => {
 
   // Enhanced Matrix rain effect with more realistic digital rain
   useEffect(() => {
-    const matrixChars = 'アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!@#$%^&*()_+-=[]{}|;:,.<>?';
-    let result = '';
-    for (let i = 0; i < 100; i++) {
-      result += matrixChars.charAt(Math.floor(Math.random() * matrixChars.length));
-      if (i % 20 === 19) result += '\n';
-    }
-    setMatrixText(result);
-    
-    const interval = setInterval(() => {
-      let newResult = '';
-      for (let i = 0; i < 100; i++) {
-        newResult += matrixChars.charAt(Math.floor(Math.random() * matrixChars.length));
-        if (i % 20 === 19) newResult += '\n';
-      }
-      setMatrixText(newResult);
-    }, 150);
+    const matrixChars = '龍虎鳳麒麟金木水火土東西南北春夏秋冬日月星辰雲雨雷電山川河海花鳥魚蟲ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲンⅠⅡⅢⅣⅤⅥⅦⅧⅨⅩⅪⅫ<>{}[]()!@#$%^&*+-=|\\:;\'\".,?/~`';
+    const columns = 25;
+    const columnStates = Array(columns).fill(null).map(() => ({
+      active: true,
+      chars: [],
+      pauseTime: 0
+    }));
 
+    const updateMatrix = () => {
+      let result = '';
+      
+      columnStates.forEach((column, colIndex) => {
+        if (column.pauseTime > 0) {
+          column.pauseTime--;
+          // Add spaces for paused columns
+          for (let i = 0; i < 5; i++) {
+            result += ' ';
+            if (colIndex === columns - 1) result += '\n';
+          }
+        } else {
+          // Add new character at top
+          if (Math.random() > 0.3) {
+            column.chars.unshift(matrixChars.charAt(Math.floor(Math.random() * matrixChars.length)));
+          }
+          
+          // Limit column height and remove old characters
+          if (column.chars.length > 5) {
+            column.chars.pop();
+          }
+          
+          // Check if bottom character should trigger pause
+          if (column.chars.length === 5 && Math.random() > 0.95) {
+            column.pauseTime = 8; // 2 seconds pause at 4fps
+            column.chars = [];
+          }
+          
+          // Fill column to 5 characters
+          const displayChars = [...column.chars];
+          while (displayChars.length < 5) {
+            displayChars.push(' ');
+          }
+          
+          displayChars.forEach((char, charIndex) => {
+            result += char;
+            if (colIndex === columns - 1) result += '\n';
+          });
+        }
+      });
+      
+      setMatrixText(result);
+    };
+
+    const interval = setInterval(updateMatrix, 250);
     return () => clearInterval(interval);
   }, []);
 
@@ -84,16 +120,67 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-black text-green-400 overflow-hidden font-mono">
-      {/* Enhanced Matrix Background Effect */}
-      <div className="fixed inset-0 opacity-15 pointer-events-none z-0">
-        <div className="absolute top-0 left-0 text-xs leading-none whitespace-pre-wrap text-green-400 animate-pulse">
-          {matrixText}
+      {/* Enhanced Matrix Background Effect with cascading glow */}
+      <div className="fixed inset-0 opacity-20 pointer-events-none z-0">
+        <div className="absolute top-0 left-0 text-xs leading-none whitespace-pre-wrap font-mono">
+          {matrixText.split('\n').map((line, lineIndex) => (
+            <div key={lineIndex} className="flex">
+              {line.split('').map((char, charIndex) => {
+                const isBottomChar = lineIndex === 4;
+                const isGlowing = isBottomChar && char !== ' ';
+                return (
+                  <span 
+                    key={charIndex}
+                    className={`inline-block w-4 ${
+                      isGlowing 
+                        ? 'text-white animate-pulse drop-shadow-[0_0_8px_rgba(255,255,255,0.9)]' 
+                        : lineIndex === 3 
+                          ? 'text-green-300' 
+                          : lineIndex === 2 
+                            ? 'text-green-400' 
+                            : 'text-green-500'
+                    }`}
+                    style={{ 
+                      animationDelay: `${charIndex * 0.1}s`,
+                      textShadow: isGlowing ? '0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff' : undefined
+                    }}
+                  >
+                    {char}
+                  </span>
+                );
+              })}
+            </div>
+          ))}
         </div>
-        <div className="absolute top-0 right-0 text-xs leading-none whitespace-pre-wrap text-green-300 animate-pulse" style={{ animationDelay: '1s' }}>
-          {matrixText}
-        </div>
-        <div className="absolute bottom-0 left-1/2 text-xs leading-none whitespace-pre-wrap text-green-500 animate-pulse" style={{ animationDelay: '2s' }}>
-          {matrixText}
+        <div className="absolute top-0 right-0 text-xs leading-none whitespace-pre-wrap font-mono" style={{ animationDelay: '1s' }}>
+          {matrixText.split('\n').map((line, lineIndex) => (
+            <div key={lineIndex} className="flex">
+              {line.split('').map((char, charIndex) => {
+                const isBottomChar = lineIndex === 4;
+                const isGlowing = isBottomChar && char !== ' ';
+                return (
+                  <span 
+                    key={charIndex}
+                    className={`inline-block w-4 ${
+                      isGlowing 
+                        ? 'text-white animate-pulse drop-shadow-[0_0_8px_rgba(255,255,255,0.9)]' 
+                        : lineIndex === 3 
+                          ? 'text-green-300' 
+                          : lineIndex === 2 
+                            ? 'text-green-400' 
+                            : 'text-green-500'
+                    }`}
+                    style={{ 
+                      animationDelay: `${charIndex * 0.1}s`,
+                      textShadow: isGlowing ? '0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff' : undefined
+                    }}
+                  >
+                    {char}
+                  </span>
+                );
+              })}
+            </div>
+          ))}
         </div>
       </div>
 
@@ -101,7 +188,7 @@ const Index = () => {
       <nav className="relative z-10 p-6 border-b border-green-400/30 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <div className="flex items-center gap-3">
-            <Bot className="h-10 w-10 text-green-400 drop-shadow-[0_0_15px_rgba(0,255,65,0.7)]" />
+            <img src="/lovable-uploads/099d1eef-35f1-4a55-a1c8-c3e45f0e33f1.png" alt="OCAI" className="h-10 w-10 drop-shadow-[0_0_15px_rgba(0,255,65,0.7)]" />
             <h1 className="text-2xl font-bold text-green-400 drop-shadow-[0_0_15px_rgba(0,255,65,0.7)]">
               OVERCLOCKED<span className="text-green-300">AI</span>
             </h1>
@@ -120,29 +207,20 @@ const Index = () => {
       <section className="relative z-10 py-20 px-6">
         <div className="max-w-6xl mx-auto text-center">
           <div className="relative">
-            <div className="flex items-center justify-center gap-4 mb-6">
-              <Bot className="h-16 w-16 text-green-400 drop-shadow-[0_0_30px_rgba(0,255,65,0.8)]" />
-              <h1 className="text-6xl md:text-8xl font-bold drop-shadow-[0_0_30px_rgba(0,255,65,0.8)]">
-                OVERCLOCKED
-              </h1>
-            </div>
-            <div className="flex items-center justify-center gap-4">
-              <span className="text-6xl md:text-8xl font-bold text-green-300 animate-pulse drop-shadow-[0_0_25px_rgba(0,255,65,0.6)]">AI</span>
-              <Bot className="h-16 w-16 text-green-400 drop-shadow-[0_0_30px_rgba(0,255,65,0.8)]" />
-            </div>
+            <h1 className="text-6xl md:text-8xl font-bold drop-shadow-[0_0_30px_rgba(0,255,65,0.8)] mb-6">
+              OVERCLOCKED
+            </h1>
+            <span className="text-6xl md:text-8xl font-bold text-green-300 animate-pulse drop-shadow-[0_0_25px_rgba(0,255,65,0.6)]">AI</span>
             <div className="absolute -top-2 -right-2 text-green-300 opacity-50 text-sm animate-pulse">
               {matrixText.slice(0, 20)}
             </div>
           </div>
           
           <p className="text-xl md:text-2xl mb-4 text-green-300 max-w-4xl mx-auto leading-relaxed">
-            The Future of Finance is Here. Built on <span className="text-green-400 font-bold drop-shadow-[0_0_10px_rgba(0,255,65,0.7)]">
-              <img src="/lovable-uploads/099d1eef-35f1-4a55-a1c8-c3e45f0e33f1.png" alt="PulseChain" className="inline h-6 w-auto mx-1" />
-              PulseChain
-            </span>.
+            The Future of Finance is Here. Built on <span className="text-green-400 font-bold drop-shadow-[0_0_10px_rgba(0,255,65,0.7)]">PulseChain</span>.
           </p>
           <p className="text-lg md:text-xl mb-8 text-green-300 max-w-4xl mx-auto leading-relaxed">
-            Stake <Bot className="inline h-5 w-5 mx-1 text-green-400" />OCAI, Earn 3.69% Yield + 555% Target in TBILL & FED Rewards.
+            Stake <img src="/lovable-uploads/099d1eef-35f1-4a55-a1c8-c3e45f0e33f1.png" alt="OCAI" className="inline h-5 w-5 mx-1" />OCAI, Earn 3.69% Yield + 555% Target in TBILL & FED Rewards.
             <br />
             <span className="text-green-400 font-semibold drop-shadow-[0_0_10px_rgba(0,255,65,0.5)]">Bringing the Staker Class Back Through Advanced Game Theory.</span>
           </p>
@@ -254,9 +332,13 @@ const Index = () => {
                       : 'border-green-400/30 bg-green-400/5'
                   }`}>
                     <div className="mb-2">
-                      <Bot className={`h-10 w-10 mx-auto filter ${bot.color} drop-shadow-[0_0_10px_rgba(0,255,65,0.6)] ${
-                        bot.type === 'overclocked' ? 'text-yellow-400' : 'text-green-400'
-                      }`} />
+                      <img 
+                        src="/lovable-uploads/099d1eef-35f1-4a55-a1c8-c3e45f0e33f1.png" 
+                        alt="OCBot" 
+                        className={`h-10 w-10 mx-auto filter ${bot.color} drop-shadow-[0_0_10px_rgba(0,255,65,0.6)] ${
+                          bot.type === 'overclocked' ? 'brightness-125 saturate-150' : ''
+                        }`} 
+                      />
                     </div>
                     <h4 className={`font-semibold mb-1 ${
                       bot.type === 'overclocked' ? 'text-yellow-400' : 'text-green-400'
@@ -307,7 +389,7 @@ const Index = () => {
               <CardContent className="space-y-4">
                 <div className="p-4 border border-green-400/30 rounded bg-gradient-to-r from-green-400/5 to-green-400/10">
                   <div className="flex justify-between items-center">
-                    <span className="text-green-300">Current <Bot className="inline h-4 w-4 mx-1 text-green-400" />OCAI Stake:</span>
+                    <span className="text-green-300">Current <img src="/lovable-uploads/099d1eef-35f1-4a55-a1c8-c3e45f0e33f1.png" alt="OCAI" className="inline h-4 w-4 mx-1" />OCAI Stake:</span>
                     <div className="text-right">
                       <span className="text-green-400 font-bold text-xl drop-shadow-[0_0_15px_rgba(0,255,65,0.7)]">{mockData.currentStake.toLocaleString()}</span>
                       <div className="text-xs text-green-300/70">🔒 Locked for 55 days</div>
@@ -321,7 +403,7 @@ const Index = () => {
                   </div>
                   <div className="space-y-2 text-sm">
                     <div className="flex justify-between">
-                      <span className="text-green-300/80"><Bot className="inline h-3 w-3 mr-1 text-green-400" />OCAI:</span>
+                      <span className="text-green-300/80"><img src="/lovable-uploads/099d1eef-35f1-4a55-a1c8-c3e45f0e33f1.png" alt="OCAI" className="inline h-3 w-3 mr-1" />OCAI:</span>
                       <span className="text-green-400 font-bold">{mockData.ocaiRewards.toLocaleString()} ($0.00)</span>
                     </div>
                     <div className="flex justify-between">
@@ -337,7 +419,7 @@ const Index = () => {
                 
                 <div className="p-4 border border-green-400/30 rounded bg-gradient-to-r from-green-400/5 to-green-400/10">
                   <div className="flex justify-between items-center">
-                    <span className="text-green-300"><Bot className="inline h-4 w-4 mx-1 text-green-400" />OCAI Holdings:</span>
+                    <span className="text-green-300"><img src="/lovable-uploads/099d1eef-35f1-4a55-a1c8-c3e45f0e33f1.png" alt="OCAI" className="inline h-4 w-4 mx-1" />OCAI Holdings:</span>
                     <div className="text-right">
                       <span className="text-green-400 font-bold text-xl drop-shadow-[0_0_15px_rgba(0,255,65,0.7)]">{mockData.holdings.toLocaleString()}</span>
                       <div className="text-xs text-green-300/70">💎 Available to stake</div>
@@ -370,17 +452,37 @@ const Index = () => {
                 <CardTitle className="text-green-400 text-center drop-shadow-[0_0_20px_rgba(0,255,65,0.8)]">STAKING ACTIONS</CardTitle>
               </CardHeader>
               <CardContent className="space-y-6">
+                <Button 
+                  variant="outline"
+                  className="w-full border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-black py-3 text-lg font-semibold transition-all duration-300 hover:shadow-[0_0_25px_rgba(0,100,255,0.6)]"
+                >
+                  <Wallet className="mr-2 h-5 w-5" />
+                  CONNECT WALLET
+                </Button>
+                <p className="text-xs text-blue-300/70 text-center -mt-2">
+                  Compatible with OKX Wallet, WalletConnect, MetaMask & Rabby Wallet
+                </p>
+                
                 <div>
                   <label className="block text-green-300 mb-2">
-                    Enter <Bot className="inline h-4 w-4 mx-1 text-green-400" />OCAI Amount to Stake:
+                    Enter <img src="/lovable-uploads/099d1eef-35f1-4a55-a1c8-c3e45f0e33f1.png" alt="OCAI" className="inline h-4 w-4 mx-1" />OCAI Amount to Stake:
                   </label>
-                  <input
-                    type="number"
-                    value={stakeAmount}
-                    onChange={(e) => setStakeAmount(e.target.value)}
-                    className="w-full p-3 bg-black border border-green-400/50 text-green-400 rounded focus:border-green-400 focus:outline-none focus:shadow-[0_0_20px_rgba(0,255,65,0.4)]"
-                    placeholder="0"
-                  />
+                  <div className="flex gap-2">
+                    <input
+                      type="number"
+                      value={stakeAmount}
+                      onChange={(e) => setStakeAmount(e.target.value)}
+                      className="flex-1 p-3 bg-black border border-green-400/50 text-green-400 rounded focus:border-green-400 focus:outline-none focus:shadow-[0_0_20px_rgba(0,255,65,0.4)]"
+                      placeholder="0"
+                    />
+                    <Button 
+                      variant="outline"
+                      className="border-green-400 text-green-400 hover:bg-green-400 hover:text-black px-4"
+                    >
+                      <Plus className="h-4 w-4 mr-1" />
+                      MAX
+                    </Button>
+                  </div>
                   <p className="text-xs text-green-300/70 mt-1">
                     ⚠️ Only 1 stake allowed per address. Cannot add to existing stake.
                   </p>
@@ -407,7 +509,7 @@ const Index = () => {
                   ⚡ LP ZAPPER: AUTO-PAIR TBILL/FED
                 </Button>
                 <p className="text-xs text-blue-300/70 text-center -mt-2">
-                  Automatically pairs your TBILL & FED rewards into LP tokens. Must burn NFT first.
+                  LP Zapper Automatically burns your NFT and pairs your TBILL & FED rewards into LP tokens for more yield, please be aware of impermanent loss before using.
                 </p>
                 
                 <div className="p-4 border border-yellow-400/50 rounded bg-yellow-400/5 shadow-[0_0_20px_rgba(255,255,0,0.15)]">
@@ -415,8 +517,8 @@ const Index = () => {
                     💡 <strong>Strategy Tips:</strong>
                   </p>
                   <ul className="text-yellow-300 text-xs space-y-1">
-                    <li>• Wait to accumulate more <Bot className="inline h-3 w-3 mx-1 text-green-400" />OCAI before staking for bigger rewards share!</li>
-                    <li>• More <Bot className="inline h-3 w-3 mx-1 text-green-400" />OCAI staked = Higher price (less liquid supply)</li>
+                    <li>• Wait to accumulate more <img src="/lovable-uploads/099d1eef-35f1-4a55-a1c8-c3e45f0e33f1.png" alt="OCAI" className="inline h-3 w-3 mx-1" />OCAI before staking for bigger rewards share!</li>
+                    <li>• More <img src="/lovable-uploads/099d1eef-35f1-4a55-a1c8-c3e45f0e33f1.png" alt="OCAI" className="inline h-3 w-3 mx-1" />OCAI staked = Higher price (less liquid supply)</li>
                     <li>• When TBILL & FED reach $1, LP fees will be massive!</li>
                   </ul>
                 </div>
@@ -441,13 +543,13 @@ const Index = () => {
               <CardContent className="text-green-300">
                 <p className="mb-4">
                   Treasury Bill (TBILL) can be burned 1:1 to the Reserve Teh contract to mint Reserve Teh (FED). 
-                  The <Bot className="inline h-4 w-4 mx-1 text-green-400" />OCAI ecosystem will distribute massive amounts of both TBILL and FED.
+                  The <img src="/lovable-uploads/099d1eef-35f1-4a55-a1c8-c3e45f0e33f1.png" alt="OCAI" className="inline h-4 w-auto mx-1" />OCAI ecosystem will distribute massive amounts of both TBILL and FED.
                 </p>
                 <ul className="space-y-2 text-sm">
                   <li>• <span className="text-green-400">1:1 Burn Ratio:</span> TBILL → FED via Reserve Teh</li>
                   <li>• <span className="text-green-400">Dual Distribution:</span> Earn both tokens simultaneously</li>
                   <li>• <span className="text-green-400">$1 Target:</span> Both tokens aim for $1 peg</li>
-                  <li>• <span className="text-green-400">Overclocked Speed:</span> Fastest earning rate on <img src="/lovable-uploads/099d1eef-35f1-4a55-a1c8-c3e45f0e33f1.png" alt=\"PulseChain" className="inline h-4 w-auto mx-1" />PulseChain</li>
+                  <li>• <span className="text-green-400">Overclocked Speed:</span> Fastest earning rate on <img src="/lovable-uploads/099d1eef-35f1-4a55-a1c8-c3e45f0e33f1.png" alt="PulseChain" className="inline h-4 w-auto mx-1" />PulseChain</li>
                 </ul>
               </CardContent>
             </Card>
@@ -458,7 +560,7 @@ const Index = () => {
               </CardHeader>
               <CardContent className="text-green-300">
                 <p className="mb-4">
-                  Instead of manually minting FED, let <Bot className="inline h-4 w-4 mx-1 text-green-400" />OCAI do the heavy lifting! 
+                  Instead of manually minting FED, let <img src="/lovable-uploads/099d1eef-35f1-4a55-a1c8-c3e45f0e33f1.png" alt="OCAI" className="inline h-4 w-4 mx-1" />OCAI do the heavy lifting! 
                   Our system targets to be the most efficient TBILL & FED printer in existence.
                 </p>
                 <ul className="space-y-2 text-sm">
@@ -586,7 +688,7 @@ const Index = () => {
                   This creates powerful incentives to HODL and STAKE through advanced game theory.
                 </p>
                 <ul className="space-y-2 text-sm">
-                  <li>• 3.69% <Bot className="inline h-3 w-3 mx-1 text-green-400" />OCAI yield on every stake</li>
+                  <li>• 3.69% <img src="/lovable-uploads/099d1eef-35f1-4a55-a1c8-c3e45f0e33f1.png" alt="OCAI" className="inline h-3 w-3 mx-1" />OCAI yield on every stake</li>
                   <li>• Target 555% yield in TBILL & FED rewards over 55 days</li>
                   <li>• NFT Proof-Of-Stake (POS) ownership</li>
                   <li>• Exclusive access to ecosystem rewards</li>
@@ -607,7 +709,7 @@ const Index = () => {
                   The one-stake-per-address rule creates strategic decision making:
                 </p>
                 <ul className="space-y-2 text-sm">
-                  <li>• <span className="text-green-400">Wait & Accumulate:</span> Buy more <Bot className="inline h-3 w-3 mx-1 text-green-400" />OCAI before staking</li>
+                  <li>• <span className="text-green-400">Wait & Accumulate:</span> Buy more <img src="/lovable-uploads/099d1eef-35f1-4a55-a1c8-c3e45f0e33f1.png" alt="OCAI" className="inline h-3 w-3 mx-1" />OCAI before staking</li>
                   <li>• <span className="text-green-400">Bigger Stake = Bigger Share:</span> More rewards proportionally</li>
                   <li>• <span className="text-green-400">Commitment Rewarded:</span> 55-day lock period</li>
                   <li>• <span className="text-green-400">No Adding:</span> Must burn NFT to stake again</li>
@@ -632,7 +734,7 @@ const Index = () => {
               </CardHeader>
               <CardContent className="text-center text-green-300">
                 <div className="text-6xl mb-4">🔒</div>
-                <p className="mb-4">Lock your <Bot className="inline h-4 w-4 mx-1 text-green-400" />OCAI for exactly 55 days</p>
+                <p className="mb-4">Lock your <img src="/lovable-uploads/099d1eef-35f1-4a55-a1c8-c3e45f0e33f1.png" alt="OCAI" className="inline h-4 w-4 mx-1" />OCAI for exactly 55 days</p>
                 <p className="text-sm text-green-300/70">NFT minted as Proof-Of-Stake (POS)</p>
               </CardContent>
             </Card>
@@ -644,7 +746,7 @@ const Index = () => {
               <CardContent className="text-center text-green-300">
                 <div className="text-6xl mb-4">💰</div>
                 <p className="mb-4">🤖 OCBotz target 555% yield in TBILL & FED over 55 days</p>
-                <p className="text-sm text-green-300/70">Plus guaranteed 3.69% <Bot className="inline h-3 w-3 mx-1 text-green-400" />OCAI Yield</p>
+                <p className="text-sm text-green-300/70">Plus guaranteed 3.69% <img src="/lovable-uploads/099d1eef-35f1-4a55-a1c8-c3e45f0e33f1.png" alt="OCAI" className="inline h-3 w-3 mx-1" />OCAI Yield</p>
               </CardContent>
             </Card>
             
@@ -655,7 +757,7 @@ const Index = () => {
               <CardContent className="text-center text-green-300">
                 <div className="text-6xl mb-4">🎁</div>
                 <p className="mb-4">Burn NFT to claim all rewards</p>
-                <p className="text-sm text-green-300/70"><Bot className="inline h-3 w-3 mx-1 text-green-400" />OCAI + Yield + TBILL + FED</p>
+                <p className="text-sm text-green-300/70"><img src="/lovable-uploads/099d1eef-35f1-4a55-a1c8-c3e45f0e33f1.png" alt="OCAI" className="inline h-3 w-3 mx-1" />OCAI + Yield + TBILL + FED</p>
               </CardContent>
             </Card>
           </div>
@@ -692,7 +794,7 @@ const Index = () => {
                   <h3 className="text-xl font-semibold text-green-400 mb-4 drop-shadow-[0_0_15px_rgba(0,255,65,0.7)]">24/7 Autonomous Operation</h3>
                   <ul className="space-y-2 text-sm">
                     <li>• Multiple 🤖 OCBotz deployed across <img src="/lovable-uploads/099d1eef-35f1-4a55-a1c8-c3e45f0e33f1.png" alt="PulseChain" className="inline h-4 w-auto mx-1" />PulseChain</li>
-                    <li>• Each bot holds percentage of <Bot className="inline h-3 w-3 mx-1 text-green-400" />OCAI supply</li>
+                    <li>• Each bot holds percentage of <img src="/lovable-uploads/099d1eef-35f1-4a55-a1c8-c3e45f0e33f1.png" alt="OCAI" className="inline h-3 w-3 mx-1" />OCAI supply</li>
                     <li>• Continuous buy/sell operations for rewards</li>
                     <li>• Advanced AI-driven trading algorithms</li>
                     <li>• Target 555% yield in TBILL & FED over 55 days</li>
@@ -713,13 +815,13 @@ const Index = () => {
               
               <div className="mt-8 p-6 bg-green-400/10 rounded border border-green-400/30 shadow-[0_0_30px_rgba(0,255,65,0.3)]">
                 <p className="text-center text-green-300 text-lg mb-4">
-                  "The 🤖 OCBotz work tirelessly to maximize value for every <Bot className="inline h-4 w-4 mx-1 text-green-400" />OCAI staker, 
+                  "The 🤖 OCBotz work tirelessly to maximize value for every <img src="/lovable-uploads/099d1eef-35f1-4a55-a1c8-c3e45f0e33f1.png" alt="OCAI" className="inline h-4 w-4 mx-1" />OCAI staker, 
                   using cutting-edge Reverse Liquidity Engineering to optimize the entire ecosystem 
                   and target exceptional yields for the Staker Class."
                 </p>
                 <div className="p-4 bg-yellow-400/10 border border-yellow-400/30 rounded">
                   <p className="text-yellow-300 text-center font-semibold">
-                    🚀 <Bot className="inline h-4 w-4 mx-1 text-green-400" />OCAI is designed for staking! 
+                    🚀 <img src="/lovable-uploads/099d1eef-35f1-4a55-a1c8-c3e45f0e33f1.png" alt="OCAI" className="inline h-4 w-4 mx-1" />OCAI is designed for staking! 
                     More tokens staked = Less liquid supply = Number go up! 📈
                   </p>
                 </div>
@@ -740,7 +842,7 @@ const Index = () => {
           </h2>
           <p className="text-xl text-green-300 mb-8">
             TBILL and FED are destined to peg to $1. Earn millions, potentially billions, 
-            by being an active member of the <Bot className="inline h-5 w-5 mx-1 text-green-400" />OCAI ecosystem on 
+            by being an active member of the <img src="/lovable-uploads/099d1eef-35f1-4a55-a1c8-c3e45f0e33f1.png" alt="OCAI" className="inline h-5 w-5 mx-1" />OCAI ecosystem on 
             <img src="/lovable-uploads/099d1eef-35f1-4a55-a1c8-c3e45f0e33f1.png" alt="PulseChain" className="inline h-5 w-auto mx-1" />PulseChain.
           </p>
           
@@ -761,7 +863,7 @@ const Index = () => {
           </div>
           
           <div className="mt-12 text-green-300/70 text-sm">
-            <p>OVERCLOCKED <Bot className="inline h-4 w-4 mx-1 text-green-400" /> • THE FUTURE OF FINANCE • 
+            <p>OVERCLOCKED <img src="/lovable-uploads/099d1eef-35f1-4a55-a1c8-c3e45f0e33f1.png" alt="OCAI" className="inline h-4 w-4 mx-1" /> • THE FUTURE OF FINANCE • 
             <img src="/lovable-uploads/099d1eef-35f1-4a55-a1c8-c3e45f0e33f1.png" alt="PULSECHAIN" className="inline h-4 w-auto mx-1" />PULSECHAIN</p>
           </div>
         </div>
