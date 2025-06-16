@@ -2,10 +2,13 @@
 import React, { useEffect, useRef } from 'react';
 
 function MatrixBackground({ timeout = 50 }) {
-    const canvas = useRef();
+    const canvas = useRef<HTMLCanvasElement>(null);
 
     useEffect(() => {
+        if (!canvas.current) return;
+        
         const context = canvas.current.getContext('2d');
+        if (!context) return;
 
         const width = document.body.offsetWidth;
         const height = document.body.offsetHeight;
@@ -16,7 +19,7 @@ function MatrixBackground({ timeout = 50 }) {
         context.fillRect(0, 0, width, height);
 
         const columns = Math.floor(width / 20) + 1;
-        const yPositions = Array.from({ length: columns }).fill(0);
+        const yPositions: number[] = Array.from({ length: columns }).fill(0) as number[];
 
         context.fillStyle = '#000';
         context.fillRect(0, 0, width, height);
@@ -45,7 +48,7 @@ function MatrixBackground({ timeout = 50 }) {
         return () => {
             clearInterval(interval);
         };
-    }, [canvas, timeout]);
+    }, [timeout]);
 
     return (
         <div
