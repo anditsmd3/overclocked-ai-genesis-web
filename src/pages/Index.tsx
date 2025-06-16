@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -11,14 +10,16 @@ const Index = () => {
   const [matrixText, setMatrixText] = useState('');
   const [stakeAmount, setStakeAmount] = useState('');
 
-  // Enhanced Matrix rain effect with more realistic digital rain
+  // Enhanced Matrix rain effect with specific Matrix movie characters
   useEffect(() => {
-    const matrixChars = '龍虎鳳麒麟金木水火土東西南北春夏秋冬日月星辰雲雨雷電山川河海花鳥魚蟲ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲンⅠⅡⅢⅣⅤⅥⅦⅧⅨⅩⅪⅫ<>{}[]()!@#$%^&*+-=|\\:;\'\".,?/~`';
-    const columns = 25;
+    const matrixChars = '龍虎鳳麒麟金木水火土東西南北春夏秋冬日月星辰雲雨雷電山川河海花鳥魚蟲ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲンⅠⅡⅢⅣⅤⅥⅦⅧⅨⅩⅪⅫ<>{}[]()!@#$%^&*+-=|\\:;\'\".,?/~`ｱｲｳｴｵｶｷｸｹｺｻｼｽｾｿﾀﾁﾂﾃﾄﾅﾆﾇﾈﾉﾊﾋﾌﾍﾎﾏﾐﾑﾒﾓﾔﾕﾖﾗﾘﾙﾚﾛﾜｦﾝ';
+    const columns = 30;
+    const columnHeight = 8;
     const columnStates = Array(columns).fill(null).map(() => ({
       active: true,
       chars: [],
-      pauseTime: 0
+      pauseTime: 0,
+      speed: Math.random() * 3 + 1 // Random speed for each column
     }));
 
     const updateMatrix = () => {
@@ -28,30 +29,30 @@ const Index = () => {
         if (column.pauseTime > 0) {
           column.pauseTime--;
           // Add spaces for paused columns
-          for (let i = 0; i < 5; i++) {
+          for (let i = 0; i < columnHeight; i++) {
             result += ' ';
             if (colIndex === columns - 1) result += '\n';
           }
         } else {
-          // Add new character at top
-          if (Math.random() > 0.3) {
+          // Add new character at top occasionally
+          if (Math.random() > 0.4) {
             column.chars.unshift(matrixChars.charAt(Math.floor(Math.random() * matrixChars.length)));
           }
           
           // Limit column height and remove old characters
-          if (column.chars.length > 5) {
+          if (column.chars.length > columnHeight) {
             column.chars.pop();
           }
           
-          // Check if bottom character should trigger pause
-          if (column.chars.length === 5 && Math.random() > 0.95) {
+          // Check if bottom character should trigger pause (when it "hits bottom")
+          if (column.chars.length === columnHeight && Math.random() > 0.92) {
             column.pauseTime = 8; // 2 seconds pause at 4fps
             column.chars = [];
           }
           
-          // Fill column to 5 characters
+          // Fill column to fixed height
           const displayChars = [...column.chars];
-          while (displayChars.length < 5) {
+          while (displayChars.length < columnHeight) {
             displayChars.push(' ');
           }
           
@@ -65,7 +66,7 @@ const Index = () => {
       setMatrixText(result);
     };
 
-    const interval = setInterval(updateMatrix, 250);
+    const interval = setInterval(updateMatrix, 200);
     return () => clearInterval(interval);
   }, []);
 
@@ -105,45 +106,49 @@ const Index = () => {
   };
 
   const ocBotzJobs = [
-    { id: 1, name: "Liquidity Manager", type: "regular", status: "ACTIVE", color: "hue-rotate-0" },
+    { id: 1, name: "Liquidity Manager", type: "regular", status: "ACTIVE", color: "hue-rotate-15" },
     { id: 2, name: "Arbitrage Hunter", type: "regular", status: "ACTIVE", color: "hue-rotate-45" },
-    { id: 3, name: "Rewards Distributor", type: "regular", status: "ACTIVE", color: "hue-rotate-90" },
-    { id: 4, name: "Smart Buyback", type: "regular", status: "ACTIVE", color: "hue-rotate-135" },
-    { id: 5, name: "TBILL Accumulator", type: "regular", status: "ACTIVE", color: "hue-rotate-180" },
-    { id: 6, name: "FED Harvester", type: "regular", status: "ACTIVE", color: "hue-rotate-225" },
-    { id: 7, name: "Price Optimizer", type: "regular", status: "ACTIVE", color: "hue-rotate-270" },
-    { id: 8, name: "Anti-Jeet Defense", type: "regular", status: "ACTIVE", color: "hue-rotate-315" },
-    { id: 9, name: "OverClockerBot Alpha", type: "overclocked", status: "DORMANT", color: "hue-rotate-60" },
-    { id: 10, name: "OverClockerBot Beta", type: "overclocked", status: "DORMANT", color: "hue-rotate-120" },
-    { id: 11, name: "OverClockerBot Gamma", type: "overclocked", status: "DORMANT", color: "hue-rotate-240" },
-    { id: 12, name: "OverClockerBot Delta", type: "overclocked", status: "DORMANT", color: "hue-rotate-300" }
+    { id: 3, name: "Rewards Distributor", type: "regular", status: "ACTIVE", color: "hue-rotate-75" },
+    { id: 4, name: "Smart Buyback", type: "regular", status: "ACTIVE", color: "hue-rotate-105" },
+    { id: 5, name: "TBILL Accumulator", type: "regular", status: "ACTIVE", color: "hue-rotate-135" },
+    { id: 6, name: "FED Harvester", type: "regular", status: "ACTIVE", color: "hue-rotate-165" },
+    { id: 7, name: "Price Optimizer", type: "regular", status: "ACTIVE", color: "hue-rotate-195" },
+    { id: 8, name: "Anti-Jeet Defense", type: "regular", status: "ACTIVE", color: "hue-rotate-225" },
+    { id: 9, name: "OverClockerBot Alpha", type: "overclocked", status: "DORMANT", color: "hue-rotate-255" },
+    { id: 10, name: "OverClockerBot Beta", type: "overclocked", status: "DORMANT", color: "hue-rotate-285" },
+    { id: 11, name: "OverClockerBot Gamma", type: "overclocked", status: "DORMANT", color: "hue-rotate-315" },
+    { id: 12, name: "OverClockerBot Delta", type: "overclocked", status: "DORMANT", color: "hue-rotate-345" }
   ];
 
   return (
     <div className="min-h-screen bg-black text-green-400 overflow-hidden font-mono">
       {/* Enhanced Matrix Background Effect with cascading glow */}
-      <div className="fixed inset-0 opacity-20 pointer-events-none z-0">
+      <div className="fixed inset-0 opacity-15 pointer-events-none z-0">
         <div className="absolute top-0 left-0 text-xs leading-none whitespace-pre-wrap font-mono">
           {matrixText.split('\n').map((line, lineIndex) => (
             <div key={lineIndex} className="flex">
               {line.split('').map((char, charIndex) => {
-                const isBottomChar = lineIndex === 4;
+                const isBottomChar = lineIndex === 7; // Bottom of 8-row height
                 const isGlowing = isBottomChar && char !== ' ';
+                const isSecondFromBottom = lineIndex === 6;
+                const isThirdFromBottom = lineIndex === 5;
                 return (
                   <span 
                     key={charIndex}
-                    className={`inline-block w-4 ${
+                    className={`inline-block w-3 ${
                       isGlowing 
-                        ? 'text-white animate-pulse drop-shadow-[0_0_8px_rgba(255,255,255,0.9)]' 
-                        : lineIndex === 3 
-                          ? 'text-green-300' 
-                          : lineIndex === 2 
-                            ? 'text-green-400' 
-                            : 'text-green-500'
+                        ? 'text-white animate-pulse drop-shadow-[0_0_12px_rgba(255,255,255,1)]' 
+                        : isSecondFromBottom
+                          ? 'text-green-200' 
+                          : isThirdFromBottom
+                            ? 'text-green-300' 
+                            : lineIndex === 4
+                              ? 'text-green-400'
+                              : 'text-green-500'
                     }`}
                     style={{ 
-                      animationDelay: `${charIndex * 0.1}s`,
-                      textShadow: isGlowing ? '0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff' : undefined
+                      animationDelay: `${charIndex * 0.05}s`,
+                      textShadow: isGlowing ? '0 0 15px #fff, 0 0 25px #fff, 0 0 35px #fff' : undefined
                     }}
                   >
                     {char}
@@ -157,23 +162,27 @@ const Index = () => {
           {matrixText.split('\n').map((line, lineIndex) => (
             <div key={lineIndex} className="flex">
               {line.split('').map((char, charIndex) => {
-                const isBottomChar = lineIndex === 4;
+                const isBottomChar = lineIndex === 7;
                 const isGlowing = isBottomChar && char !== ' ';
+                const isSecondFromBottom = lineIndex === 6;
+                const isThirdFromBottom = lineIndex === 5;
                 return (
                   <span 
                     key={charIndex}
-                    className={`inline-block w-4 ${
+                    className={`inline-block w-3 ${
                       isGlowing 
-                        ? 'text-white animate-pulse drop-shadow-[0_0_8px_rgba(255,255,255,0.9)]' 
-                        : lineIndex === 3 
-                          ? 'text-green-300' 
-                          : lineIndex === 2 
-                            ? 'text-green-400' 
-                            : 'text-green-500'
+                        ? 'text-white animate-pulse drop-shadow-[0_0_12px_rgba(255,255,255,1)]' 
+                        : isSecondFromBottom
+                          ? 'text-green-200' 
+                          : isThirdFromBottom
+                            ? 'text-green-300' 
+                            : lineIndex === 4
+                              ? 'text-green-400'
+                              : 'text-green-500'
                     }`}
                     style={{ 
-                      animationDelay: `${charIndex * 0.1}s`,
-                      textShadow: isGlowing ? '0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff' : undefined
+                      animationDelay: `${charIndex * 0.05}s`,
+                      textShadow: isGlowing ? '0 0 15px #fff, 0 0 25px #fff, 0 0 35px #fff' : undefined
                     }}
                   >
                     {char}
@@ -550,7 +559,7 @@ const Index = () => {
                   <li>• <span className="text-green-400">1:1 Burn Ratio:</span> TBILL → FED via Reserve Teh</li>
                   <li>• <span className="text-green-400">Dual Distribution:</span> Earn both tokens simultaneously</li>
                   <li>• <span className="text-green-400">$1 Target:</span> Both tokens aim for $1 peg</li>
-                  <li>• <span className="text-green-400">Overclocked Speed:</span> Fastest earning rate on <img src="/lovable-uploads/099d1eef-35f1-4a55-a1c8-c3e45f0e33f1.png" alt="PulseChain" className="inline h-4 w-auto mx-1" />PulseChain</li>
+                  <li>• <span className="text-green-400">Overclocked Speed:</span> Fastest earning rate on PulseChain</li>
                 </ul>
               </CardContent>
             </Card>
@@ -656,10 +665,7 @@ const Index = () => {
                 <div className="text-center p-4 border border-green-400 rounded bg-green-400/10">
                   <h4 className="text-green-400 font-semibold mb-2">Launch Price</h4>
                   <p className="text-2xl font-bold text-green-300">${tokenomics.launchPrice}</p>
-                  <p className="text-sm text-green-300/70">
-                    <img src="/lovable-uploads/2fe16d8c-7588-4038-abb3-40fea0395a00.png" alt="PulseX" className="inline h-4 w-auto mx-1" />
-                    PulseX DEX
-                  </p>
+                  <p className="text-sm text-green-300/70">DEX Launch</p>
                   <p className="text-xs text-green-300/50">Market price</p>
                 </div>
               </div>
@@ -794,7 +800,7 @@ const Index = () => {
                 <div>
                   <h3 className="text-xl font-semibold text-green-400 mb-4 drop-shadow-[0_0_15px_rgba(0,255,65,0.7)]">24/7 Autonomous Operation</h3>
                   <ul className="space-y-2 text-sm">
-                    <li>• Multiple 🤖 OCBotz deployed across <img src="/lovable-uploads/099d1eef-35f1-4a55-a1c8-c3e45f0e33f1.png" alt="PulseChain" className="inline h-4 w-auto mx-1" />PulseChain</li>
+                    <li>• Multiple 🤖 OCBotz deployed across PulseChain</li>
                     <li>• Each bot holds percentage of <img src="/lovable-uploads/099d1eef-35f1-4a55-a1c8-c3e45f0e33f1.png" alt="OCAI" className="inline h-3 w-3 mx-1" />OCAI supply</li>
                     <li>• Continuous buy/sell operations for rewards</li>
                     <li>• Advanced AI-driven trading algorithms</li>
@@ -844,7 +850,7 @@ const Index = () => {
           <p className="text-xl text-green-300 mb-8">
             TBILL and FED are destined to peg to $1. Earn millions, potentially billions, 
             by being an active member of the <img src="/lovable-uploads/099d1eef-35f1-4a55-a1c8-c3e45f0e33f1.png" alt="OCAI" className="inline h-5 w-5 mx-1" />OCAI ecosystem on 
-            <img src="/lovable-uploads/099d1eef-35f1-4a55-a1c8-c3e45f0e33f1.png" alt="PulseChain" className="inline h-5 w-auto mx-1" />PulseChain.
+            PulseChain.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -864,8 +870,7 @@ const Index = () => {
           </div>
           
           <div className="mt-12 text-green-300/70 text-sm">
-            <p>OVERCLOCKED <img src="/lovable-uploads/099d1eef-35f1-4a55-a1c8-c3e45f0e33f1.png" alt="OCAI" className="inline h-4 w-4 mx-1" /> • THE FUTURE OF FINANCE • 
-            <img src="/lovable-uploads/099d1eef-35f1-4a55-a1c8-c3e45f0e33f1.png" alt="PULSECHAIN" className="inline h-4 w-auto mx-1" />PULSECHAIN</p>
+            <p>OVERCLOCKED <img src="/lovable-uploads/099d1eef-35f1-4a55-a1c8-c3e45f0e33f1.png" alt="OCAI" className="inline h-4 w-4 mx-1" /> • THE FUTURE OF FINANCE • PULSECHAIN</p>
           </div>
         </div>
       </section>
