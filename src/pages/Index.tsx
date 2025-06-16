@@ -1,74 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Calculator, Shield, Cpu, TrendingUp, Zap, Users, Award, DollarSign, Clock, Coins, Activity, Wallet, Plus, Bot } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import MatrixBackground from '@/components/MatrixBackground';
 
 const Index = () => {
   const navigate = useNavigate();
   const [angelRoundValue, setAngelRoundValue] = useState(1000000);
-  const [matrixText, setMatrixText] = useState('');
   const [stakeAmount, setStakeAmount] = useState('');
-
-  // Enhanced Matrix rain effect with specific Matrix movie characters
-  useEffect(() => {
-    const matrixChars = '龍虎鳳麒麟金木水火土東西南北春夏秋冬日月星辰雲雨雷電山川河海花鳥魚蟲ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲンⅠⅡⅢⅣⅤⅥⅦⅧⅨⅩⅪⅫ<>{}[]()!@#$%^&*+-=|\\:;\'\".,?/~`ｱｲｳｴｵｶｷｸｹｺｻｼｽｾｿﾀﾁﾂﾃﾄﾅﾆﾇﾈﾉﾊﾋﾌﾍﾎﾏﾐﾑﾒﾓﾔﾕﾖﾗﾘﾙﾚﾛﾜｦﾝ';
-    const columns = 30;
-    const columnHeight = 8;
-    const columnStates = Array(columns).fill(null).map(() => ({
-      active: true,
-      chars: [],
-      pauseTime: 0,
-      speed: Math.random() * 3 + 1 // Random speed for each column
-    }));
-
-    const updateMatrix = () => {
-      let result = '';
-      
-      columnStates.forEach((column, colIndex) => {
-        if (column.pauseTime > 0) {
-          column.pauseTime--;
-          // Add spaces for paused columns
-          for (let i = 0; i < columnHeight; i++) {
-            result += ' ';
-            if (colIndex === columns - 1) result += '\n';
-          }
-        } else {
-          // Add new character at top occasionally
-          if (Math.random() > 0.4) {
-            column.chars.unshift(matrixChars.charAt(Math.floor(Math.random() * matrixChars.length)));
-          }
-          
-          // Limit column height and remove old characters
-          if (column.chars.length > columnHeight) {
-            column.chars.pop();
-          }
-          
-          // Check if bottom character should trigger pause (when it "hits bottom")
-          if (column.chars.length === columnHeight && Math.random() > 0.92) {
-            column.pauseTime = 8; // 2 seconds pause at 4fps
-            column.chars = [];
-          }
-          
-          // Fill column to fixed height
-          const displayChars = [...column.chars];
-          while (displayChars.length < columnHeight) {
-            displayChars.push(' ');
-          }
-          
-          displayChars.forEach((char, charIndex) => {
-            result += char;
-            if (colIndex === columns - 1) result += '\n';
-          });
-        }
-      });
-      
-      setMatrixText(result);
-    };
-
-    const interval = setInterval(updateMatrix, 200);
-    return () => clearInterval(interval);
-  }, []);
 
   // Calculate token economics with corrected Early Bird Angels 5x discount
   const calculateTokenomics = (angelValue: number) => {
@@ -122,77 +62,8 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-black text-green-400 overflow-hidden font-mono">
-      {/* Enhanced Matrix Background Effect with cascading glow */}
-      <div className="fixed inset-0 opacity-15 pointer-events-none z-0">
-        <div className="absolute top-0 left-0 text-xs leading-none whitespace-pre-wrap font-mono">
-          {matrixText.split('\n').map((line, lineIndex) => (
-            <div key={lineIndex} className="flex">
-              {line.split('').map((char, charIndex) => {
-                const isBottomChar = lineIndex === 7; // Bottom of 8-row height
-                const isGlowing = isBottomChar && char !== ' ';
-                const isSecondFromBottom = lineIndex === 6;
-                const isThirdFromBottom = lineIndex === 5;
-                return (
-                  <span 
-                    key={charIndex}
-                    className={`inline-block w-3 ${
-                      isGlowing 
-                        ? 'text-white animate-pulse drop-shadow-[0_0_12px_rgba(255,255,255,1)]' 
-                        : isSecondFromBottom
-                          ? 'text-green-200' 
-                          : isThirdFromBottom
-                            ? 'text-green-300' 
-                            : lineIndex === 4
-                              ? 'text-green-400'
-                              : 'text-green-500'
-                    }`}
-                    style={{ 
-                      animationDelay: `${charIndex * 0.05}s`,
-                      textShadow: isGlowing ? '0 0 15px #fff, 0 0 25px #fff, 0 0 35px #fff' : undefined
-                    }}
-                  >
-                    {char}
-                  </span>
-                );
-              })}
-            </div>
-          ))}
-        </div>
-        <div className="absolute top-0 right-0 text-xs leading-none whitespace-pre-wrap font-mono" style={{ animationDelay: '1s' }}>
-          {matrixText.split('\n').map((line, lineIndex) => (
-            <div key={lineIndex} className="flex">
-              {line.split('').map((char, charIndex) => {
-                const isBottomChar = lineIndex === 7;
-                const isGlowing = isBottomChar && char !== ' ';
-                const isSecondFromBottom = lineIndex === 6;
-                const isThirdFromBottom = lineIndex === 5;
-                return (
-                  <span 
-                    key={charIndex}
-                    className={`inline-block w-3 ${
-                      isGlowing 
-                        ? 'text-white animate-pulse drop-shadow-[0_0_12px_rgba(255,255,255,1)]' 
-                        : isSecondFromBottom
-                          ? 'text-green-200' 
-                          : isThirdFromBottom
-                            ? 'text-green-300' 
-                            : lineIndex === 4
-                              ? 'text-green-400'
-                              : 'text-green-500'
-                    }`}
-                    style={{ 
-                      animationDelay: `${charIndex * 0.05}s`,
-                      textShadow: isGlowing ? '0 0 15px #fff, 0 0 25px #fff, 0 0 35px #fff' : undefined
-                    }}
-                  >
-                    {char}
-                  </span>
-                );
-              })}
-            </div>
-          ))}
-        </div>
-      </div>
+      {/* Matrix Background */}
+      <MatrixBackground timeout={50} />
 
       {/* Navigation */}
       <nav className="relative z-10 p-6 border-b border-green-400/30 backdrop-blur-sm">
@@ -221,9 +92,6 @@ const Index = () => {
               OVERCLOCKED
             </h1>
             <span className="text-6xl md:text-8xl font-bold text-green-300 animate-pulse drop-shadow-[0_0_25px_rgba(0,255,65,0.6)]">AI</span>
-            <div className="absolute -top-2 -right-2 text-green-300 opacity-50 text-sm animate-pulse">
-              {matrixText.slice(0, 20)}
-            </div>
           </div>
           
           <p className="text-xl md:text-2xl mb-4 text-green-300 max-w-4xl mx-auto leading-relaxed">
@@ -272,16 +140,16 @@ const Index = () => {
       </section>
 
       {/* Enhanced Live Statistics Widget */}
-      <section className="relative z-10 py-8 px-6 bg-gradient-to-b from-black to-gray-900">
+      <section className="relative z-10 py-8 px-6 bg-black">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-8 text-green-400 drop-shadow-[0_0_25px_rgba(0,255,65,0.9)]">
             LIVE ECOSYSTEM STATS
           </h2>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <Card className="bg-gradient-to-br from-black to-green-900/20 border-green-400/50 hover:shadow-[0_0_40px_rgba(0,255,65,0.3)] transition-all duration-300">
+            <Card className="bg-black border-green-400/50 hover:shadow-[0_0_40px_rgba(0,255,65,0.3)] transition-all duration-300">
               <CardContent className="p-6 text-center relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-green-400/5 to-transparent animate-pulse"></div>
+                <div className="absolute inset-0 bg-green-400/5 animate-pulse"></div>
                 <Coins className="h-10 w-10 text-green-400 mx-auto mb-3 drop-shadow-[0_0_15px_rgba(0,255,65,0.8)]" />
                 <h4 className="text-green-400 font-semibold mb-1 drop-shadow-[0_0_12px_rgba(0,255,65,0.7)]">Current Supply</h4>
                 <p className="text-3xl font-bold text-green-300 drop-shadow-[0_0_15px_rgba(0,255,65,0.6)]">{mockData.currentSupply.toLocaleString()}</p>
@@ -291,9 +159,9 @@ const Index = () => {
               </CardContent>
             </Card>
             
-            <Card className="bg-gradient-to-br from-black to-green-900/20 border-green-400/50 hover:shadow-[0_0_40px_rgba(0,255,65,0.3)] transition-all duration-300">
+            <Card className="bg-black border-green-400/50 hover:shadow-[0_0_40px_rgba(0,255,65,0.3)] transition-all duration-300">
               <CardContent className="p-6 text-center relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-green-400/5 to-transparent animate-pulse"></div>
+                <div className="absolute inset-0 bg-green-400/5 animate-pulse"></div>
                 <DollarSign className="h-10 w-10 text-green-400 mx-auto mb-3 drop-shadow-[0_0_15px_rgba(0,255,65,0.8)]" />
                 <h4 className="text-green-400 font-semibold mb-1 drop-shadow-[0_0_12px_rgba(0,255,65,0.7)]">Current Price</h4>
                 <p className="text-3xl font-bold text-green-300 drop-shadow-[0_0_15px_rgba(0,255,65,0.6)]">${mockData.currentPrice}</p>
@@ -301,9 +169,9 @@ const Index = () => {
               </CardContent>
             </Card>
             
-            <Card className="bg-gradient-to-br from-black to-green-900/20 border-green-400/50 hover:shadow-[0_0_40px_rgba(0,255,65,0.3)] transition-all duration-300">
+            <Card className="bg-black border-green-400/50 hover:shadow-[0_0_40px_rgba(0,255,65,0.3)] transition-all duration-300">
               <CardContent className="p-6 text-center relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-green-400/5 to-transparent animate-pulse"></div>
+                <div className="absolute inset-0 bg-green-400/5 animate-pulse"></div>
                 <Bot className="h-10 w-10 text-green-400 mx-auto mb-3 drop-shadow-[0_0_15px_rgba(0,255,65,0.8)]" />
                 <h4 className="text-green-400 font-semibold mb-1 drop-shadow-[0_0_12px_rgba(0,255,65,0.7)]">🤖 OCBotz Deployed</h4>
                 <p className="text-3xl font-bold text-green-300 drop-shadow-[0_0_15px_rgba(0,255,65,0.6)]">{mockData.ocBotzDeployed}</p>
@@ -315,9 +183,9 @@ const Index = () => {
               </CardContent>
             </Card>
             
-            <Card className="bg-gradient-to-br from-black to-green-900/20 border-green-400/50 hover:shadow-[0_0_40px_rgba(0,255,65,0.3)] transition-all duration-300">
+            <Card className="bg-black border-green-400/50 hover:shadow-[0_0_40px_rgba(0,255,65,0.3)] transition-all duration-300">
               <CardContent className="p-6 text-center relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-green-400/5 to-transparent animate-pulse"></div>
+                <div className="absolute inset-0 bg-green-400/5 animate-pulse"></div>
                 <Activity className="h-10 w-10 text-green-400 mx-auto mb-3 drop-shadow-[0_0_15px_rgba(0,255,65,0.8)]" />
                 <h4 className="text-green-400 font-semibold mb-1 drop-shadow-[0_0_12px_rgba(0,255,65,0.7)]">Rewards Locked</h4>
                 <p className="text-xl font-bold text-green-300 drop-shadow-[0_0_15px_rgba(0,255,65,0.6)]">{mockData.rewardsLocked}</p>
@@ -327,7 +195,7 @@ const Index = () => {
           </div>
 
           {/* Enhanced Robot Activity Visualization */}
-          <Card className="mt-8 bg-gradient-to-br from-black to-green-900/10 border-green-400/50 shadow-[0_0_50px_rgba(0,255,65,0.3)]">
+          <Card className="mt-8 bg-black border-green-400/50 shadow-[0_0_50px_rgba(0,255,65,0.3)]">
             <CardHeader>
               <CardTitle className="text-green-400 text-center drop-shadow-[0_0_20px_rgba(0,255,65,0.8)]">
                 REAL-TIME 🤖 OCBOTZ ACTIVITY
@@ -342,9 +210,7 @@ const Index = () => {
                       : 'border-green-400/30 bg-green-400/5'
                   }`}>
                     <div className="mb-2">
-                      <img 
-                        src="/lovable-uploads/099d1eef-35f1-4a55-a1c8-c3e45f0e33f1.png" 
-                        alt="OCBot" 
+                      <Bot 
                         className={`h-10 w-10 mx-auto filter ${bot.color} drop-shadow-[0_0_10px_rgba(0,255,65,0.6)] ${
                           bot.type === 'overclocked' ? 'brightness-125 saturate-150' : ''
                         }`} 
@@ -392,12 +258,12 @@ const Index = () => {
           
           <div className="grid md:grid-cols-2 gap-8">
             {/* Enhanced User Holdings */}
-            <Card className="bg-gradient-to-br from-black to-green-900/20 border-green-400/50 hover:shadow-[0_0_50px_rgba(0,255,65,0.4)] transition-all duration-300">
+            <Card className="bg-black border-green-400/50 hover:shadow-[0_0_50px_rgba(0,255,65,0.4)] transition-all duration-300">
               <CardHeader>
                 <CardTitle className="text-green-400 text-center drop-shadow-[0_0_20px_rgba(0,255,65,0.8)]">YOUR HOLDINGS</CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
-                <div className="p-4 border border-green-400/30 rounded bg-gradient-to-r from-green-400/5 to-green-400/10">
+                <div className="p-4 border border-green-400/30 rounded bg-green-400/5">
                   <div className="flex justify-between items-center">
                     <span className="text-green-300">Current <img src="/lovable-uploads/099d1eef-35f1-4a55-a1c8-c3e45f0e33f1.png" alt="OCAI" className="inline h-4 w-4 mx-1" />OCAI Stake:</span>
                     <div className="text-right">
@@ -407,7 +273,7 @@ const Index = () => {
                   </div>
                 </div>
                 
-                <div className="p-4 border border-green-400/30 rounded bg-gradient-to-r from-green-400/5 to-green-400/10">
+                <div className="p-4 border border-green-400/30 rounded bg-green-400/5">
                   <div className="flex justify-between items-center mb-2">
                     <span className="text-green-300">Pending Rewards:</span>
                   </div>
@@ -427,7 +293,7 @@ const Index = () => {
                   </div>
                 </div>
                 
-                <div className="p-4 border border-green-400/30 rounded bg-gradient-to-r from-green-400/5 to-green-400/10">
+                <div className="p-4 border border-green-400/30 rounded bg-green-400/5">
                   <div className="flex justify-between items-center">
                     <span className="text-green-300"><img src="/lovable-uploads/099d1eef-35f1-4a55-a1c8-c3e45f0e33f1.png" alt="OCAI" className="inline h-4 w-4 mx-1" />OCAI Holdings:</span>
                     <div className="text-right">
@@ -437,7 +303,7 @@ const Index = () => {
                   </div>
                 </div>
 
-                <div className="p-4 border border-blue-400/30 rounded bg-gradient-to-r from-blue-400/5 to-blue-400/10">
+                <div className="p-4 border border-blue-400/30 rounded bg-blue-400/5">
                   <div className="flex justify-between items-center mb-2">
                     <span className="text-blue-300">TBILL/FED LP Tokens:</span>
                     <span className="text-blue-400 font-bold">{mockData.lpTokens.toLocaleString()}</span>
@@ -457,7 +323,7 @@ const Index = () => {
             </Card>
 
             {/* Enhanced Staking Actions */}
-            <Card className="bg-gradient-to-br from-black to-green-900/20 border-green-400/50 hover:shadow-[0_0_50px_rgba(0,255,65,0.4)] transition-all duration-300">
+            <Card className="bg-black border-green-400/50 hover:shadow-[0_0_50px_rgba(0,255,65,0.4)] transition-all duration-300">
               <CardHeader>
                 <CardTitle className="text-green-400 text-center drop-shadow-[0_0_20px_rgba(0,255,65,0.8)]">STAKING ACTIONS</CardTitle>
               </CardHeader>
@@ -539,14 +405,14 @@ const Index = () => {
       </section>
 
       {/* Treasury Bill Information Section */}
-      <section className="relative z-10 py-16 px-6 bg-gradient-to-b from-black to-gray-900">
+      <section className="relative z-10 py-16 px-6 bg-black">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl font-bold text-center mb-12 text-green-400 drop-shadow-[0_0_30px_rgba(0,255,65,0.9)]">
             THE ULTIMATE TBILL & FED PRINTER
           </h2>
           
           <div className="grid md:grid-cols-2 gap-8">
-            <Card className="bg-gradient-to-br from-black to-green-900/20 border-green-400/50 hover:shadow-[0_0_50px_rgba(0,255,65,0.4)]">
+            <Card className="bg-black border-green-400/50 hover:shadow-[0_0_50px_rgba(0,255,65,0.4)]">
               <CardHeader>
                 <CardTitle className="text-green-400 drop-shadow-[0_0_15px_rgba(0,255,65,0.8)]">Treasury Bill Utility</CardTitle>
               </CardHeader>
@@ -564,7 +430,7 @@ const Index = () => {
               </CardContent>
             </Card>
 
-            <Card className="bg-gradient-to-br from-black to-green-900/20 border-green-400/50 hover:shadow-[0_0_50px_rgba(0,255,65,0.4)]">
+            <Card className="bg-black border-green-400/50 hover:shadow-[0_0_50px_rgba(0,255,65,0.4)]">
               <CardHeader>
                 <CardTitle className="text-green-400 drop-shadow-[0_0_15px_rgba(0,255,65,0.8)]">Why Bother Minting FED?</CardTitle>
               </CardHeader>
@@ -586,13 +452,13 @@ const Index = () => {
       </section>
 
       {/* ICO Calculator Section */}
-      <section className="relative z-10 py-16 px-6 bg-gradient-to-b from-black to-gray-900">
+      <section className="relative z-10 py-16 px-6 bg-black">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl font-bold text-center mb-12 text-green-400 drop-shadow-[0_0_30px_rgba(0,255,65,0.9)]">
             ICO CALCULATOR
           </h2>
           
-          <Card className="bg-gradient-to-br from-black to-green-900/10 border-green-400/50 p-8 hover:shadow-[0_0_50px_rgba(0,255,65,0.4)] transition-all duration-300">
+          <Card className="bg-black border-green-400/50 p-8 hover:shadow-[0_0_50px_rgba(0,255,65,0.4)] transition-all duration-300">
             <CardHeader>
               <CardTitle className="text-green-400 text-center text-2xl drop-shadow-[0_0_20px_rgba(0,255,65,0.8)]">
                 Dynamic Pricing Based on Early Bird 😇 Angels Round
@@ -630,7 +496,7 @@ const Index = () => {
               </div>
               
               <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-4">
-                <div className="text-center p-4 border border-green-400/30 rounded bg-gradient-to-br from-green-400/10 to-green-400/5 hover:shadow-[0_0_25px_rgba(0,255,65,0.3)] transition-all duration-300">
+                <div className="text-center p-4 border border-green-400/30 rounded bg-green-400/10 hover:shadow-[0_0_25px_rgba(0,255,65,0.3)] transition-all duration-300">
                   <h4 className="text-green-400 font-semibold mb-2 drop-shadow-[0_0_12px_rgba(0,255,65,0.7)]">Early Bird 😇 Angels</h4>
                   <p className="text-2xl font-bold text-green-300 drop-shadow-[0_0_15px_rgba(0,255,65,0.6)]">${tokenomics.earlyBirdPrice}</p>
                   <p className="text-sm text-green-300/70">5x discount • $10k max</p>
@@ -728,7 +594,7 @@ const Index = () => {
       </section>
 
       {/* Staking Mechanics */}
-      <section className="relative z-10 py-16 px-6 bg-gradient-to-b from-black to-gray-900">
+      <section className="relative z-10 py-16 px-6 bg-black">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl font-bold text-center mb-12 text-green-400 drop-shadow-[0_0_30px_rgba(0,255,65,0.9)]">
             STAKING MECHANICS
@@ -788,7 +654,7 @@ const Index = () => {
             AUTONOMOUS 🤖 OCBOTZ
           </h2>
           
-          <Card className="bg-gradient-to-br from-black to-green-900/10 border-green-400/50 hover:shadow-[0_0_50px_rgba(0,255,65,0.5)] transition-all duration-300">
+          <Card className="bg-black border-green-400/50 hover:shadow-[0_0_50px_rgba(0,255,65,0.5)] transition-all duration-300">
             <CardHeader>
               <CardTitle className="text-green-400 text-center text-2xl flex items-center justify-center gap-2 drop-shadow-[0_0_20px_rgba(0,255,65,0.8)]">
                 <Bot className="h-8 w-8 text-green-400 drop-shadow-[0_0_15px_rgba(0,255,65,0.7)]" />
