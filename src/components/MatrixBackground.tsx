@@ -1,5 +1,5 @@
-
 import React, { useEffect, useRef } from 'react';
+import { Bot } from 'lucide-react';
 
 function MatrixBackground({ timeout = 50 }) {
     const canvas = useRef<HTMLCanvasElement>(null);
@@ -26,13 +26,51 @@ function MatrixBackground({ timeout = 50 }) {
 
         const botColors = ['#ff0066', '#00ff66', '#6600ff', '#ff6600', '#00ffff', '#ffff00', '#ff3366', '#33ff66'];
 
-        const matrixEffect = () => {
+        // Create a temporary canvas to render the Bot icon
+        const createBotIcon = (color: string, size: number = 15) => {
+            const tempCanvas = document.createElement('canvas');
+            const tempCtx = tempCanvas.getContext('2d');
+            if (!tempCtx) return null;
+            
+            tempCanvas.width = size;
+            tempCanvas.height = size;
+            
+            // Create SVG string for Bot icon (simplified version)
+            const svgString = `
+                <svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="4" y="11" width="16" height="10" rx="2" fill="${color}"/>
+                    <circle cx="8.5" cy="15.5" r="1" fill="#000"/>
+                    <circle cx="15.5" cy="15.5" r="1" fill="#000"/>
+                    <path d="M9 9V7a3 3 0 0 1 6 0v2" stroke="${color}" stroke-width="2"/>
+                    <path d="M8 21l0-4.5" stroke="${color}" stroke-width="2"/>
+                    <path d="M16 21l0-4.5" stroke="${color}" stroke-width="2"/>
+                </svg>
+            `;
+            
+            const img = new Image();
+            const blob = new Blob([svgString], { type: 'image/svg+xml' });
+            const url = URL.createObjectURL(blob);
+            
+            return new Promise<HTMLCanvasElement | null>((resolve) => {
+                img.onload = () => {
+                    tempCtx.drawImage(img, 0, 0, size, size);
+                    URL.revokeObjectURL(url);
+                    resolve(tempCanvas);
+                };
+                img.onerror = () => resolve(null);
+                img.src = url;
+            });
+        };
+
+        const matrixEffect = async () => {
             context.fillStyle = '#0001';
             context.fillRect(0, 0, width, height);
 
             context.font = '15pt monospace';
 
-            yPositions.forEach((y, index) => {
+            for (let index = 0; index < yPositions.length; index++) {
+                const y = yPositions[index];
+                
                 // 10% chance for bot icon, 90% for regular characters
                 const isBotIcon = Math.random() < 0.1;
                 
@@ -42,9 +80,23 @@ function MatrixBackground({ timeout = 50 }) {
                     context.fillStyle = botColor;
                     context.shadowColor = botColor;
                     context.shadowBlur = 15;
-                    const text = '⚡'; // Using a distinctive character as placeholder for bot
+                    
                     const x = index * 20;
-                    context.fillText(text, x, y);
+                    
+                    // Try to create and draw bot icon, fallback to robot emoji if it fails
+                    try {
+                        const botCanvas = await createBotIcon(botColor, 15);
+                        if (botCanvas) {
+                            context.drawImage(botCanvas, x, y - 15, 15, 15);
+                        } else {
+                            // Fallback to a simple robot character
+                            context.fillText('🤖', x, y);
+                        }
+                    } catch (error) {
+                        // Fallback to a simple robot character
+                        context.fillText('🤖', x, y);
+                    }
+                    
                     // Reset shadow for regular characters
                     context.shadowBlur = 0;
                 } else {
@@ -60,7 +112,7 @@ function MatrixBackground({ timeout = 50 }) {
                 } else {
                     yPositions[index] = y + 20;
                 }
-            });
+            }
         };
 
         const interval = setInterval(matrixEffect, timeout);
